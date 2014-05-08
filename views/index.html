@@ -1,59 +1,10 @@
 <% include header.html %>
 
-  <div class="middle">
-    <div class="alert alert-success" style="display:none;" id="suggestSuccess">
-      <a href="#" class="close" data-dismiss="alert">&times;</a>
-      We have many more guides coming soon! Leave your email below to get notified when they're released.
-  </div>
-
-
-  <div class="alert alert-success" style="display:none;" id="emailSuccess">
-      <a href="#" class="close" data-dismiss="alert">&times;</a>
-      We'll notify you when we release additional guides!
-  </div>
-  
-
-  <div class="middleInner" id="middleDiv">
-
-  <a style="display:block" href="/harvard">
-    <div class="guideBox">
-        <img id="circlePic" src="/harvard.jpg" alt="harvard"></br></br>
-        <p class="guideTitle">Our First Guide:</br>What's Harvard like?</p></br>
-        <p class="description">
-          18-page PDF: a first-hand account of what the Harvard undergraduate experience is like.</p></br>
-        <p class="clickToPreview">click to preview</p>
-    </div>
-  </a>
-
-
-  <div class="author">
-      <img id="circlePic" src="/molly.png" alt="molly"></br></br>
-      The author of this guide, Molly Yang, is a 2013 graduate of Harvard College. She wrote this guide to provide a consolidated, deeper, and non-evangelical look at Harvard to help you make your decision about whether Harvard's the school for you.
-      </br></br>
-      Download a copy for $5.</br></br>
-
-      <!-- STRIPE -->
-      <form action="/charge" method="POST">
-      <script
-        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="pk_live_9qQLQrVnPHlpr2m6DS69M35N"
-        data-amount="500"
-        data-name="Download Guide"
-        data-description="18-page Harvard guide ($5)"
-        data-image="/crest.jpg"
-        data-allow-remember-me = "false">
-
-      </script>
-    </form>
-
-
-  </div>
+<div class="middleInner">
 
 
 
-  </div>
 </div>
-
 
 
 <% include footer.html %>
