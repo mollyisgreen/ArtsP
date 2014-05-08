@@ -1,0 +1,69 @@
+<!-- Sign up Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+
+	<div class="modal-dialog">
+
+           <script>
+            function validSignup() {
+                  $(".error").hide();
+                  var hasError = false;
+                  var passwordVal = $("#password").val();
+                  var repasswordVal = $("#repassword").val();
+                  var emailVal = $("#email").val();
+                  var re = /^(?=.*[a-zA-Z!@#$&*])(?=.*[0-9]).{6,}$/;
+                  var reEmail = /^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})$/;
+
+                  //make sure password meets requirements - at least one char and number
+                  if (!re.test(passwordVal)) {
+                        $("#repassword").after('<span class="error">Passwords must be at least six characters and contain both characters and numbers</span></br>');
+                        hasError = true;
+                  }
+
+                  // make sure passwords match
+                  if (passwordVal != repasswordVal ) {
+                        $("#repassword").after('<span class="error">Passwords do not match.</span></br>');
+                        hasError = true;
+                  }
+
+                  // make sure email is email format
+                  if (!reEmail.test(emailVal)) {
+                        $("#repassword").after('<span class="error">Please enter a proper email.</span></br>');
+                        hasError = true;
+                  }
+                  if(hasError == true) {return false;}
+            }
+            </script>
+
+		<form onsubmit="return validSignup()" method="post" action="/signup" id="signupForm" accept-charset="utf-8">
+      	     <input class="suggestionBox" name="name" type="text" placeholder="name" required>
+
+      	     <input id="email" class="suggestionBox" name="email" type="text" placeholder="email" required>
+
+      	     <input id="password" class="suggestionBox" name="password" type="password" placeholder="password" required>
+
+      	     <input id="repassword" class="suggestionBox" name="repassword" type="password" placeholder="re-enter password" required>
+
+      	    <button id="submit" type="submit" class="btn btn-primary">Sign up</button>
+      	</form>
+
+	</div>
+
+
+</div>
+
+
+<!-- Log in Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+
+		<form action="/login" method="post" id="loginForm" accept-charset="utf-8">
+
+      		<input class="suggestionBox" name="email" type="text" placeholder="email" required>
+
+      	    <input class="suggestionBox" name="password" type="password" placeholder="password" required>
+
+      	    <button type="submit" class="btn btn-primary">Log in</button>
+      	</form>
+
+	</div>
+</div>

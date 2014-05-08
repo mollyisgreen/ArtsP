@@ -1,0 +1,46 @@
+
+	</body>
+
+	<div class="footer">
+		<div class="footerInner">
+	  	We have lots of guides coming out soon!
+
+	    <!-- email form -->
+	    <div id="mc_embed_signup">
+		    <form id="emailForm" action="/saveEmail" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+		      
+		    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="leave your email" required>
+		    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+		    <div style="position: absolute; left: -5000px;">
+		    <input type="text" name="b_69a732618d51ce1efb2cc8b10_d221158b4c" value=""></div>
+		    <div class="clear"><input type="submit" value="stay updated on new guide releases" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+	    	</form>
+	    </div>
+
+		<!-- AJAX submit suggestion-->
+		<script>
+		$(document).ready(function(){   
+      
+			$('#emailForm').submit(function() {
+			    $.ajax({
+					dataType: 'json',
+					data: $('#emailForm').serialize(),
+					type: 'POST',
+					url: "/saveEmail",
+					success: successEmailResponse,
+			    });
+				return false;
+			});
+
+			function successEmailResponse(){
+				document.getElementById('emailSuccess').style.display = "block";
+				document.getElementById("emailForm").reset();
+			}
+		});
+		</script>
+
+  		</div>
+	</div>
+
+
+</html>

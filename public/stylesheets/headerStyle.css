@@ -1,0 +1,57 @@
+/********** navbar *********/
+
+.navbar {
+	background: #6792C4;
+	-moz-box-shadow:    0px 5px 7px 0px #D4D4D4;
+	-webkit-box-shadow: 0px 5px 7px 0px #D4D4D4;
+	box-shadow:         0px 5px 7px 0px #D4D4D4;
+	color: #FFFFFF;
+	font-family: PoiretOne-Regular;
+	font-size: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	padding: 10px 20px 15px 40px;
+}
+
+.navbarInner {
+	margin:0 auto;
+	width: 960px;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+	color: #FFFFFF;
+    text-decoration: none;
+	font-size: 20px;
+	line-height: 20px;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+#logo {
+	float: left;
+	width: 150px;
+}
+
+.suggestionBox {
+	font-family: PoiretOne-Regular;
+	font-size: 20px;
+	line-height: 20px;
+	width: 350px;
+	padding: 10px 10px 10px 10px;
+	margin: 10px 20px 0px 40px;
+	float: left;
+	color: #858385;
+}
+
+#right-nav {
+	float: right;
+	margin: 20px 20px 0px 10px;
+	color: #FFFFFF;
+    text-decoration: none;
+	font-size: 20px;
+	line-height: 20px;
+}

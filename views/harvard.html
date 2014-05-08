@@ -1,0 +1,93 @@
+<% include header.html %>
+
+<div class="middleHarvard">
+    <div class="alert alert-success" style="display:none;" id="suggestSuccess">
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+      We have many more guides coming soon! Leave your email below to get notified when they're released.
+    </div>
+
+    <div class="alert alert-success" style="display:none;" id="emailSuccess">
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+      We'll notify you when we release additional guides!
+    </div>
+
+  	<div class="authorLeft">
+      <img style="margin-left: 30px;" id="circlePic" src="/molly.png" alt="molly"></br></br></br>
+      The author of this guide, Molly Yang, is a 2013 graduate of Harvard College. She wrote this guide to provide a consolidated, deeper, and non-evangelical look at Harvard to help you make your decision about whether Harvard's the school for you. If you have any additional questions that you don't feel that this guide addresses, please email Molly at mollyisgreen@gmail.com, and she'll add those answers to the guide and email you a fresh new copy!
+      </br></br></br>
+      <b>Download a copy for $5.</b></br></br>
+
+      <!-- STRIPE -->
+      <form action="/charge" method="POST">
+        <input name="utf8" type="hidden" value="&#x2713;" />
+        <input name="authenticity_token" type="hidden" value="f755bb0ed134b76c432144748a6d4b7a7ddf2b71" />
+          
+        <script
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_live_9qQLQrVnPHlpr2m6DS69M35N"
+          data-amount="500"
+          data-name="Download Guide"
+          data-description="18-page Harvard guide ($5)"
+          data-image="/crest.jpg"
+          data-allow-remember-me = "false">
+        </script>
+      </form>
+
+      </br></br>If you have any issues with payments or downloading the guide, please email team@insidesy.com and we'll get back you asap.</br></br></br>
+
+      <!-- AddThis Button BEGIN -->
+      <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+      <a class="addthis_button_preferred_1"></a>
+      <a class="addthis_button_preferred_2"></a>
+      <a class="addthis_button_preferred_3"></a>
+      <a class="addthis_button_preferred_4"></a>
+      <a class="addthis_button_compact"></a>
+      <a class="addthis_counter addthis_bubble_style"></a>
+      </div>
+      <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53338ed21a8a4e98"></script>
+      <!-- AddThis Button END -->
+
+  	</div>
+
+
+	<div class="textBox">
+        <p class="headerTag"><b>Preview of the Guide: What's Harvard like?</b></p></br>
+        <p class="headerTag"><b>Table of Contents</b></p>
+
+
+		    Chapter 1: Harvard academics (dispelling myths)</br>
+		    Chapter 2: Harvard social scene and culture (what’s everyone like?)</br>
+		    Chapter 3: Post-Harvard prospects (or, is Harvard worth the price tag?)</br>
+		    Chapter 4: Should you attend Harvard or _________ ?</br>
+        Chapter 5: Strategy for applying (maximize your chances!)</br></br>
+
+
+        <p class="headerTag"><b>Preview: Excerpt from page 8</b></p>
+
+	Grade inflation</br>
+  The average grade at Harvard is an A-/B+. Grade inflation definitely exists at Harvard, and it works well to students’ advantage in the graduate school/job application process. I actually think that grade inflation is a good thing because it encourages students to take intellectual and academic risks. There were numerous classes I took at Harvard that were rigorous and challenging and I could’ve been concerned about their affecting my GPA, but given grade inflation, I knew that I’d never get below a B- as long as I tried. This freed me to focus on learning, rather than constantly worrying about GPA. Here’s a Crimson article about grade inflation: http://www.thecrimson.com/article/2013/12/3/grade-inflation-mode-a/ </br></br>
+
+  Final clubs</br>
+  One aspect of Harvard that gets a lot of attention is its final clubs, so let’s talk candidly about them. Final clubs are undergraduate social clubs with properties in Harvard Square. They’re functionally very similar to fraternities and sororities at other schools. Because they have private properties, final clubs have stronger protection from policies around drinking and partying relative to university-owned dorms and party suites. Final club properties are essentially just large houses strewn around Harvard Square, most of which belong to the male final clubs. The total membership for the female-only and male-only final clubs represents ~10% of the Harvard student body. </br>
+  Because Harvard is quite strict with its drinking/party policies for...
+
+
+  </br></br>Download the rest of the guide to see more!
+
+  </div>
+  
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'insidesy';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></br>
+
+</div>
+
+<% include footer.html %>

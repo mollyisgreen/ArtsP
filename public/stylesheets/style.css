@@ -1,0 +1,138 @@
+/********** whole doc *********/
+h1, h2 {
+	color: #4A4A4A;
+}
+
+body {
+	margin: 0px 0px 0px 0px;
+}
+
+@font-face {
+	font-family: PoiretOne-Regular;
+	src: url('/poiretone-regular-webfont.ttf'),
+	url('/poiretone-regular-webfont.eot'),
+	url('/poiretone-regular-webfont.svg'),
+	url('/poiretone-regular-webfont.woff');
+}
+
+/********** body *********/
+
+
+.middle {
+	text-align: center;
+	padding: 20px 20px 20px 20px;
+	overflow: hidden;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.middleInner {
+	margin: 0 auto;
+	width: 700px;
+	padding: 20px 20px 20px 20px;
+}
+
+.guideBox {
+	color: #858385;
+	border: none;
+	width: 300px;
+	height: 422px;
+	padding: 20px 20px 20px 20px;
+	-moz-box-shadow:    0px 2px 4px 3px #D4D4D4;
+	-webkit-box-shadow: 0px 2px 4px 3px #D4D4D4;
+	box-shadow:         0px 2px 4px 3px #D4D4D4;
+	float: left;
+}
+
+.guideTitle {
+	color: #858385;
+	/*color: #4A4A4A;*/
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.description {
+	color: #858385;
+	line-height: 20px;
+	font-size: 12px;
+}
+
+.clickToPreview {		
+	color: #858385;
+	line-height: 20px;
+	font-size: 16px;
+}
+
+.author {
+	-moz-box-shadow:    0px 2px 4px 3px #D4D4D4;
+	-webkit-box-shadow: 0px 2px 4px 3px #D4D4D4;
+	box-shadow:         0px 2px 4px 3px #D4D4D4;
+	color: #858385;
+	width: 300px;
+	overflow: hidden;
+	font-size: 12px;
+	line-height: 20px;
+	padding: 20px 20px 20px 20px;
+}
+
+
+#circlePic {
+	width: 150px;
+	height: 150px;
+	border-radius: 100px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+}
+
+
+/********** about pages *********/
+
+.redBlock {
+	background: #C74B5A;
+	padding: 20px 20px 10px 20px;
+	margin: 0 auto;
+	width: 800px;
+	color: #FFFFFF;
+	overflow: hidden;
+	margin-bottom: 40px;
+}
+
+.leftRedText {
+	font-size: 20px;
+	float: left;
+	margin: 70px 10px 30px 10px;
+}
+
+.rightRedText {
+	font-size: 20px;
+	line-height: 40px;
+	float: left;
+	text-align: left;
+}
+
+.redBracket {
+	font-size: 150px;
+	float: left;
+	margin-left: 40px;
+	margin-top: -40px;
+}
+
+.aboutText {
+	width: 800px;
+	margin: 0 auto;
+	font-size: 16px;
+	color: #6F6D6D;
+	line-height: 25px;
+	align: left;
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+
+#disqus_thread {
+	color: #6F6D6D;	
+}
+
+

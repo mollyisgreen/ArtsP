@@ -1,0 +1,53 @@
+/********** footer *********/
+
+.footer {
+	font-family: PoiretOne-Regular;
+	font-size: 20px;
+	line-height: 20px;
+	background: #6792C4;
+	-moz-box-shadow:    0px -5px 7px 0px #D4D4D4;
+	-webkit-box-shadow: 0px -5px 7px 0px #D4D4D4;
+	box-shadow:         0px -5px 7px 0px #D4D4D4;
+	color: #FFFFFF;
+	padding: 50px 50px 50px 50px;
+	text-align: center;
+	overflow: hidden;
+	margin-top: 10px;
+}
+
+.footerInner {
+	margin:0 auto;
+	width: 680px;
+}
+
+#mc_embed_signup {
+	margin-top: 20px;
+}
+
+/* email box */
+	#mce-EMAIL {
+	font-family: PoiretOne-Regular;
+	font-size: 20px;
+	color: #858385;
+	width: 250px;
+	padding: 10px 10px 10px 10px;
+	float: left;
+}
+
+/* signup button */
+#mc-embedded-subscribe {
+	font-family: PoiretOne-Regular;
+	background: #6792C4;
+	font-size: 20px;
+	text-align: center;
+	width: 350px;
+	float: left;
+	overflow: hidden;
+	margin-left: 30px;
+	padding: 10px 10px 10px 10px;
+	border:solid;
+	border-width:1px;
+	border-color: #FFFFFF;
+	color: #FFFFFF;
+}
+
