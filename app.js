@@ -4,7 +4,7 @@
  */
 
 
-db = require('./db');
+// db = require('./db');
 var dotenv = require('dotenv');
 dotenv.load();
 
@@ -60,13 +60,13 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-
+/*
 app.post('/submitSuggestion', db.submitSuggestion);
 app.post('/saveEmail', db.saveEmail);
 app.post('/uploadguide', db.uploadguide);
 app.get('/downloadguide', db.downloadguide);
 app.get('/users', user.list);
-
+*/
 
 // STRIPE
 app.post('/charge', function(req, res){

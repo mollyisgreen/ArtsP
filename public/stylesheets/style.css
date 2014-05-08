@@ -12,12 +12,9 @@ body {
 
 .middle {
 	text-align: center;
-	padding: 20px 20px 20px 20px;
 	overflow: hidden;
 	font-family: LucidaSans;
 	font-size: 16px;
-	margin-left:auto;
-	margin-right:auto;
 }
 
 .middleInner {
@@ -27,9 +24,53 @@ body {
 }
 
 .landingtop {
-
+	height: 325px;
 }
 
 .landingbottom {
-
+	background: #242424;
+	height: 120px;
 }
+
+.landingtopleft {
+	width: 340px;
+	height: 140px;
+	margin: 0 auto;
+}
+
+.landingtopright {
+	width: 340px;
+	height: 140px;
+	margin: 0 auto;
+}
+
+.landingbottom {
+	color: #FFFFFF;
+}
+
+.landingbottombutton {
+	width: 210px;
+	height: 60px;
+	background: #476F9D;
+	padding: 10px 10px 10px 10px;
+}
+
+#landingbottomleft {
+	width: 30%;
+	float: left;
+}
+
+#landingbottommiddle {
+	width: 30%;
+	float: left;
+}
+
+#landingbottomright {
+	width: 30%;
+	float: left;
+}
+
+
+
+
+
