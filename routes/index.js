@@ -1,8 +1,4 @@
 
-/*
- * GET home page.
- */
-
 // redirect to https
 function redirectSec(req, res, next) {
     if (req.headers['x-forwarded-proto'] == 'http') { 
@@ -21,6 +17,10 @@ module.exports = function(app, passport) {
 
 	app.get('/about', function(req, res){
 	  res.render('about.html', { title: 'Express' });
+	});
+
+	app.get('/questionnaire', function(req, res){
+	  res.render('questionnaire.html', { title: 'Express' });
 	});
 
 	app.get('/venue', function(req, res){
