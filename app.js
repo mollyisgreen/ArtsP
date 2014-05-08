@@ -52,7 +52,6 @@ app.configure(function() {
 
 require('./routes/index.js')(app, passport);
 require('./routes/dashboard.js')(app, passport);
-require('./routes/guide.js')(app, passport);
 require('./passport')(passport);
 
 

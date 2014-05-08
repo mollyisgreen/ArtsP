@@ -19,16 +19,8 @@ module.exports = function(app, passport) {
 	  res.render('index.html', { title: 'Express' } );
 	});
 
-	app.get('/harvard', function(req, res){
-	  res.render('harvard.html', { title: 'Express' });
-	});
-
 	app.get('/about', function(req, res){
 	  res.render('about.html', { title: 'Express' });
-	});
-
-	app.get('/yourguide', function(req, res){
-	  res.render('yourguide.html', { title: 'Express' });
 	});
 
 	app.get('/signupAttempt', function(req, res){
