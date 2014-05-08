@@ -7,61 +7,30 @@
 		<title>Insidesy</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
-		<link rel="stylesheet" type="text/css" href="/stylesheets/guidePreviewStyle.css">
 		<link rel="stylesheet" type="text/css" href="/stylesheets/headerStyle.css">
 		<link rel="stylesheet" type="text/css" href="/stylesheets/footerStyle.css">
 		
 		<!-- jQuery -->		
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-		<!-- Open Sans Font -->
-		<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
 		<!-- Twitter Bootstrap -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
-
 	</head>
 
 	<body>
 
-	<header class="navbar">
-    	<div class="navbarInner">
+		<header class="navbar">
+	    	<div class="navbarInner">
 
-      		<a href="/"><img src="/logo.png" id="logo" alt="logo"></a>
+	      		<a href="/"><img src="/logo.png" id="logo" alt="logo"></a>
 
-      		<a href="/about" id="right-nav">About</a>
+	      		<a href="/about" id="right-nav">About</a>
 
-      		<!-- Button trigger modal -->
-			<button data-toggle="modal" data-target="#signupModal">Sign up</button>
-			<button data-toggle="modal" data-target="#loginModal">Log in</button>
+	      		<!-- Button trigger modal -->
+				<button data-toggle="modal" data-target="#signupModal">Sign up</button>
+				<button data-toggle="modal" data-target="#loginModal">Log in</button>
 
-
-
-    	</div>
-
-		<!-- AJAX submit suggestion-->
-		<script>
-		$(document).ready(function(){   
-      
-			$('#suggestionForm').submit(function() {
-			    $.ajax({
-					dataType: 'json',
-					data: $('#suggestionForm').serialize(),
-					type: 'POST',
-					url: "/submitSuggestion",
-					success: successSuggestResponse,
-			    });
-				return false;
-			});
-
-			function successSuggestResponse(){
-				document.getElementById('suggestSuccess').style.display = "block";
-				document.getElementById("suggestionForm").reset();
-			}
-		});
-		</script>
-
-	</header>
+	    	</div>
+		</header>
