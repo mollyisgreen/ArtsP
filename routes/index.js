@@ -19,6 +19,10 @@ module.exports = function(app, passport) {
 	  res.render('about.html', { title: 'Express' });
 	});
 
+	app.get('/new', function(req, res){
+	  res.render('new.html', { title: 'Express' });
+	});
+
 	app.get('/signupAttempt', function(req, res){
 	  res.render('signupAttempt.html', { title: 'Express' });
 	});
