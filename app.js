@@ -18,7 +18,6 @@ var path = require('path');
 var fs = require('fs');
 var app = express();
 var passport = require('passport');
-var stripe = require("stripe")(process.env.stripePublicKey);
 
 
 app.configure(function() {
