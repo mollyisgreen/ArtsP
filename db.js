@@ -45,4 +45,37 @@ exports.submitSuggestion = function(req, res){
     return res.send(suggestion);
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////
+
+var Artist = mongoose.model('Artist', {
+        name : String
+});
+
+exports.getArtists = function(req, res){
+    // use mongoose to get all todos in the database
+    Artist.find(function(err, todos) {
+        if (err)
+            res.send(err)
+
+            res.json(todos); // return all todos in JSON format
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

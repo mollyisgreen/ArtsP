@@ -4,7 +4,7 @@
  */
 
 
-// db = require('./db');
+db = require('./db');
 var dotenv = require('dotenv');
 dotenv.load();
 
@@ -63,37 +63,10 @@ if ('development' == app.get('env')) {
 /*
 app.post('/submitSuggestion', db.submitSuggestion);
 app.post('/saveEmail', db.saveEmail);
-app.post('/uploadguide', db.uploadguide);
-app.get('/downloadguide', db.downloadguide);
 app.get('/users', user.list);
 */
+app.get('/artists', db.getArtists);
 
-// STRIPE
-app.post('/charge', function(req, res){
-	// Set your secret key: remember to change this to your live secret key in production
-	// See your keys here https://manage.stripe.com/account
-	//stripe.setApiKey(config.stripeSecretKey);
-	stripe.setApiKey(process.env.stripeSecretKey);
-
-	// Get the credit card details submitted by the form
-	var stripeToken = req.body.stripeToken;
-	
-	var charge = stripe.charges.create({
-	  amount: 500, // amount in cents, again
-	  currency: "usd",
-	  card: stripeToken,
-	  description: "payinguser@example.com"
-	}, function(err, charge) {
-	  if (err && err.type === 'StripeCardError') {
-	    // The card has been declined
-	  }
-	});
-
-	var twentyMin = 60 * 1000 * 20;
-  	res.cookie('remember', 1, { maxAge: twentyMin });
-
-	res.redirect("/purchasedharvard");
-});
 
 
 http.createServer(app).listen(app.get('port'), function(){
