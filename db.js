@@ -82,7 +82,21 @@ exports.createArtist = function(req, res){
 }
 
 
+exports.deleteArtist = function(req, res){
+    Artist.remove({
+        _id : req.params.artist_id
+        }, function(err, artist) {
+            if (err)
+                res.send(err);
 
+            // get and return all the todos after you create another
+            Artist.find(function(err, artists) {
+                if (err)
+                    res.send(err)
+                res.json(artists);
+            });
+    });
+}
 
 
 

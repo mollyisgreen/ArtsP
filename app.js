@@ -65,9 +65,14 @@ app.post('/saveEmail', db.saveEmail);
 app.get('/users', user.list);
 */
 app.get('/artists', db.getArtists);
-app.post('/createArtist', db.createArtist);
+app.post('/artists', db.createArtist);
+// TODO: should pass artist_id to db.deleteArtist but haven't gotten around yet
+app.delete('/artists/:artist_id', db.deleteArtist);
 
-
+app.get('*', function(req, res) {
+	// load the single view file (angular will handle the page changes on the front-end)
+	res.sendfile('./views/editdashboard.html');
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
