@@ -53,21 +53,32 @@ var Artist = mongoose.model('Artist', {
 
 exports.getArtists = function(req, res){
     // use mongoose to get all todos in the database
-    Artist.find(function(err, todos) {
+    Artist.find(function(err, artists) {
         if (err)
             res.send(err)
 
-            res.json(todos); // return all todos in JSON format
+            res.json(artists); // return all todos in JSON format
     });
 }
 
 
+exports.createArtist = function(req, res){
+    // create an artist, information comes from AJAX request from Angular
+    Artist.create({
+        name : req.body.text,
+        done : false
+    }, function(err, artist) {
+        if (err)
+            res.send(err);
 
-
-
-
-
-
+        // get and return all artists after you create another
+        Artist.find(function(err, artists) {
+            if (err)
+                res.send(err)
+            res.json(artists);
+        });
+    });
+}
 
 
 

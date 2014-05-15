@@ -66,6 +66,7 @@ app.post('/saveEmail', db.saveEmail);
 app.get('/users', user.list);
 */
 app.get('/artists', db.getArtists);
+app.post('/createArtist', db.createArtist);
 
 
 
