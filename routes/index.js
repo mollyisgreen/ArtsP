@@ -23,6 +23,10 @@ module.exports = function(app, passport) {
 	  res.render('editdashboard.html', { title: 'Express' });
 	});
 
+	app.get('/list', function(req, res){
+	  res.render('list.html', { title: 'Express' });
+	});
+
 	app.get('/signupAttempt', function(req, res){
 	  res.render('signupAttempt.html', { title: 'Express' });
 	});
