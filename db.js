@@ -97,7 +97,7 @@ exports.editArtist = function(req, res){
         }, function(err, artist) {
             if (err)
                 res.send(err);
-
+            console.log(artist);
         res.json(artist);
     });
 }

@@ -60,17 +60,13 @@ var editor = angular.module('editor', ['ngRoute'])
 })
 
 .controller('editController', function($scope, $http) {
-
-	// edit an artist. NOT WORKING.
-	$scope.artist = function(id) {
-		$http.get('/artist/' + id)
-			.success(function(data) {
-				$scope.artists = data;
-				console.log(data);
-			})
-			.error(function(data) {
-				console.log('Error: ' + data);
-			});
-	};
+	$http.get('/artist/53758590dd5a0263a0000001')
+		.success(function(data) {
+			$scope.artist = data;
+			console.log(data);
+		})
+		.error(function(data) {
+			console.log('Error: ' + data);
+	});
 
 });
