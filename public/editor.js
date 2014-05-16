@@ -61,7 +61,7 @@ var editor = angular.module('editor', ['ngRoute'])
 
 .controller('editController', function($scope, $http) {
 
-	// edit an artist
+	// edit an artist. NOT WORKING.
 	$scope.artist = function(id) {
 		$http.get('/artist/' + id)
 			.success(function(data) {
