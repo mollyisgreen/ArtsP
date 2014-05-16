@@ -58,17 +58,21 @@ exports.getArtists = function(req, res){
         if (err)
             res.send(err)
 
-            res.json(artists); // return all todos in JSON format
+        res.json(artists); // return all todos in JSON format
     });
 }
 
 
 exports.createArtist = function(req, res){
+    
+    console.log("meow");
+
     // create an artist, information comes from AJAX request from Angular
-    Artist.create({
-        name : req.body.text,
-        done : false
-    }, function(err, artist) {
+    var artist = new Artist({
+        name    : "Molly"
+    });
+
+    artist.save(function(err, artist) {
         if (err)
             res.send(err);
 
