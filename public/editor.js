@@ -59,8 +59,8 @@ var editor = angular.module('editor', ['ngRoute'])
 
 })
 
-.controller('editController', function($scope, $http) {
-	$http.get('/artist/53758590dd5a0263a0000001')
+.controller('editController', function($scope, $routeParams, $http) {
+	$http.get('/artist/' + $routeParams.artistId)
 		.success(function(data) {
 			$scope.artist = data;
 			console.log(data);

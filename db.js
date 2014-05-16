@@ -90,14 +90,12 @@ exports.createArtist = function(req, res){
 }
 
 exports.editArtist = function(req, res){
-    console.log("beotch");
 
     Artist.find({
         _id : req.params.artist_id
         }, function(err, artist) {
             if (err)
                 res.send(err);
-            console.log(artist);
         res.json(artist);
     });
 }
