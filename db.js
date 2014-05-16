@@ -49,7 +49,10 @@ exports.submitSuggestion = function(req, res){
 //////////////////////////////////////////////////////////////////////////////////////////
 
 var Artist = mongoose.model('Artist', {
-        name    : String
+        name    : String,
+        city    : String,
+        question    : String,
+        answer  : String
 });
 
 exports.getArtists = function(req, res){
@@ -67,7 +70,10 @@ exports.createArtist = function(req, res){
 
     // create an artist, information comes from AJAX request from Angular
     var artist = new Artist({
-        name    : req.body.artistname
+        name    : req.body.artistname,
+        city    : req.body.artistcity,
+        question    : req.body.artistquestion,
+        answer  : req.body.artistanswer
     });
 
     artist.save(function(err, artist) {
