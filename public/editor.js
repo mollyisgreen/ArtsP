@@ -69,4 +69,16 @@ var editor = angular.module('editor', ['ngRoute'])
 			console.log('Error: ' + data);
 	});
 
+	// save edits
+	$scope.editArtist = function(id) {
+		$http.post('/editArtist/' + id, $scope.formData)
+			.success(function(data) {
+				$scope.artist = data;
+				console.log(data);
+			})
+			.error(function(data) {
+				console.log('Error: ' + data);
+			});
+	};
+
 });

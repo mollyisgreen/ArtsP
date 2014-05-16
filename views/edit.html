@@ -2,8 +2,23 @@ editing this shitt
 
 <!-- is this correct directive? -->
 <div ng-repeat="artist in artist">
-	{{ artist.name }}
-	{{ artist.city }}
-	{{ artist.question }}
-	{{ artist.answer }}
+	<form name="revisionForm">
+	    <label>Name</label>
+	    <input type="text" name="name" ng-model="artist.name">
+
+	    <label>City</label>
+	    <input type="text" name="city" ng-model="artist.city">
+
+	    <label>Question</label>
+	    <input type="text" name="question" ng-model="artist.question">
+
+	    <label>Answer</label>
+	    <input type="text" name="answer" ng-model="artist.answer">
+	 
+	 
+	  <br>
+	  <a href="#/" class="btn">Cancel</a>
+	  <button ng-click="editArtist(artist._id)" class="btn btn-primary">Save</button>
+	  <button ng-click="destroy()" ng-show="project.$remove" class="btn btn-danger">Delete</button>
+	</form>
 </div>
