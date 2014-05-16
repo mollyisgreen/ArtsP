@@ -1,0 +1,33 @@
+<!-- Form -->
+<div id="artist-form" class="row">
+	<div class="col-sm-8 col-sm-offset-2 text-center">
+		<form>
+			<div class="form-group">
+
+				<!-- BIND THIS VALUE TO formData.text IN ANGULAR ng-model="formData.text" -->
+				<input type="text" class="form-control input-lg text-center" placeholder="Artist name" ng-model="formData.artistname">
+				<input type="text" class="form-control input-lg text-center" placeholder="City" ng-model="formData.artistcity">
+				<input type="text" class="form-control input-lg text-center" placeholder="Question" ng-model="formData.artistquestion">
+				<input type="text" class="form-control input-lg text-center" placeholder="Answer" ng-model="formData.artistanswer">
+			</div>
+
+			<button type="submit" class="btn btn-primary btn-lg" ng-click="createArtist()">Add</button>
+		</form>
+	</div>
+</div>
+
+<!-- Artist List -->
+<div id="artist-list" class="row">
+	<div class="col-sm-4 col-sm-offset-4">
+
+		<!-- LOOP OVER THE ARTISTS IN $scope.todos -->
+		<div class="checkbox" ng-repeat="artist in artists">
+			<label>
+				<input type="checkbox" ng-click="deleteArtist(artist._id)"> 
+				<a href="#/edit/{{artist._id}}">Edit</a>
+				{{ artist.name }}, {{ artist.city }}, {{ artist.question }}, {{ artist.answer }}
+			</label>
+		</div>
+
+	</div>
+</div>
