@@ -71,7 +71,7 @@ var editor = angular.module('editor', ['ngRoute'])
 
 	// save edits
 	$scope.saveChange = function(id) {
-		$http.post('/saveChange/' + id, $scope.formData)
+		$http.post('/saveChange/' + id, $scope.artist[0])
 			.success(function(data) {
 				$scope.artist = data;
 				console.log(data);

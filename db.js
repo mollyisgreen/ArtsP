@@ -118,20 +118,20 @@ exports.deleteArtist = function(req, res){
 
 
 exports.saveChange = function(req, res){
-    console.log("bah");
+    console.log(req.body);
     db.collection("artists").update(
         { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
         {
             $set: {
-                'name'   : req.body.artistname,
-                'city'   : req.body.artistcity,
-                'question'   : req.body.artistquestion,
-                'answer' : req.body.artistanswer
+                'name'   : req.body.name,
+                'city'   : req.body.city,
+                'question'   : req.body.question,
+                'answer' : req.body.answer
             }
         },
         function (err, result) {
             if (err) throw err;
-            console.log("baby3");
+            console.log("aaaaa");
         });
 
 }
