@@ -118,7 +118,6 @@ exports.deleteArtist = function(req, res){
 
 
 exports.saveChange = function(req, res){
-    console.log(req.body);
     db.collection("artists").update(
         { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
         {
@@ -131,7 +130,6 @@ exports.saveChange = function(req, res){
         },
         function (err, result) {
             if (err) throw err;
-            console.log("aaaaa");
         });
 
 }
