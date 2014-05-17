@@ -2,23 +2,15 @@ editing this shitt
 
 <!-- is this correct directive? -->
 <div ng-repeat="artist in artist">
+
 	<form name="revisionForm">
-	    <label>Name</label>
-	    <input type="text" name="name" ng-model="artist.name">
-
-	    <label>City</label>
-	    <input type="text" name="city" ng-model="artist.city">
-
-	    <label>Question</label>
-	    <input type="text" name="question" ng-model="artist.question">
-
-	    <label>Answer</label>
-	    <input type="text" name="answer" ng-model="artist.answer">
-	 
-	 
+		<input type="text" class="form-control input-lg text-center" placeholder={{artist.name}} ng-model="formData.artistname">
+		<input type="text" class="form-control input-lg text-center" placeholder={{artist.city}} ng-model="formData.artistcity">
+		<input type="text" class="form-control input-lg text-center" placeholder={{artist.question}} ng-model="formData.artistquestion">
+		<input type="text" class="form-control input-lg text-center" placeholder={{artist.answer}} ng-model="formData.artistanswer">
 	  <br>
 	  <a href="#/" class="btn">Cancel</a>
-	  <button ng-click="editArtist(artist._id)" class="btn btn-primary">Save</button>
+	  <button ng-click="saveChange(artist._id)" class="btn btn-primary">Save</button>
 	  <button ng-click="destroy()" ng-show="project.$remove" class="btn btn-danger">Delete</button>
 	</form>
 </div>

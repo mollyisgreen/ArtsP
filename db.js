@@ -117,32 +117,23 @@ exports.deleteArtist = function(req, res){
 }
 
 
-exports.editArtist = function(req, res){
-    console.log("BYAH");
-    Artist.find({
-        _id : req.params.artist_id
-        }, function(err, artist) {
-            if (err)
-                res.send(err);
-
-        artist.name = req.body.name;
-        artist.city = req.body.city;
-        artist.question = req.body.question;
-        artist.answer = req.body.answer;
-
-        artist.save(function(err, artist) {
-            if (err)
-                res.send(err);
-
-            res.json(artist);
+exports.saveChange = function(req, res){
+    console.log("bah");
+    db.collection("artists").update(
+        { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
+        {
+            $set: {
+                'name'   : req.body.artistname,
+                'city'   : req.body.artistcity,
+                'question'   : req.body.artistquestion,
+                'answer' : req.body.artistanswer
+            }
+        },
+        function (err, result) {
+            if (err) throw err;
+            console.log("baby3");
         });
-    });
+
 }
-
-
-
-
-
-
 
 

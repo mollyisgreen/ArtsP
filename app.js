@@ -69,7 +69,7 @@ app.post('/createArtist', db.createArtist);
 // TODO: should pass artist_id to db.deleteArtist but haven't gotten around yet
 app.delete('/artists/:artist_id', db.deleteArtist);
 app.get('/artist/:artist_id', db.editArtist);
-app.post('/editArtist/:artist_id', db.editArtist);
+app.post('/saveChange/:artist_id', db.saveChange);
 
 
 http.createServer(app).listen(app.get('port'), function(){
