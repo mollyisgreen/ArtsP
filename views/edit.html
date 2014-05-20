@@ -2,18 +2,22 @@
 	<div class="title">Name</div>
 	<div class="slogan">one up-and-coming artist per day</div>
 
-	<!-- is this correct directive? -->
-	<div ng-repeat="artist in artist">
+	<div class="interview">
+		<!-- is this correct directive? -->
+		<div ng-repeat="artist in artist">
+			<div class="addPhoto">Add photo</div>
 
-		<form class="interview" name="revisionForm">
-			Artist: <input type="text" class="formfield" ng-model="artist.name"></br>
-			City: <input type="text" class="formfield" ng-model="artist.city"></br>
-			Question: <input type="text" class="formfield" ng-model="artist.question"></br>
-			Answer: <input type="text" class="formfield" ng-model="artist.answer"></br>
-		  <br>
-		  <a href="#/" class="btn">Cancel</a>
-		  <button ng-click="saveChange(artist._id)">Save</button>
-		  <button ng-click="destroy()" ng-show="project.$remove">Delete</button>
-		</form>
+			<form class="interview" name="revisionForm">
+				Artist: <input type="text" class="formfield" ng-model="artist.name"></br>
+				City: <input type="text" class="formfield" ng-model="artist.city"></br>
+				Question: <input type="text" class="formfield" ng-model="artist.question"></br>
+				Answer: <input type="text" class="formfield" ng-model="artist.answer"></br>
+			  <br>
+			  <a href="#/" class="btn">Cancel</a>
+			  <button ng-click="saveChange(artist._id)">Save</button>
+			  <button ng-click="destroy()" ng-show="project.$remove">Delete</button>
+			</form>
+		</div>
 	</div>
+
 </div>
