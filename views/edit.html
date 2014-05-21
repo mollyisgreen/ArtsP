@@ -5,11 +5,9 @@
 	<div class="interview">
 		<!-- TOOD: is this correct directive? -->
 		<div ng-repeat="artist in artist">
-			
-			<div class="addPhoto">Add photo</div>
-			<button ng-click="savePhoto(artist._id)">Save photo</button>
-			<div ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="optional-css-class"
-        ng-show="dropSupported">drop files here</div>
+
+			<div ng-file-drop="onFileSelect($files)" class="addPhoto" 
+				ng-file-drag-over-class="dropOverPhoto">Drop photo here</div>
 
 			<form class="interview" name="revisionForm">
 				Artist: <input type="text" class="formfield" ng-model="artist.name"></br>
