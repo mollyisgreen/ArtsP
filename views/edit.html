@@ -6,6 +6,11 @@
 		<!-- is this correct directive? -->
 		<div ng-repeat="artist in artist">
 			<div class="addPhoto">Add photo</div>
+			
+			<form enctype="multipart/form-data">
+				<input type="file" name="imgfile"><br>
+			</form>
+			<button ng-click="savePhoto(artist._id)">Save photo</button>
 
 			<form class="interview" name="revisionForm">
 				Artist: <input type="text" class="formfield" ng-model="artist.name"></br>

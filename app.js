@@ -70,6 +70,7 @@ app.post('/createArtist', db.createArtist);
 app.delete('/artists/:artist_id', db.deleteArtist);
 app.get('/artist/:artist_id', db.editArtist);
 app.post('/saveChange/:artist_id', db.saveChange);
+app.post('/savePhoto/:artist_id', db.savePhoto);
 
 
 http.createServer(app).listen(app.get('port'), function(){

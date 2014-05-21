@@ -81,4 +81,16 @@ var editor = angular.module('editor', ['ngRoute'])
 			});
 	};
 
+	// save photo
+	$scope.savePhoto = function(id) {
+		$http.post('/savePhoto/' + id, $scope.artist[0])
+			.success(function(data) {
+				$scope.artist = data;
+				console.log(data);
+			})
+			.error(function(data) {
+				console.log('Error: ' + data);
+			});
+	};
+
 });

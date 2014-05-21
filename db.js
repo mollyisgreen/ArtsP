@@ -52,7 +52,8 @@ var Artist = mongoose.model('Artist', {
         name    : String,
         city    : String,
         question    : String,
-        answer  : String
+        answer  : String,
+        photo   : Buffer
 });
 
 exports.getArtists = function(req, res){
@@ -134,4 +135,17 @@ exports.saveChange = function(req, res){
 
 }
 
+
+
+
+exports.savePhoto = function(req, res){
+
+    db.collection("artists").update(
+        { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
+        { $set: { 'photo' : req.body } },
+        function (err, result) {
+            if (err) throw err;
+        }
+    );
+}
 
