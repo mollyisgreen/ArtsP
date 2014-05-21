@@ -1,5 +1,5 @@
-// public/core.js
-var editor = angular.module('editor', ['ngRoute'])
+
+var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 
 .config(function($routeProvider) {
   	$routeProvider
@@ -83,7 +83,7 @@ var editor = angular.module('editor', ['ngRoute'])
 
 	// save photo
 	$scope.savePhoto = function(id) {
-		$http.post('/savePhoto/' + id, $scope.artist[0])
+		$http.post('/savePhoto/' + id, $scope.formData)
 			.success(function(data) {
 				$scope.artist = data;
 				console.log(data);
@@ -92,5 +92,6 @@ var editor = angular.module('editor', ['ngRoute'])
 				console.log('Error: ' + data);
 			});
 	};
+	
 
 });

@@ -3,24 +3,23 @@
 	<div class="slogan">one up-and-coming artist per day</div>
 
 	<div class="interview">
-		<!-- is this correct directive? -->
+		<!-- TOOD: is this correct directive? -->
 		<div ng-repeat="artist in artist">
-			<div class="addPhoto">Add photo</div>
 			
-			<form enctype="multipart/form-data">
-				<input type="file" name="imgfile"><br>
-			</form>
+			<div class="addPhoto">Add photo</div>
 			<button ng-click="savePhoto(artist._id)">Save photo</button>
+			<div ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="optional-css-class"
+        ng-show="dropSupported">drop files here</div>
 
 			<form class="interview" name="revisionForm">
 				Artist: <input type="text" class="formfield" ng-model="artist.name"></br>
 				City: <input type="text" class="formfield" ng-model="artist.city"></br>
 				Question: <input type="text" class="formfield" ng-model="artist.question"></br>
 				Answer: <input type="text" class="formfield" ng-model="artist.answer"></br>
-			  <br>
-			  <a href="#/" class="btn">Cancel</a>
-			  <button ng-click="saveChange(artist._id)">Save</button>
-			  <button ng-click="destroy()" ng-show="project.$remove">Delete</button>
+			  	<br>
+			  	<a href="#/" class="btn">Cancel</a>
+			  	<button ng-click="saveChange(artist._id)">Save</button>
+			  	<button ng-click="destroy()" ng-show="project.$remove">Delete</button>
 			</form>
 		</div>
 	</div>
