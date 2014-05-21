@@ -95,11 +95,12 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 
 
 	$scope.onFileSelect = function($files) {
+
 	    //$files: an array of files selected, each file has name, size, and type.
 	    for (var i = 0; i < $files.length; i++) {
 	      var file = $files[i];
 	      $scope.upload = $upload.upload({
-	        url: 'savePhoto/', //upload.php script, node.js route, or servlet url
+	        url: 'savePhoto/' + $scope.artist[0]._id, //upload.php script, node.js route, or servlet url
 	        // method: 'POST' or 'PUT',
 	        // headers: {'header-key': 'header-value'},
 	        // withCredentials: true,

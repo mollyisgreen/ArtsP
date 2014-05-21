@@ -7,7 +7,7 @@
 		<div ng-repeat="artist in artist">
 
 			<div ng-file-drop="onFileSelect($files)" class="addPhoto" 
-				ng-file-drag-over-class="dropOverPhoto">Drop photo here</div>
+				ng-file-drag-over-class="dropOverPhoto" ng-model="artist._id" >Drop photo here</div>
 
 			<form class="interview" name="revisionForm">
 				Artist: <input type="text" class="formfield" ng-model="artist.name"></br>
