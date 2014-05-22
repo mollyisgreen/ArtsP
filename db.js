@@ -137,12 +137,11 @@ exports.saveChange = function(req, res){
 
 
 exports.savePhoto = function(req, res){
-    
-    console.log(req.body);
+    console.log(req.files);
 
     db.collection("artists").update(
         { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
-        { $set: { 'photo' : req.body.photo } },
+        { $set: { 'photo' : req.files } },
         function (err, result) {
             if (err) throw err;
         }
