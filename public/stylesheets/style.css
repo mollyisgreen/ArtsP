@@ -11,16 +11,14 @@ body {
 
 
 .middle {
-	text-align: center;
 	overflow: hidden;
-	font-family: LucidaSans;
-	font-size: 16px;
+	margin: 30px 30px 30px 30px;
+	padding: 10px 10px 10px 10px;
 }
 
 .middleInner {
-	margin: 0 auto;
 	width: 700px;
-	padding: 40px 20px 20px 20px;
+	margin: 0 auto;
 }
 
 .title {
@@ -38,6 +36,9 @@ body {
 	padding-top: 20px;
 }
 
+.interviewblock {
+	margin: 20px 20px 20px 20px;
+}
 
 .interview {
 	font-family: Raleway;
