@@ -81,21 +81,9 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 			});
 	};
 
-	// save photo
-	$scope.savePhoto = function(id) {
-		$http.post('/savePhoto/' + id, $scope.formData)
-			.success(function(data) {
-				$scope.artist = data;
-				console.log(data);
-			})
-			.error(function(data) {
-				console.log('Error: ' + data);
-			});
-	};
-
 
 	$scope.onFileSelect = function($files) {
-		console.log($files[0].image);
+		console.log($files[0]);
 
 	    //$files: an array of files selected, each file has name, size, and type.
 	    // FOR MULTIPLE FILES

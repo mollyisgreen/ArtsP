@@ -146,12 +146,12 @@ exports.savePhoto = function(req, res){
         }
     );
 */
+    console.log(req.files.file.path);
 
     // get the temporary location of the file
-    var tmp_path = req.files.image.path;
+    var tmp_path = req.files.file.path;
             
-    var target_path = './public/artistphotos/' + artist.id;
-    console.log("baby2");
+    var target_path = './public/artistphotos/' + req.params.artist_id;
     
     // move the file from the temporary location to the intended location
     fs.rename(tmp_path, target_path, function(err) {
@@ -159,7 +159,7 @@ exports.savePhoto = function(req, res){
         // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
         fs.unlink(tmp_path, function() {
             if (err) throw err;
-            res.send('File uploaded to: ' + target_path + ' - ' + req.files.guide.size + ' bytes');
+            res.send('File uploaded to: ' + target_path + ' - ' + req.files.file.size + ' bytes');
         });
     });
 
