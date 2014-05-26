@@ -53,7 +53,7 @@ var Artist = mongoose.model('Artist', {
         city    : String,
         question    : String,
         answer  : String,
-        photo   : Buffer
+        photoPath   : String
 });
 
 exports.getArtists = function(req, res){
@@ -132,12 +132,11 @@ exports.saveChange = function(req, res){
         function (err, result) {
             if (err) throw err;
         });
-
 }
 
 
 exports.savePhoto = function(req, res){
-
+/*
     db.collection("artists").update(
         { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
         // is req.files sufficient? should i go deeper into that?
@@ -146,5 +145,31 @@ exports.savePhoto = function(req, res){
             if (err) throw err;
         }
     );
-}
+*/
 
+    // get the temporary location of the file
+    var tmp_path = req.files.image.path;
+            
+    var target_path = './public/artistphotos/' + artist.id;
+    console.log("baby2");
+    
+    // move the file from the temporary location to the intended location
+    fs.rename(tmp_path, target_path, function(err) {
+        if (err) throw err;
+        // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
+        fs.unlink(tmp_path, function() {
+            if (err) throw err;
+            res.send('File uploaded to: ' + target_path + ' - ' + req.files.guide.size + ' bytes');
+        });
+    });
+
+    db.collection("artists").update(
+        { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
+        // is req.files sufficient? should i go deeper into that?
+        { $set: { 'photoPath' : target_path } },
+        function (err, result) {
+            if (err) throw err;
+        }
+    );
+
+}
