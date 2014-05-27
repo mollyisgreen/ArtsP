@@ -8,8 +8,8 @@
 		<div class="slogan">This is what the art ist.</div>
 
 		<div class="interviewblock">
-			<div class="artistPhoto"></div>
-			<img src="/var/folders/cq/dy16s1xj6d710vq8fyvgfbzw0000gn/T/2504-1lec09w.jpg" alt="artistphoto"></img>
+			{{ artists[0].photoPath }}
+			<img class="artistPhoto" src={{artists[0].photoPath}} alt="artistphoto">
 
 			<div class="interview">
 				Name: {{artists[0].name}}</br>
