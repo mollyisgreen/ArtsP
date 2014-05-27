@@ -128,8 +128,7 @@ exports.saveChange = function(req, res){
                 'name'      : req.body.name,
                 'city'      : req.body.city,
                 'question'   : req.body.question,
-                'answer'    : req.body.answer,
-                'feature'   : req.body.feature
+                'answer'    : req.body.answer
             }
         },
         function (err, result) {

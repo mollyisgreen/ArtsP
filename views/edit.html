@@ -3,9 +3,32 @@
 		<div class="title">Name</div>
 		<div class="slogan">one up-and-coming artist per day</div>
 
-		<div class="interview">
-			<!-- TODO: is this correct directive? -->
-			<div ng-repeat="artist in artist">
+
+		<!-- TODO: is this correct directive? -->
+		<div ng-repeat="artist in artist">
+
+			<!-- embed feature -->
+			<button ng-click="textfeature=!textfeature">Text</button>
+				<span ng-hide="textfeature">Feature:
+				    <input type="textfeature" id="from" />
+				</span>
+ 				<span ng-show="custom"></span>
+
+ 			<button ng-click="embedfeature=!embedfeature">Embedded Link</button>
+				<span ng-hide="embedfeature">Feature:
+				    <input type="text" id="from" />
+				</span>
+ 				<span ng-show="embedfeature"></span>
+
+			<button ng-click="imagefeature=!imagefeature">Image</button>
+				<span ng-hide="imagefeature">Feature:
+				    <input type="text" id="from" />
+				</span>
+ 				<span ng-show="imagefeature"></span>
+		
+
+			<!-- interview -->
+			<div class="interview">
 
 				<script type="text/javascript">
 				    if (0){
@@ -21,7 +44,6 @@
 					ng-file-drag-over-class="dropOverPhoto" ng-model="artist.photo" style="display: none">Drop photo here</div>
 
 				<form class="interview" name="revisionForm">
-					Feature: <input type="text" class="formfield" ng-model="artist.feature"></br>
 					Artist: <input type="text" class="formfield" ng-model="artist.name"></br>
 					City: <input type="text" class="formfield" ng-model="artist.city"></br>
 					Question: <input type="text" class="formfield" ng-model="artist.question"></br>

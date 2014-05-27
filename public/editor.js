@@ -60,6 +60,13 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 })
 
 .controller('editController', function($scope, $routeParams, $http, $upload) {
+	
+	// hide all feature embedding options
+	$scope.textfeature = true;
+	$scope.embedfeature = true;
+	$scope.imagefeature = true;
+
+
 	$http.get('/artist/' + $routeParams.artistId)
 		.success(function(data) {
 			$scope.artist = data;
