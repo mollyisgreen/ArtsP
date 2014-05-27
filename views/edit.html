@@ -7,8 +7,18 @@
 			<!-- TODO: is this correct directive? -->
 			<div ng-repeat="artist in artist">
 
-				<div ng-file-drop="onFileSelect($files)" class="addPhoto" 
-					ng-file-drag-over-class="dropOverPhoto" ng-model="artist.photo">Drop photo here</div>
+				<script type="text/javascript">
+				    if (0){
+				        $("#yesPhoto").show();
+				    } else {
+				        $("#noPhoto").show();
+				    }
+				</script>
+
+				<img id="yesPhoto" class="artistPhoto" src={{artist.photoPath}} alt="artistphoto" style="display: none">
+
+				<div id="noPhoto" ng-file-drop="onFileSelect($files)" class="addPhoto" 
+					ng-file-drag-over-class="dropOverPhoto" ng-model="artist.photo" style="display: none">Drop photo here</div>
 
 				<form class="interview" name="revisionForm">
 					Artist: <input type="text" class="formfield" ng-model="artist.name"></br>
