@@ -7,25 +7,31 @@
 		<!-- TODO: is this correct directive? -->
 		<div ng-repeat="artist in artist">
 
-			<!-- embed feature -->
-			<button ng-click="textfeature=!textfeature">Text</button>
-				<span ng-hide="textfeature">Feature:
-				    <input type="textfeature" id="from" />
-				</span>
- 				<span ng-show="custom"></span>
+			<!-- enter feature -->
+			<form class="interview" name="revisionForm">
+				<button ng-click="textfeature=!textfeature">Text</button>
+					<span ng-hide="textfeature">
+					    <input type="text" id="textcontent" ng-model="artist.feature"/>
+					    <button ng-click="saveTextFeature(artist._id)">Save Feature</button>
+					</span>
+	 				<span ng-show="custom"></span>
 
- 			<button ng-click="embedfeature=!embedfeature">Embedded Link</button>
-				<span ng-hide="embedfeature">Feature:
-				    <input type="text" id="from" />
-				</span>
- 				<span ng-show="embedfeature"></span>
+	 			<button ng-click="embedfeature=!embedfeature">Embedded Link</button>
+					<span ng-hide="embedfeature">
+					    <input type="text" id="from" ng-model="artist.feature"/>
+					    <button ng-click="saveEmbedFeature(artist._id)">Save Feature</button>
+					</span>
+	 				<span ng-show="embedfeature"></span>
 
-			<button ng-click="imagefeature=!imagefeature">Image</button>
-				<span ng-hide="imagefeature">Feature:
-				    <input type="text" id="from" />
-				</span>
- 				<span ng-show="imagefeature"></span>
-		
+				<button ng-click="imagefeature=!imagefeature">Image</button>
+					<span ng-hide="imagefeature">
+					    <input type="text" id="from" ng-model="artist.feature"/>
+					    <button ng-click="saveImageFeature(artist._id)">Save Feature</button>
+					</span>
+	 				<span ng-show="imagefeature"></span>
+			</form>
+
+
 
 			<!-- interview -->
 			<div class="interview">

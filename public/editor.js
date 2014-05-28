@@ -76,9 +76,21 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 			console.log('Error: ' + data);
 	});
 
-	// save edits
+	// save interview/profile edits
 	$scope.saveChange = function(id) {
 		$http.post('/saveChange/' + id, $scope.artist[0])
+			.success(function(data) {
+				$scope.artist = data;
+				console.log(data);
+			})
+			.error(function(data) {
+				console.log('Error: ' + data);
+			});
+	};
+
+	// save feature edits
+	$scope.saveTextFeature = function(id) {
+		$http.post('/saveTextFeature/' + id, $scope.artist[0])
 			.success(function(data) {
 				$scope.artist = data;
 				console.log(data);

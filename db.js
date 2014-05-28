@@ -137,6 +137,21 @@ exports.saveChange = function(req, res){
 }
 
 
+exports.saveTextFeature = function(req, res){
+    db.collection("artists").update(
+        { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
+        {
+            $set: {
+                'feature'      : req.body.feature
+            }
+        },
+        function (err, result) {
+            if (err) throw err;
+        });
+}
+
+
+
 exports.savePhoto = function(req, res){
 /*
     db.collection("artists").update(
