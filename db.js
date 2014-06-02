@@ -139,6 +139,19 @@ exports.saveChange = function(req, res){
         });
 }
 
+exports.changeDate = function(req, res){
+    db.collection("artists").update(
+        { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
+        {
+            $set: {
+                'date'      : req.body.date
+            }
+        },
+        function (err, result) {
+            if (err) throw err;
+        });
+}
+
 
 exports.saveTextFeature = function(req, res){
     db.collection("artists").update(

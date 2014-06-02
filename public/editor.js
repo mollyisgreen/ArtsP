@@ -57,6 +57,19 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 			});
 	};
 
+	// save interview/profile edits
+	$scope.changeDate = function(id, index) {
+		console.log($scope.artists[index]);
+		$http.post('/changeDate/' + id, $scope.artists[index])
+			.success(function(data) {
+				$scope.artist = data;
+				console.log(data);
+			})
+			.error(function(data) {
+				console.log('Error: ' + data);
+			});
+	};
+
 })
 
 .controller('editController', function($scope, $routeParams, $http, $upload) {

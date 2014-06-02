@@ -71,6 +71,7 @@ app.post('/createArtist', db.createArtist);
 app.delete('/artists/:artist_id', db.deleteArtist);
 app.get('/artist/:artist_id', db.editArtist);
 app.post('/saveChange/:artist_id', db.saveChange);
+app.post('/changeDate/:artist_id', db.changeDate);
 app.post('/savePhoto/:artist_id', db.savePhoto);
 app.post('/saveTextFeature/:artist_id', db.saveTextFeature);
 
