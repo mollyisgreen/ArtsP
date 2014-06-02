@@ -49,12 +49,13 @@ exports.submitSuggestion = function(req, res){
 //////////////////////////////////////////////////////////////////////////////////////////
 
 var Artist = mongoose.model('Artist', {
-        name    : String,
-        city    : String,
+        name        : String,
+        city        : String,
         question    : String,
-        answer  : String,
+        answer      : String,
         photoPath   : String,
-        feature : String
+        feature     : String,
+        date        : Date
 });
 
 exports.getArtists = function(req, res){
@@ -72,11 +73,12 @@ exports.createArtist = function(req, res){
 
     // create an artist, information comes from AJAX request from Angular
     var artist = new Artist({
-        name    : req.body.artistname,
-        city    : req.body.artistcity,
+        name        : req.body.artistname,
+        city        : req.body.artistcity,
         question    : req.body.artistquestion,
-        answer  : req.body.artistanswer,
-        feature : req.body.artistfeature
+        answer      : req.body.artistanswer,
+        feature     : req.body.artistfeature,
+        date        : req.body.artistdate
     });
 
     artist.save(function(err, artist) {
@@ -128,7 +130,8 @@ exports.saveChange = function(req, res){
                 'name'      : req.body.name,
                 'city'      : req.body.city,
                 'question'   : req.body.question,
-                'answer'    : req.body.answer
+                'answer'    : req.body.answer,
+                'date'      : req.body.date
             }
         },
         function (err, result) {

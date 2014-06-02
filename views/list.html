@@ -9,10 +9,12 @@
 				<div class="form-group">
 
 					<!-- BIND THIS VALUE TO formData.text IN ANGULAR ng-model="formData.text" -->
+					<input type="date" class="formfield" ng-model="formData.artistdate"></br>
 					<input type="text" class="formfield" placeholder="Artist name" ng-model="formData.artistname"></br>
 					<input type="text" class="formfield" placeholder="City" ng-model="formData.artistcity"></br>
 					<input type="text" class="formfield" placeholder="Question" ng-model="formData.artistquestion"></br>
 					<input type="text" class="formfield" placeholder="Answer" ng-model="formData.artistanswer"></br>
+					
 				</div>
 
 				<button type="submit" ng-click="createArtist()">Add</button>
