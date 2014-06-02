@@ -14,7 +14,7 @@
 					<input type="text" class="formfield" placeholder="City" ng-model="formData.artistcity"></br>
 					<input type="text" class="formfield" placeholder="Question" ng-model="formData.artistquestion"></br>
 					<input type="text" class="formfield" placeholder="Answer" ng-model="formData.artistanswer"></br>
-					
+
 				</div>
 
 				<button type="submit" ng-click="createArtist()">Add</button>
@@ -27,11 +27,11 @@
 		<div class="col-sm-4 col-sm-offset-4">
 
 			<!-- LOOP OVER THE ARTISTS IN $scope.todos -->
-			<div class="checkbox" ng-repeat="artist in artists">
+			<div class="checkbox" ng-repeat="artist in artists | orderBy: 'date'">
 				<label>
 					<input type="checkbox" ng-click="deleteArtist(artist._id)"> 
 					<a href="#/edit/{{artist._id}}">Edit</a>
-					{{ artist.name }}, {{ artist.city }}, {{ artist.question }}, {{ artist.answer }}
+					{{ artist.date }}, {{ artist.name }}, {{ artist.city }}, {{ artist.question }}, {{ artist.answer }}
 				</label>
 			</div>
 
