@@ -90,8 +90,8 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 	});
 
 	// save interview/profile edits
-	$scope.saveChange = function(id) {
-		$http.post('/saveChange/' + id, $scope.artist[0])
+	$scope.saveChange = function(id, index) {
+		$http.post('/saveChange/' + id, $scope.artist[index])
 			.success(function(data) {
 				$scope.artist = data;
 				console.log(data);
@@ -102,8 +102,8 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 	};
 
 	// save feature edits
-	$scope.saveTextFeature = function(id) {
-		$http.post('/saveTextFeature/' + id, $scope.artist[0])
+	$scope.saveTextFeature = function(id, index) {
+		$http.post('/saveTextFeature/' + id, $scope.artist[index])
 			.success(function(data) {
 				$scope.artist = data;
 				console.log(data);

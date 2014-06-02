@@ -14,21 +14,21 @@
 				<button ng-click="textfeature=!textfeature">Text</button>
 					<span ng-hide="textfeature">
 					    <input type="text" id="textcontent" ng-model="artist.feature"/>
-					    <button ng-click="saveTextFeature(artist._id)">Save Feature</button>
+					    <button ng-click="saveTextFeature(artist._id, $index)">Save Feature</button>
 					</span>
 	 				<span ng-show="custom"></span>
 
 	 			<button ng-click="embedfeature=!embedfeature">Embedded Link</button>
 					<span ng-hide="embedfeature">
 					    <input type="text" id="from" ng-model="artist.feature"/>
-					    <button ng-click="saveEmbedFeature(artist._id)">Save Feature</button>
+					    <button ng-click="saveEmbedFeature(artist._id, $index)">Save Feature</button>
 					</span>
 	 				<span ng-show="embedfeature"></span>
 
 				<button ng-click="imagefeature=!imagefeature">Image</button>
 					<span ng-hide="imagefeature">
 					    <input type="text" id="from" ng-model="artist.feature"/>
-					    <button ng-click="saveImageFeature(artist._id)">Save Feature</button>
+					    <button ng-click="saveImageFeature(artist._id, $index)">Save Feature</button>
 					</span>
 	 				<span ng-show="imagefeature"></span>
 			</form>
@@ -59,7 +59,7 @@
 					Answer: <input type="text" class="formfield" ng-model="artist.answer"></br>
 				  	<br>
 				  	<a href="#/" class="btn">Cancel</a>
-				  	<button ng-click="saveChange(artist._id)">Save</button>
+				  	<button ng-click="saveChange(artist._id, $index)">Save</button>
 				  	<button ng-click="destroy()" ng-show="project.$remove">Delete</button>
 				</form>
 			</div>
