@@ -22,15 +22,34 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 
 .controller('indexController', function($scope, $http) {
 
-	$scope.releaseDate = "2012-08-08";
+	// set today's date
+	$scope.releaseDate = "2012-04-04T04:00:00.000Z";
+
+
+	// save interview/profile edits
+	$scope.nextArtist = function(pageDate) {
+
+		console.log(pageDate);
+
+		$scope.releaseDate.setDate(pageDate.getDate() - 1);
+		console.log($scope.releaseDate);
+		
+		$http.get('/show/' + newDate)
+			.success(function(data) {
+				$scope.artist = data;
+				$scope.releaseDate = newDate;
+				console.log(data);
+			})
+			.error(function(data) {
+				console.log('Error: ' + data);
+			});
+	};
 
 })
 
 
 .controller('mainController', function($scope, $http) {
 	$scope.formData = {};
-
-	$scope.releaseDate = "08-08-2012";
 
 	// when landing on the page, get all artists and show them
 	$http.get('/artists')
