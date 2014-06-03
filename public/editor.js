@@ -4,7 +4,7 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 .config(function($routeProvider) {
   	$routeProvider
 	    .when('/', {
-	      controller:'mainController',
+	      controller:'indexController',
 	      templateUrl:'artist'
 	    })
 	    .when('/edit', {
@@ -19,6 +19,13 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 	      redirectTo:'/'
     });
 })
+
+.controller('indexController', function($scope, $http) {
+
+	$scope.releaseDate = "2012-08-08";
+
+})
+
 
 .controller('mainController', function($scope, $http) {
 	$scope.formData = {};
