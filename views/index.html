@@ -1,31 +1,7 @@
 <% include header.html %>
 
-<div class="middle">
-	<div class="middleInner">
-		<div class="title">Name</div>
-		<div class="slogan">one up-and-coming artist per day</div>
-
-		<div class="slogan">This is what the art ist.</div>
-
-		<div ng-repeat="artist in artists" data-ng-show = "artist.date == '2019-03-02T05:00:00.000Z'">
-
-		{{artist.feature}}</br>
-		
-		<div class="interviewblock">
-			<img class="artistPhoto" src={{artist.photoPath}} alt="artistphoto">
-
-			<div class="interview">
-				Name: {{artist.name}}</br>
-				City: {{artist.city}}</br>
-				Date: </br>
-				<b>{{artist.question}}</b></br>
-				{{artist.answer}}</br>
-			</div>
-		</div>
-
-
-		<a href="#/{{i+1}}">Next</a>
-	</div>
-</div>
+	<div class="container">
+	
+	<div ng-view></div>
 
 <% include footer.html %>

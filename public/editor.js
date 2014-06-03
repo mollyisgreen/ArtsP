@@ -5,6 +5,10 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
   	$routeProvider
 	    .when('/', {
 	      controller:'mainController',
+	      templateUrl:'artist'
+	    })
+	    .when('/edit', {
+	      controller:'mainController',
 	      templateUrl:'list'
 	    })
 	    .when('/edit/:artistId', {
@@ -18,6 +22,8 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 
 .controller('mainController', function($scope, $http) {
 	$scope.formData = {};
+
+	$scope.releaseDate = "08-08-2012";
 
 	// when landing on the page, get all artists and show them
 	$http.get('/artists')

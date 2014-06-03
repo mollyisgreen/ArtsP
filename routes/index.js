@@ -15,16 +15,16 @@ module.exports = function(app, passport) {
 	  res.render('index.html', { title: 'Express' } );
 	});
 
-	app.get('/about', function(req, res){
-	  res.render('about.html', { title: 'Express' });
-	});
-
 	app.get('/editdashboard', function(req, res){
 	  res.render('editdashboard.html', { title: 'Express' });
 	});
 
 	app.get('/list', function(req, res){
 	  res.render('list.html', { title: 'Express' });
+	});
+
+	app.get('/artist', function(req, res){
+	  res.render('artist.html', { title: 'Express' });
 	});
 
 	app.get('/edit', function(req, res){
