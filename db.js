@@ -55,7 +55,8 @@ var Artist = mongoose.model('Artist', {
         answer      : String,
         photoPath   : String,
         feature     : String,
-        date        : Date
+        // date : Date,
+        date        : String
 });
 
 exports.getArtists = function(req, res){
@@ -71,6 +72,11 @@ exports.getArtists = function(req, res){
 
 exports.createArtist = function(req, res){
 
+    console.log(req.body.artistdate);
+    var dateLong = req.body.artistdate;
+    var dateShort = dateLong.substring(0, 10);
+    console.log(dateShort);
+
     // create an artist, information comes from AJAX request from Angular
     var artist = new Artist({
         name        : req.body.artistname,
@@ -78,7 +84,7 @@ exports.createArtist = function(req, res){
         question    : req.body.artistquestion,
         answer      : req.body.artistanswer,
         feature     : req.body.artistfeature,
-        date        : req.body.artistdate
+        date        : dateShort
     });
 
     artist.save(function(err, artist) {
@@ -123,6 +129,9 @@ exports.deleteArtist = function(req, res){
 
 
 exports.saveChange = function(req, res){
+    var dateLong = req.body.date;
+    var dateShort = dateLong.substring(0, 10);
+
     db.collection("artists").update(
         { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
         {
@@ -131,7 +140,7 @@ exports.saveChange = function(req, res){
                 'city'      : req.body.city,
                 'question'   : req.body.question,
                 'answer'    : req.body.answer,
-                'date'      : req.body.date
+                'date'      : dateShort
             }
         },
         function (err, result) {
@@ -140,11 +149,16 @@ exports.saveChange = function(req, res){
 }
 
 exports.changeDate = function(req, res){
+    console.log(req.body.date);
+    var dateLong = req.body.date;
+    var dateShort = dateLong.substring(0, 10);
+    console.log(dateShort);
+
     db.collection("artists").update(
         { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
         {
             $set: {
-                'date'      : req.body.date
+                'date'      : dateShort
             }
         },
         function (err, result) {
