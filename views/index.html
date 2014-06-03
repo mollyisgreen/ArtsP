@@ -7,17 +7,19 @@
 
 		<div class="slogan">This is what the art ist.</div>
 
-		{{artists[0].feature}}</br>
+		<div ng-repeat="artist in artists | orderBy : 'date'">
+
+		{{artist.feature}}</br>
 		
 		<div class="interviewblock">
-			<img class="artistPhoto" src={{artists[0].photoPath}} alt="artistphoto">
+			<img class="artistPhoto" src={{artist.photoPath}} alt="artistphoto">
 
 			<div class="interview">
-				Name: {{artists[0].name}}</br>
-				City: {{artists[0].city}}</br>
+				Name: {{artist.name}}</br>
+				City: {{artist.city}}</br>
 				Date: </br>
-				<b>{{artists[0].question}}</b></br>
-				{{artists[0].answer}}</br>
+				<b>{{artist.question}}</b></br>
+				{{artist.answer}}</br>
 			</div>
 		</div>
 
