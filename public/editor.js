@@ -23,12 +23,13 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 .controller('indexController', function($scope, $routeParams, $http) {
 
 	// set today's date
-	//$scope.releaseDate = "2014-06-03T04:00:00.000Z";
+	var pageDate = new Date();
+	var pageDateProper = pageDate.toLocaleDateString();
 
-	$http.get('/show/' + $scope.releaseDate)
+	$http.get('/show/' + pageDateProper)
 		.success(function(data) {
 			$scope.artist = data;
-			//$scope.releaseDate = "2014-06-03T04:00:00.000Z";
+			$scope.releaseDate = "2014-06-03T04:00:00.000Z";
 			console.log(data);
 		})
 		.error(function(data) {
