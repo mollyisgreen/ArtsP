@@ -27,14 +27,14 @@
 		<div class="col-sm-4 col-sm-offset-4">
 
 			<!-- LOOP OVER THE ARTISTS IN $scope.todos -->
-			<div class="checkbox" ng-repeat="artist in artists">
+			<div class="checkbox" ng-repeat="artist in artists | orderBy:'date'">
 				<label>
 					<input type="checkbox" ng-click="deleteArtist(artist._id)"> 
 					<a href="#/edit/{{artist._id}}">Edit</a>
 
 					<form name="editDate">
 						Date (YY/MM/DD): <input ng-model="artist.date"></br>
-						<button ng-click="changeDate(artist._id, $index)">Save</button>
+						<button ng-click="changeDate(artist._id, artist)">Save</button>
 					</form>
 
 					(YY/MM/DD): {{ artist.date }}</br>
