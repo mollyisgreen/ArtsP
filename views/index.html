@@ -7,7 +7,7 @@
 
 		<div class="slogan">This is what the art ist.</div>
 
-		<div ng-repeat="artist in artists | orderBy : 'date'">
+		<div ng-repeat="artist in artists" data-ng-show = "artist.date == '2018-04-04T04:00:00.000Z'">
 
 		{{artist.feature}}</br>
 		
