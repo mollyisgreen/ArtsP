@@ -23,8 +23,8 @@ module.exports = function(app, passport) {
 	  res.render('list.html', { title: 'Express' });
 	});
 
-	app.get('/artist', function(req, res){
-	  res.render('artist.html', { title: 'Express' });
+	app.get('/show', function(req, res){
+	  res.render('show.html', { title: 'Express' });
 	});
 
 	app.get('/edit', function(req, res){

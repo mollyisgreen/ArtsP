@@ -5,7 +5,7 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
   	$routeProvider
 	    .when('/', {
 	      controller:'indexController',
-	      templateUrl:'artist'
+	      templateUrl:'show'
 	    })
 	    .when('/edit', {
 	      controller:'mainController',
@@ -20,31 +20,37 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
     });
 })
 
-.controller('indexController', function($scope, $http) {
+.controller('indexController', function($scope, $routeParams, $http) {
 
 	// set today's date
-	$scope.releaseDate = "2012-04-04T04:00:00.000Z";
+	//$scope.releaseDate = "2014-06-03T04:00:00.000Z";
 
+	$http.get('/show/' + $scope.releaseDate)
+		.success(function(data) {
+			$scope.artist = data;
+			//$scope.releaseDate = "2014-06-03T04:00:00.000Z";
+			console.log(data);
+		})
+		.error(function(data) {
+			console.log('Error: ' + data);
+	});
 
+/*
 	// save interview/profile edits
 	$scope.nextArtist = function(pageDate) {
 
 		console.log(pageDate);
+		var newDate = new Date(pageDate);
+		console.log(newDate);
 
-		$scope.releaseDate.setDate(pageDate.getDate() - 1);
-		console.log($scope.releaseDate);
+		newDate.setDate(newDate.getDate() - 1);
+		console.log(newDate);
+		var newDateProper = newDate.toLocaleDateString();
+		console.log(newDateProper);
 		
-		$http.get('/show/' + newDate)
-			.success(function(data) {
-				$scope.artist = data;
-				$scope.releaseDate = newDate;
-				console.log(data);
-			})
-			.error(function(data) {
-				console.log('Error: ' + data);
-			});
+		return newDateProper;
 	};
-
+*/
 })
 
 
