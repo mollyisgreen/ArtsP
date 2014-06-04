@@ -15,12 +15,19 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 	      controller:'editController',
 	      templateUrl:'edit'
 	    })
+	    .when('/show/:date', {
+	      controller:'indexController',
+	      templateUrl:'show'
+	    })
 	    .otherwise({
 	      redirectTo:'/'
     });
 })
 
 .controller('indexController', function($scope, $routeParams, $http) {
+
+	var blah = Date.parse('6/3/2014');
+	console.log(blah);
 
 	// set today's date
 	var pageDate = new Date();
@@ -30,9 +37,14 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 	
 	var dateMill = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
 
-	$http.get('/show/' + dateMill)
+	console.log($routeParams);
+
+	$http.get('/show/' + ($routeParams.date || dateMill))
 		.success(function(data) {
+			console.log($routeParams);
+			console.log("is this hpap");
 			$scope.artist = data;
+			$scope.releaseDate = ($routeParams.date || dateMill);
 			console.log(data);
 		})
 		.error(function(data) {
