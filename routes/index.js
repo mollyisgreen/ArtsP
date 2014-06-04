@@ -15,10 +15,6 @@ module.exports = function(app, passport) {
 	  res.render('index.html', { title: 'Express' } );
 	});
 
-	app.get('/editdashboard', function(req, res){
-	  res.render('editdashboard.html', { title: 'Express' });
-	});
-
 	app.get('/list', function(req, res){
 	  res.render('list.html', { title: 'Express' });
 	});
@@ -28,7 +24,22 @@ module.exports = function(app, passport) {
 	});
 
 	app.get('/edit', function(req, res){
-	  res.render('edit.html', { title: 'Express' });
+	  	res.render('edit.html', { title: 'Express' });
+	});
+
+	app.get('/editordashboard', isLoggedIn, function(req, res){
+	  	res.render('editordashboard.html', { 
+	  		user : req.user // get the user out of session and pass to template
+	  	});
+	});
+
+	app.get('/login', function(req, res){
+	  res.render('login.html', { title: 'Express' });
+	});
+
+/*
+	app.get('/signup', function(req, res){
+	  res.render('signup.html', { title: 'Express' });
 	});
 
 	app.get('/signupAttempt', function(req, res){
@@ -39,6 +50,15 @@ module.exports = function(app, passport) {
 	  res.render('loginAttempt.html', { title: 'Express' });
 	});
 
+	// process the signup form
+	app.post('/signup', 
+		passport.authenticate('local-signup', {
+		successRedirect : '/editordashboard',
+		failureRedirect : '/signup',
+		failureFlash: true
+	}));
+*/
+
 	app.get('/purchasedharvard', function(req, res){
 		if (req.cookies.remember) {
 	  		res.render('purchasedharvard.html', { title: 'Express' });
@@ -47,18 +67,10 @@ module.exports = function(app, passport) {
 		}
 	});
 
-	// process the signup form
-	app.post('/signup', 
-		passport.authenticate('local-signup', {
-		successRedirect : '/dashboard',
-		failureRedirect : '/signupAttempt',
-		failureFlash: true
-	}));
-
 	// login
 	app.post('/login', passport.authenticate('local-login', {
-		successRedirect : '/dashboard',
-		failureRedirect : '/loginAttempt',
+		successRedirect : '/editordashboard',
+		failureRedirect : '/login',
 		failureFlash : true
 	}));
 
@@ -71,6 +83,8 @@ module.exports = function(app, passport) {
 
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
+
+	console.log("asdlkfjasdf");
 
 	// if user is authenticated in the session, carry on 
 	if (req.isAuthenticated())

@@ -4,10 +4,6 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 .config(function($routeProvider) {
   	$routeProvider
 	    .when('/', {
-	      controller:'indexController',
-	      templateUrl:'show'
-	    })
-	    .when('/edit', {
 	      controller:'mainController',
 	      templateUrl:'list'
 	    })
@@ -15,54 +11,9 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 	      controller:'editController',
 	      templateUrl:'edit'
 	    })
-	    .when('/show/:date', {
-	      controller:'indexController',
-	      templateUrl:'show'
-	    })
 	    .otherwise({
 	      redirectTo:'/'
     });
-})
-
-.controller('indexController', function($scope, $routeParams, $http) {
-
-	// today's date in milliseconds
-	var pageDate = new Date();
-	var currentMonth = pageDate.getMonth() + 1;
-	var currentDate = pageDate.getDate();
-	var currentYear = pageDate.getFullYear();
-	var dateMill = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
-
-	$http.get('/show/' + ($routeParams.date || dateMill))
-		.success(function(data) {
-			$scope.artist = data;
-			$scope.releaseDate = ($routeParams.date || dateMill);
-			// tomorrow
-			$scope.previous = parseInt($scope.releaseDate) + 86400000;
-			// yesterday
-			$scope.next = $scope.releaseDate - 86400000;
-			console.log(data);
-		})
-		.error(function(data) {
-			console.log('Error: ' + data);
-	});
-
-/*
-	// save interview/profile edits
-	$scope.nextArtist = function(pageDate) {
-
-		console.log(pageDate);
-		var newDate = new Date(pageDate);
-		console.log(newDate);
-
-		newDate.setDate(newDate.getDate() - 1);
-		console.log(newDate);
-		var newDateProper = newDate.toLocaleDateString();
-		console.log(newDateProper);
-		
-		return newDateProper;
-	};
-*/
 })
 
 
