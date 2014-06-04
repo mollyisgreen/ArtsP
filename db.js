@@ -70,8 +70,6 @@ exports.getArtists = function(req, res){
 
 exports.indexArtist = function(req, res){
 
-console.log("bitches");
-
     var millConvert = new Date(+req.params.date);
     var searchDate = millConvert.toISOString();
     console.log(searchDate);

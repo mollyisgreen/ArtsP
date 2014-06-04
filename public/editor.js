@@ -26,23 +26,15 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 
 .controller('indexController', function($scope, $routeParams, $http) {
 
-	var blah = Date.parse('6/3/2014');
-	console.log(blah);
-
-	// set today's date
+	// today's date in milliseconds
 	var pageDate = new Date();
 	var currentMonth = pageDate.getMonth() + 1;
 	var currentDate = pageDate.getDate();
 	var currentYear = pageDate.getFullYear();
-	
 	var dateMill = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
-
-	console.log($routeParams);
 
 	$http.get('/show/' + ($routeParams.date || dateMill))
 		.success(function(data) {
-			console.log($routeParams);
-			console.log("is this hpap");
 			$scope.artist = data;
 			$scope.releaseDate = ($routeParams.date || dateMill);
 			console.log(data);
