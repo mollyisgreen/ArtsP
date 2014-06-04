@@ -1,0 +1,28 @@
+<div class="middle">
+	<div class="middleInner">
+		<div class="title">Name</div>
+		<div class="slogan">one up-and-coming artist per day</div>
+
+		<div class="slogan">This is what the art ist.</div>
+
+		{{ releaseDate }}
+
+		<div ng-repeat="artist in artist">
+			{{artist.feature}}</br>
+			
+			<div class="interviewblock">
+				<img class="artistPhoto" src={{artist.photoPath}} alt="artistphoto">
+
+				<div class="interview">
+					Name: {{artist.name}}</br>
+					City: {{artist.city}}</br>
+					Date: </br>
+					<b>{{artist.question}}</b></br>
+					{{artist.answer}}</br>
+				</div>
+			</div>
+
+			<a href="#/show/nextArtist(releaseDate)">Next</a>
+	</div>
+	</div>
+</div>
