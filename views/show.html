@@ -5,8 +5,6 @@
 
 		<div class="slogan">This is what the art ist.</div>
 
-		{{ releaseDate }}
-
 		<div ng-repeat="artist in artist">
 			{{artist.feature}}</br>
 			
@@ -22,7 +20,8 @@
 				</div>
 			</div>
 
-			<a href="#/show/{{releaseDate-86400000}}">Next</a>
+			<a href="#/show/{{previous}}">Previous</a>
+			<a href="#/show/{{next}}">Next</a>
 	</div>
 	</div>
 </div>

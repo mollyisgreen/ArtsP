@@ -37,6 +37,10 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 		.success(function(data) {
 			$scope.artist = data;
 			$scope.releaseDate = ($routeParams.date || dateMill);
+			// tomorrow
+			$scope.previous = parseInt($scope.releaseDate) + 86400000;
+			// yesterday
+			$scope.next = $scope.releaseDate - 86400000;
 			console.log(data);
 		})
 		.error(function(data) {
