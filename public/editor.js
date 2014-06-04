@@ -24,12 +24,15 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 
 	// set today's date
 	var pageDate = new Date();
-	var pageDateProper = pageDate.toLocaleDateString();
+	var currentMonth = pageDate.getMonth() + 1;
+	var currentDate = pageDate.getDate();
+	var currentYear = pageDate.getFullYear();
+	
+	var dateMill = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
 
-	$http.get('/show/' + pageDateProper)
+	$http.get('/show/' + dateMill)
 		.success(function(data) {
 			$scope.artist = data;
-			$scope.releaseDate = "2014-06-03T04:00:00.000Z";
 			console.log(data);
 		})
 		.error(function(data) {
@@ -62,7 +65,6 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 	$http.get('/artists')
 		.success(function(data) {
 			$scope.artists = data;
-			console.log(data);
 		})
 		.error(function(data) {
 			console.log('Error: ' + data);

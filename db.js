@@ -68,6 +68,21 @@ exports.getArtists = function(req, res){
     });
 }
 
+exports.indexArtist = function(req, res){
+
+    var millConvert = new Date(+req.params.date);
+    var searchDate = millConvert.toISOString();
+    console.log(searchDate);
+
+    Artist.find({
+        date : searchDate
+        }, function(err, artist) {
+            if (err)
+                res.send(err);
+        res.json(artist);
+    });
+}
+
 
 exports.createArtist = function(req, res){
 
