@@ -5,23 +5,23 @@
 
 		<div class="slogan">This is what the art ist.</div>
 
-		<div ng-repeat="artist in artist">
-			{{artist.feature}}</br>
-			
-			<div class="interviewblock">
-				<img class="artistPhoto" src={{artist.photoPath}} alt="artistphoto">
+		{{releaseDate}}
 
-				<div class="interview">
-					Name: {{artist.name}}</br>
-					City: {{artist.city}}</br>
-					Date: </br>
-					<b>{{artist.question}}</b></br>
-					{{artist.answer}}</br>
-				</div>
+		{{artist.feature}}</br>
+			
+		<div class="interviewblock">
+			<img class="artistPhoto" src={{artist.photoPath}} alt="artistphoto">
+
+			<div class="interview">
+				Name: {{artist[0].name}}</br>
+				City: {{artist[0].city}}</br>
+				Date: </br>
+				<b>{{artist[0].question}}</b></br>
+				{{artist[0].answer}}</br>
 			</div>
 
-			<a href="#/show/{{previous}}">Previous</a>
-			<a href="#/show/{{next}}">Next</a>
+		<a href="#/show/{{previous}}">Previous</a>
+		<a href="#/show/{{next}}">Next</a>
 	</div>
 	</div>
 </div>

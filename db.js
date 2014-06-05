@@ -70,6 +70,7 @@ exports.getArtists = function(req, res){
 
 exports.indexArtist = function(req, res){
 
+    // millisecond for date you want to find
     var millConvert = new Date(+req.params.date);
     var searchDate = millConvert.toISOString();
     console.log(searchDate);

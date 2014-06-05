@@ -29,18 +29,21 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 
 	$http.get('/show/' + ($routeParams.date || dateMill))
 		.success(function(data) {
+			console.log("isthiswhatwhat");
+			console.log($routeParams.date);
 			$scope.artist = data;
 			$scope.releaseDate = ($routeParams.date || dateMill);
-			// tomorrow
-			$scope.previous = (parseInt($scope.releaseDate) + 86400000);
+			console.log($scope.releaseDate);
+			
 			// yesterday
 			$scope.next = ($scope.releaseDate - 86400000);
+			// tomorrow
+			$scope.previous = (parseInt($scope.releaseDate) + 86400000);
+
 			console.log(data);
 		})
 		.error(function(data) {
 			console.log('Error: ' + data);
 	});
 
-
 });
-
