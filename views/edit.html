@@ -18,15 +18,16 @@
 					</span>
 	 				<span ng-show="custom"></span>
 
-	 			<button ng-click="embedfeature=!embedfeature">Embedded Link</button>
+	 			<button ng-click="embedfeature=!embedfeature">Embedded Link</button></br>
 					<span ng-hide="embedfeature">
-					    <input type="text" id="from" ng-model="artist.feature"/>
+					    iframe link: <input type="text" id="from" ng-model="artist.embedlink"/></br>
+					    iframe width: <input type="text" id="from" ng-model="artist.embedwidth"/></br>
+					    iframe height: <input type="text" id="from" ng-model="artist.embedheight"/></br>
 					    <button ng-click="saveEmbedFeature(artist._id, $index)">Save Feature</button>
 					</span>
 	 				<span ng-show="embedfeature"></span>
 
 			</form>
-
 
 
 			<!-- interview -->
@@ -44,7 +45,6 @@
 
 				<div id="noPhoto" ng-file-drop="onFileSelect($files)" class="addPhoto" 
 					ng-file-drag-over-class="dropOverPhoto" ng-model="artist.photo" style="display: none">Drop photo here</div>
-{{artist.date}}
 				<form class="interview" name="revisionForm">
 					Date (YY/MM/DD): <input class="formfield" ng-model="artist.date"></br>
 					Artist: <input type="text" class="formfield" ng-model="artist.name"></br>

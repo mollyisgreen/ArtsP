@@ -58,6 +58,7 @@ var Artist = mongoose.model('Artist', {
         date       : Date
 });
 
+
 exports.getArtists = function(req, res){
     // use mongoose to get all todos in the database
     Artist.find(function(err, artists) {
@@ -68,6 +69,7 @@ exports.getArtists = function(req, res){
     });
 }
 
+// find artist for given date
 exports.indexArtist = function(req, res){
 
     // millisecond for date you want to find
@@ -118,6 +120,7 @@ exports.createArtist = function(req, res){
     });
 }
 
+// go to edit artist page from lsit
 exports.editArtist = function(req, res){
 
     Artist.find({
@@ -195,9 +198,28 @@ exports.saveTextFeature = function(req, res){
     db.collection("artists").update(
         { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
         {
+            $set: { feature      : req.body.feature },
+            $unset: { 
+                        embedlink: "",
+                        embedheight: "",
+                        embedwidth: ""
+                    }
+        },
+        function (err, result) {
+            if (err) throw err;
+        });
+}
+
+exports.saveEmbedFeature = function(req, res){
+    db.collection("artists").update(
+        { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
+        {
             $set: {
-                'feature'      : req.body.feature
-            }
+                    embedlink      : req.body.embedlink,
+                    embedheight    : req.body.embedheight,
+                    embedwidth     : req.body.embedwidth
+            },
+            $unset: { feature: "" }
         },
         function (err, result) {
             if (err) throw err;

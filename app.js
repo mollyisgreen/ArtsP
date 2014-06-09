@@ -76,6 +76,7 @@ app.post('/saveChange/:artist_id', db.saveChange);
 app.post('/changeDate/:artist_id', db.changeDate);
 app.post('/savePhoto/:artist_id', db.savePhoto);
 app.post('/saveTextFeature/:artist_id', db.saveTextFeature);
+app.post('/saveEmbedFeature/:artist_id', db.saveEmbedFeature);
 
 
 http.createServer(app).listen(app.get('port'), function(){

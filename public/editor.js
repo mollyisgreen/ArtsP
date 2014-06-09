@@ -117,6 +117,18 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 	};
 
 
+	$scope.saveEmbedFeature = function(id, index) {
+		$http.post('/saveEmbedFeature/' + id, $scope.artist[index])
+			.success(function(data) {
+				$scope.artist = data;
+				console.log(data);
+			})
+			.error(function(data) {
+				console.log('Error: ' + data);
+			});
+	};
+
+
 	$scope.onFileSelect = function($files) {
 		console.log($files[0]);
 
