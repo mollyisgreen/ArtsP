@@ -15,7 +15,7 @@ module.exports = function(app, passport) {
 	  res.render('index.html', { title: 'Express' } );
 	});
 
-	app.get('/list', function(req, res){
+	app.get('/list', isLoggedIn, function(req, res){
 	  res.render('list.html', { title: 'Express' });
 	});
 
@@ -23,7 +23,7 @@ module.exports = function(app, passport) {
 	  res.render('show.html', { title: 'Express' });
 	});
 
-	app.get('/edit', function(req, res){
+	app.get('/edit', isLoggedIn, function(req, res){
 	  	res.render('edit.html', { title: 'Express' });
 	});
 
