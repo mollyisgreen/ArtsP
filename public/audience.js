@@ -30,11 +30,11 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 	var firstPostMill = Date.parse("7/1/2014");
 	console.log(firstPostMill);
 	
-	$http.get('/show/' + ($routeParams.date || todayInMill))
+	$http.get('/show/' + $routeParams.date)
 		.success(function(data) {
 			console.log("showpageshowing");
 			$scope.artist = data;
-			$scope.releaseDate = ($routeParams.date || todayInMill);
+			$scope.releaseDate = $routeParams.date;
 
 			if($scope.artist[0].embedlink) {
 				// safe iframe src link
