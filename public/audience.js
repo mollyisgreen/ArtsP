@@ -1,11 +1,20 @@
+// today's date in milliseconds
+var pageDate = new Date();
+var currentMonth = pageDate.getMonth() + 1;
+var currentDate = pageDate.getDate();
+var currentYear = pageDate.getFullYear();
+var todayInMill = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
+
+
 
 var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 
 .config(function($routeProvider) {
   	$routeProvider
 	    .when('/', {
-	      controller:'indexController',
-	      templateUrl:'show'
+	    	redirectTo: '/show/' + todayInMill,
+	      	//controller:'indexController',
+	      	//templateUrl:'show'
 	    })
 	    .when('/show/:date', {
 	      controller:'indexController',
@@ -18,25 +27,14 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 
 .controller('indexController', function($scope, $routeParams, $http, $sce) {
 
-	// today's date in milliseconds
-	var pageDate = new Date();
-	var currentMonth = pageDate.getMonth() + 1;
-	var currentDate = pageDate.getDate();
-	var currentYear = pageDate.getFullYear();
-	var todayInMill = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
-
 	var firstPostMill = Date.parse("7/1/2014");
 	console.log(firstPostMill);
-
-	// if index, redirect to new url w milliseconds
-
+	
 	$http.get('/show/' + ($routeParams.date || todayInMill))
 		.success(function(data) {
-			console.log("isthiswhatwhat");
-			console.log($routeParams.date);
+			console.log("showpageshowing");
 			$scope.artist = data;
 			$scope.releaseDate = ($routeParams.date || todayInMill);
-			console.log($scope.releaseDate);
 
 			if($scope.artist[0].embedlink) {
 				// safe iframe src link
