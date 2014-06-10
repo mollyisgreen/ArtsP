@@ -38,8 +38,11 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 			$scope.releaseDate = ($routeParams.date || todayInMill);
 			console.log($scope.releaseDate);
 
-			// safe iframe src link
-			//$scope.iframesrc = $sce.trustAsResourceUrl($scope.artist[0].embedlink);
+			if($scope.artist[0].embedlink) {
+				// safe iframe src link
+				$scope.iframesrc = $sce.trustAsResourceUrl($scope.artist[0].embedlink);
+				document.getElementById('iframe').style.display = 'none'; 
+			}
 			
 			// yesterday
 			$scope.next = ($scope.releaseDate - 86400000);
