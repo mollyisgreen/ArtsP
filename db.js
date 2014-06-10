@@ -133,6 +133,23 @@ exports.editArtist = function(req, res){
 }
 
 exports.deleteArtist = function(req, res){
+
+    //var target_path = './public/artistphotos/' + req.params.artist_id + '.png';
+    //var saved_path = '/artistphotos/' + req.params.artist_id + '.png';
+
+    var photoPath;
+
+    db.collection("artists").findOne(
+        { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
+        { 'photoPath': 1 },
+        function (err, result) {
+            if (err) throw err;
+            photoPath = result.photoPath;
+            console.log(photoPath);
+        }
+    );
+
+
     Artist.remove({
         _id : req.params.artist_id
         }, function(err, artist) {
