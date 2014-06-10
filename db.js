@@ -89,13 +89,6 @@ exports.indexArtist = function(req, res){
 
 exports.createArtist = function(req, res){
 
-/*
-    console.log(req.body.artistdate);
-    var dateLong = req.body.artistdate;
-    var dateShort = dateLong.substring(0, 10);
-    console.log(dateShort);
-*/
-
     // create an artist, information comes from AJAX request from Angular
     var artist = new Artist({
         name        : req.body.artistname,
@@ -139,30 +132,41 @@ exports.deleteArtist = function(req, res){
 
     var photoPath;
 
+    // if artist has a photo
+
+    // find public folders path of artists folder
     db.collection("artists").findOne(
         { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
         { 'photoPath': 1 },
         function (err, result) {
             if (err) throw err;
-            photoPath = result.photoPath;
+
+            photoPath = './public' + result.photoPath;
             console.log(photoPath);
+
+            // delete photo from public folder
+            fs.unlink(photoPath, function (err) {
+                if (err) res.send(err);
+                console.log('successfully deleted artist photo');
+            });
+
+            // delete artist from database
+            Artist.remove({_id : req.params.artist_id}, 
+                function(err, artist) {
+                    if (err)
+                        res.send(err);
+                    
+                    // get and return all the todos after you create another
+                    Artist.find(function(err, artists) {
+                        if (err)
+                            res.send(err)
+                        res.json(artists);
+                    });
+            });
+
         }
     );
 
-
-    Artist.remove({
-        _id : req.params.artist_id
-        }, function(err, artist) {
-            if (err)
-                res.send(err);
-
-            // get and return all the todos after you create another
-            Artist.find(function(err, artists) {
-                if (err)
-                    res.send(err)
-                res.json(artists);
-            });
-    });
 }
 
 
