@@ -13,7 +13,7 @@
 			<form class="interview" name="revisionForm">
 				<button ng-click="textfeature=!textfeature">Text</button>
 					<span ng-hide="textfeature">
-					    <input type="text" id="textcontent" ng-model="artist.feature"/>
+					    <input type="text" id="textcontent" ng-model="artist.textfeature"/>
 					    <button ng-click="saveTextFeature(artist._id, $index)">Save Feature</button>
 					</span>
 	 				<span ng-show="custom"></span>

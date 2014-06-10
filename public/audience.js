@@ -16,7 +16,7 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
     });
 })
 
-.controller('indexController', function($scope, $routeParams, $http) {
+.controller('indexController', function($scope, $routeParams, $http, $sce) {
 
 	// today's date in milliseconds
 	var pageDate = new Date();
@@ -34,6 +34,9 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 			$scope.artist = data;
 			$scope.releaseDate = ($routeParams.date || dateMill);
 			console.log($scope.releaseDate);
+
+			// safe iframe src link
+			$scope.iframesrc = $sce.trustAsResourceUrl($scope.artist[0].embedlink);
 			
 			// yesterday
 			$scope.next = ($scope.releaseDate - 86400000);

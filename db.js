@@ -198,7 +198,7 @@ exports.saveTextFeature = function(req, res){
     db.collection("artists").update(
         { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
         {
-            $set: { feature      : req.body.feature },
+            $set: { textfeature      : req.body.textfeature },
             $unset: { 
                         embedlink: "",
                         embedheight: "",
@@ -219,7 +219,7 @@ exports.saveEmbedFeature = function(req, res){
                     embedheight    : req.body.embedheight,
                     embedwidth     : req.body.embedwidth
             },
-            $unset: { feature: "" }
+            $unset: { textfeature: "" }
         },
         function (err, result) {
             if (err) throw err;

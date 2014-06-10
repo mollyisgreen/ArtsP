@@ -7,9 +7,11 @@
 
 		{{releaseDate}}</br>
 
-		<div id="blah">{{artist[0].feature}}</div></br>
+		{{artist[0].textfeature}}
 
-			
+		<iframe src={{iframesrc}} width={{artist[0].embedwidth}} height={{artist[0].embedheight}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
 		<div class="interviewblock">
 			<img class="artistPhoto" src={{artist[0].photoPath}} alt="artistphoto">
 
@@ -21,8 +23,10 @@
 				{{artist[0].answer}}</br>
 			</div>
 
+		</div>
+
 		<a href="#/show/{{previous}}">Previous</a>
 		<a href="#/show/{{next}}">Next</a>
-	</div>
+
 	</div>
 </div>
