@@ -39,7 +39,7 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 			console.log($scope.releaseDate);
 
 			// safe iframe src link
-			$scope.iframesrc = $sce.trustAsResourceUrl($scope.artist[0].embedlink);
+			//$scope.iframesrc = $sce.trustAsResourceUrl($scope.artist[0].embedlink);
 			
 			// yesterday
 			$scope.next = ($scope.releaseDate - 86400000);
