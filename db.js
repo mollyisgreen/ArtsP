@@ -127,12 +127,7 @@ exports.editArtist = function(req, res){
 
 exports.deleteArtist = function(req, res){
 
-    //var target_path = './public/artistphotos/' + req.params.artist_id + '.png';
-    //var saved_path = '/artistphotos/' + req.params.artist_id + '.png';
-
     var photoPath;
-
-    // if artist has a photo
 
     // find public folders path of artists folder
     db.collection("artists").findOne(
@@ -144,11 +139,13 @@ exports.deleteArtist = function(req, res){
             photoPath = './public' + result.photoPath;
             console.log(photoPath);
 
-            // delete photo from public folder
-            fs.unlink(photoPath, function (err) {
-                if (err) res.send(err);
-                console.log('successfully deleted artist photo');
-            });
+            // if artist has a photo, delete photo from public folder
+            if(result.photoPath){
+                fs.unlink(photoPath, function (err) {
+                    if (err) res.send(err);
+                    console.log('successfully deleted artist photo');
+                });
+            }
 
             // delete artist from database
             Artist.remove({_id : req.params.artist_id}, 
