@@ -41,7 +41,9 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 			if($scope.artist[0].embedlink) {
 				// safe iframe src link
 				$scope.iframesrc = $sce.trustAsResourceUrl($scope.artist[0].embedlink);
-				document.getElementById('iframe').style.display = 'none'; 
+				document.getElementById('textfeature').style.display = 'none'; 
+			} else {
+				document.getElementById('iframefeature').style.display = 'none'; 
 			}
 			
 			// yesterday

@@ -1,20 +1,13 @@
 <div class="middle">
 	<div class="middleInner">
-		<div class="title">Name</div>
+		<div class="title">Atom Review</div>
 		<div class="slogan">one up-and-coming artist per day</div>
 
-		<div class="slogan">This is what the art ist.</div>
+		<div id="textfeature">{{artist[0].textfeature}}</div>
 
-		{{todayInMill}}</br>
-		{{releaseDate}}</br>
-
-		{{artist[0].textfeature}}
-
-
-		<div id="iframe">
+		<div id="iframefeature">
 			<iframe src={{iframesrc}} width={{artist[0].embedwidth}} height={{artist[0].embedheight}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		</div>
-
 
 		<div class="interviewblock">
 			<img class="artistPhoto" src={{artist[0].photoPath}}>
