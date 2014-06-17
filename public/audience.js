@@ -20,6 +20,10 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 	      controller:'indexController',
 	      templateUrl:'show'
 	    })
+	    .when('/show/:date', {
+	      controller:'indexController',
+	      templateUrl:'show'
+	    })
 	    .otherwise({
 	      redirectTo:'/'
     });
@@ -62,5 +66,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 		.error(function(data) {
 			console.log('Error: ' + data);
 	});
+
 
 });

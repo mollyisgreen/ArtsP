@@ -24,6 +24,7 @@ module.exports = function(app, passport) {
 	});
 
 	app.get('/preview', function(req, res){
+		console.log("meow?");
 	  res.render('preview.html', { title: 'Express' });
 	});
 

@@ -11,6 +11,10 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 	      controller:'editController',
 	      templateUrl:'edit'
 	    })
+	    .when('/preview/:artistId', {
+	      controller:'editController',
+	      templateUrl:'preview'
+	    })
 	    .otherwise({
 	      redirectTo:'/'
     });
