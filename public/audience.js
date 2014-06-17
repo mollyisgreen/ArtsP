@@ -29,7 +29,7 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
     });
 })
 
-.controller('indexController', function($scope, $routeParams, $http, $sce) {
+.controller('indexController', function($scope, $routeParams, $http, $sce, $location) {
 
 	var firstPostMill = Date.parse("7/1/2014");
 	console.log(firstPostMill);
@@ -38,6 +38,9 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 		.success(function(data) {
 			console.log("showpageshowing");
 			$scope.artist = data;
+
+			console.log(data);
+
 			$scope.releaseDate = $routeParams.date;
 
 			if($scope.artist[0].embedlink) {
