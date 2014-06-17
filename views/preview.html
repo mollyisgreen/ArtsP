@@ -1,0 +1,31 @@
+<div class="middle">
+	<div class="middleInner">
+		<div class="title">Atom Review</div>
+		<div class="slogan">one up-and-coming artist per day</div>
+
+		<div id="textfeature">{{artist[0].textfeature}}</div>
+
+		<div id="iframefeature">
+			<iframe src={{iframesrc}} width={{artist[0].embedwidth}} height={{artist[0].embedheight}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		</div>
+
+		<div class="interviewblock">
+			<img class="artistPhoto" src={{artist[0].photoPath}}>
+
+			<div class="interview">
+				Name: {{artist[0].name}}</br>
+				City: {{artist[0].city}}</br>
+				Date: </br>
+				<b>{{artist[0].question}}</b></br>
+				{{artist[0].answer}}</br>
+			</div>
+
+		</div>
+
+		<div id="previous"><a href="#/show/{{previous}}">Previous</a></div>
+		<div id="next"><a href="#/show/{{next}}">Next</a></div>
+		<a href="#/" class="btn">Back to Dashboard</a>
+		<a href="#/edit/{{artist[0]._id}}">Edit</a>
+
+	</div>
+</div>
