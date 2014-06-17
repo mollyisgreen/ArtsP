@@ -71,6 +71,8 @@ app.post('/createArtist', db.createArtist);
 // TODO: should pass artist_id to db.deleteArtist but haven't gotten around yet
 app.delete('/artists/:artist_id', db.deleteArtist);
 app.get('/artist/:artist_id', db.editArtist);
+// didn't create db.previewArtist b/c has same functionality as editArtist
+app.get('/preview/:artist_id', db.editArtist);
 app.get('/show/:date', db.indexArtist);
 app.post('/saveChange/:artist_id', db.saveChange);
 app.post('/changeDate/:artist_id', db.changeDate);

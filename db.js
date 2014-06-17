@@ -113,7 +113,7 @@ exports.createArtist = function(req, res){
     });
 }
 
-// go to edit artist page from lsit
+// go to edit artist page from list
 exports.editArtist = function(req, res){
 
     Artist.find({
@@ -191,19 +191,12 @@ exports.saveChange = function(req, res){
 }
 
 exports.changeDate = function(req, res){
-    /*
-    console.log(req.body.date);
-    var dateLong = req.body.date;
-    var dateShort = dateLong.substring(0, 10);
-    console.log(dateShort);
-    */
 
     db.collection("artists").update(
         { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
         {
             $set: {
                 'date'      : req.body.date
-                //'date'      : dateShort
             }
         },
         function (err, result) {
@@ -247,16 +240,7 @@ exports.saveEmbedFeature = function(req, res){
 
 
 exports.savePhoto = function(req, res){
-/*
-    db.collection("artists").update(
-        { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
-        // is req.files sufficient? should i go deeper into that?
-        { $set: { 'photo' : req.files } },
-        function (err, result) {
-            if (err) throw err;
-        }
-    );
-*/
+
     console.log(req.files.file.path);
 
     // get the temporary location of the file
