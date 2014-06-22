@@ -116,6 +116,8 @@ exports.createArtist = function(req, res){
 // go to edit artist page from list
 exports.editArtist = function(req, res){
 
+    console.log("babyyeah");
+    
     Artist.find({
         _id : req.params.artist_id
         }, function(err, artist) {

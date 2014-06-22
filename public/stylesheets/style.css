@@ -1,5 +1,4 @@
 body {
-	font-family: Courier;
 	margin: 0px 0px 0px 0px;
 	border: solid;
 	text-align: center;
@@ -9,8 +8,18 @@ body {
 	color: #4A4A4A;
 }
 
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: #4A4A4A;
+}
+
 
 /********** body *********/
+
+.middle {
+	font-family: Courier;
+}
 
 .title {
 	font-size: 48px;
@@ -20,6 +29,7 @@ body {
 .slogan {
 	font-size: 18px;
 	margin-top: 15px;
+	margin-bottom: 30px;
 }
 
 
