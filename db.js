@@ -56,7 +56,7 @@ var Artist = mongoose.model('Artist', {
         answer      : String,
         photoPath   : String,
         feature     : String,
-        date       : Date
+        date        : Date
 });
 
 
@@ -117,8 +117,6 @@ exports.createArtist = function(req, res){
 
 // go to edit artist page from list
 exports.editArtist = function(req, res){
-
-    console.log("babyyeah");
     
     Artist.find({
         _id : req.params.artist_id
@@ -185,8 +183,8 @@ exports.saveChange = function(req, res){
                 'city'      : req.body.city,
                 'description' : req.body.description,
                 'question'   : req.body.question,
-                'answer'    : req.body.answer
-                //'date'      : req.body.date
+                'answer'    : req.body.answer,
+                'date'      : new Date(req.body.date)
                 //'date'      : dateShort
             }
         },
@@ -199,9 +197,8 @@ exports.changeDate = function(req, res){
 
     db.collection("artists").update(
         { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
-        {
-            $set: {
-                'date'      : req.body.date
+        { $set: {
+            'date'      : new Date(req.body.date)
             }
         },
         function (err, result) {

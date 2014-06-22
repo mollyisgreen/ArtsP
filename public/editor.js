@@ -64,8 +64,6 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 	// save interview/profile edits
 	$scope.changeDate = function(id, artist) {
 		var index = $scope.artists.indexOf(artist);
-
-		console.log($scope.artists.indexOf(artist));
 		
 		$http.post('/changeDate/' + id, $scope.artists[index])
 			.success(function(data) {

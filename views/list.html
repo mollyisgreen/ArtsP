@@ -36,7 +36,8 @@
 					<a href="#/preview/{{artist._id}}">Preview</a>
 
 					<form name="editDate">
-						Date (YY/MM/DD): <input ng-model="artist.date"></br>
+						{{artist.date}}
+						Date (YY/MM/DD): <input type="date" ng-model="artist.date"></br>
 						<button ng-click="changeDate(artist._id, artist)">Save</button>
 					</form>
 

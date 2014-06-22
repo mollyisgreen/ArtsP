@@ -46,7 +46,8 @@
 				<div id="noPhoto" ng-file-drop="onFileSelect($files)" class="addPhoto" 
 					ng-file-drag-over-class="dropOverPhoto" ng-model="artist.photo" style="display: none">Drop photo here</div>
 				<form class="interview" name="revisionForm">
-					Date (YY/MM/DD): <input class="formfield" ng-model="artist.date"></br>
+					{{artist.date}}</br>
+					Date (YY/MM/DD): <input type="date" class="formfield" ng-model="artist.date"></br>
 					Artist: <input type="text" class="formfield" ng-model="artist.name"></br>
 					City: <input type="text" class="formfield" ng-model="artist.city"></br>
 					Description: <input type="text" class="formfield" ng-model="artist.description"></br>
