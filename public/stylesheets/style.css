@@ -1,35 +1,38 @@
-/********** whole doc *********/
-h1, h2 {
+body {
+	margin: 0px 0px 0px 0px;
+	border: solid;
+	text-align: center;
+	font-family: Courier;
+	border-color: #F2F2F2;
+	border-width: 30px;
+	padding-top: 50px;
 	color: #4A4A4A;
 }
 
-body {
-	margin: 0px 0px 0px 0px;
-}
 
 /********** body *********/
 
-
-.middle {
-	overflow: hidden;
-	margin: 30px 30px 30px 30px;
-	padding: 10px 10px 10px 10px;
-}
-
-.middleInner {
-	width: 700px;
-	margin: 0 auto;
-}
-
 .title {
-	font-family: Courier;
 	font-size: 48px;
 	line-height: 30px;
-	text-align: center;
 }
 
 .slogan {
-.
+	font-size: 18px;
+	margin-top: 15px;
+}
+
+
+#categorycontainer {
+	margin: 0 auto;
+	width: 458px;
+}
+
+.categories {
+	font-size: 18px;
+	float: left;
+	margin-right: 20px;
+	margin-left: 20px;
 }
 
 .interviewblock {
@@ -37,7 +40,6 @@ body {
 }
 
 .interview {
-	font-family: Raleway;
 	font-size: 16px;
 	color: #4A4A4A;
 	line-height: 25px;
