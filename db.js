@@ -52,6 +52,7 @@ var Artist = mongoose.model('Artist', {
         name        : String,
         city        : String,
         question    : String,
+        description : String,
         answer      : String,
         photoPath   : String,
         feature     : String,
@@ -94,6 +95,7 @@ exports.createArtist = function(req, res){
         name        : req.body.artistname,
         city        : req.body.artistcity,
         question    : req.body.artistquestion,
+        description : req.body.artistdescription,
         answer      : req.body.artistanswer,
         feature     : req.body.artistfeature,
         date        : req.body.artistdate
@@ -181,9 +183,10 @@ exports.saveChange = function(req, res){
             $set: {
                 'name'      : req.body.name,
                 'city'      : req.body.city,
+                'description' : req.body.description,
                 'question'   : req.body.question,
-                'answer'    : req.body.answer,
-                'date'      : req.body.date
+                'answer'    : req.body.answer
+                //'date'      : req.body.date
                 //'date'      : dateShort
             }
         },
