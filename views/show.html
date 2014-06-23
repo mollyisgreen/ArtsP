@@ -15,13 +15,13 @@
 		<img src="line.png"></br>
 
 
-		{{artist[0].description}}
+		<div class="textfeature">{{artist[0].textfeature}}</div>
 
-		<div id="textfeature">{{artist[0].textfeature}}</div>
-
-		<div id="iframefeature">
+		<div class="iframefeature">
 			<iframe src={{iframesrc}} width={{artist[0].embedwidth}} height={{artist[0].embedheight}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		</div>
+
+		<div class="slogan">{{artist[0].description}}</div>
 
 		<div class="interviewblock">
 			<img class="artistPhoto" src={{artist[0].photoPath}}>
