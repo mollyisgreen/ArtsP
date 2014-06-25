@@ -1,3 +1,39 @@
+@font-face {
+	font-family: NoticiaText;
+	src: url('/noticiatext-regular.ttf'),
+	url('/noticiatext-regular.eot'),
+	url('/noticiatext-regular.svg'),
+	url('/noticiatext-regular.woff');
+}
+
+@font-face {
+	font-family: NoticiaText;
+	src: url('/noticiatext-bold.ttf'),
+	url('/noticiatext-bold.eot'),
+	url('/noticiatext-bold.svg'),
+	url('/noticiatext-bold.woff');
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: NoticiaText;
+	src: url('/noticiatext-italic.ttf'),
+	url('/noticiatext-italic.eot'),
+	url('/noticiatext-italic.svg'),
+	url('/noticiatext-italic.woff');
+	font-style: italic;
+}
+
+@font-face {
+	font-family: NoticiaText;
+	src: url('/noticiatext-bolditalic.ttf'),
+	url('/noticiatext-bolditalic.eot'),
+	url('/noticiatext-bolditalic.svg'),
+	url('/noticiatext-bolditalic.woff');
+	font-weight: bold;
+	font-style: italic;
+}
+
 body {
 	margin: 0px 0px 0px 0px;
 	border: solid;
@@ -51,7 +87,7 @@ a:hover, a:visited, a:link, a:active
 }
 
 .description {
-	font-family: 'Noticia Text', serif;
+	font-family: NoticiaText, serif;
 	font-size: 16px;
 	color: #4A4A4A;
 	line-height: 25px;
@@ -62,7 +98,7 @@ a:hover, a:visited, a:link, a:active
 }
 
 .interview {
-	font-family: 'Noticia Text', serif;
+	font-family: NoticiaText, serif;
 	font-size: 16px;
 	color: #4A4A4A;
 	line-height: 25px;
