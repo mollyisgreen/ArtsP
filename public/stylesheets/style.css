@@ -50,12 +50,19 @@ a:hover, a:visited, a:link, a:active
 	margin-bottom: 20px;
 }
 
+.description {
+	font-family: 'Noticia Text', serif;
+	font-size: 16px;
+	color: #4A4A4A;
+	line-height: 25px;
+}
 
 .interviewblock {
 	margin: 20px 20px 20px 20px;
 }
 
 .interview {
+	font-family: 'Noticia Text', serif;
 	font-size: 16px;
 	color: #4A4A4A;
 	line-height: 25px;
