@@ -93,8 +93,10 @@ a:hover, a:visited, a:link, a:active
 	line-height: 25px;
 }
 
-.interviewblock {
-	margin: 20px 20px 20px 20px;
+.interviewborder {
+	background-image: url('../interviewborder.png');
+	background-repeat: no-repeat;
+	height: 500px;
 }
 
 .interview {
