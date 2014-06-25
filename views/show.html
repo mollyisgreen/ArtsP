@@ -1,54 +1,49 @@
-<div class="middle">
-	<div class="middleInner">
-		<div class="title">Atom Review</div>
-		<div class="slogan">one up-and-coming artist per day</div>
+<div class="title">Atom Review</div>
+<div class="slogan">one up-and-coming artist per day</div>
 
-		<img src="line.png">
+<img src="line.png">
 
-		<div id="categorycontainer">
-			<div class="categories">film</div>
-			<div class="categories">music</div>
-			<div class="categories">performance</div>
-			<div class="categories">written</div>
+<div id="categorycontainer">
+	<div class="categories">film</div>
+	<div class="categories">music</div>
+	<div class="categories">performance</div>
+	<div class="categories">written</div>
+</div>
+
+<img src="line.png"></br>
+
+
+<div class="textfeature">{{artist[0].textfeature}}</div>
+
+<div class="iframefeature">
+	<iframe src={{iframesrc}} width={{artist[0].embedwidth}} height={{artist[0].embedheight}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+
+<div class="description">{{artist[0].description}}</div>
+
+
+<div class="interviewblock">
+
+	<div class="leftinterview"></div>	
+
+	<div class="rightinterview">
+		<div class="interview">
+			<b>Artist</b> {{artist[0].name}}</br>
+			<b>City</b> {{artist[0].city}}</br>
+
+			<b>{{artist[0].question}}</b></br>
+			{{artist[0].answer}}</br>
 		</div>
 
-		<img src="line.png"></br>
+		<img class="artistPhoto" src={{artist[0].photoPath}}>
 
-
-		<div class="textfeature">{{artist[0].textfeature}}</div>
-
-		<div class="iframefeature">
-			<iframe src={{iframesrc}} width={{artist[0].embedwidth}} height={{artist[0].embedheight}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-		</div>
-
-		<div class="description">{{artist[0].description}}</div>
-
-
-		<div class="interviewblock">
-
-			<div class="leftinterview"></div>	
-
-			<div class="rightinterview">
-				<div class="interview">
-					<b>Artist</b> {{artist[0].name}}</br>
-					<b>City</b> {{artist[0].city}}</br>
-
-					<b>{{artist[0].question}}</b></br>
-					{{artist[0].answer}}</br>
-				</div>
-
-				<img class="artistPhoto" src={{artist[0].photoPath}}>
-
-				<!-- AddThis -->
-				<div class="addthis_sharing_toolbox"></div>
-
-			</div>
-			
-		</div>
-
-
-		<div id="previous"><a href="#/show/{{previous}}">Previous</a></div>
-		<div id="next"><a href="#/show/{{next}}">Next</a></div>
+		<!-- AddThis -->
+		<div class="addthis_sharing_toolbox"></div>
 
 	</div>
+
 </div>
+
+
+<div id="previous"><a href="#/show/{{previous}}">Previous</a></div>
+<div id="next"><a href="#/show/{{next}}">Next</a></div>
