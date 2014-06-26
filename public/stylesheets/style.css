@@ -1,35 +1,35 @@
 @font-face {
 	font-family: NoticiaText;
-	src: url('/noticiatext-regular.ttf'),
-	url('/noticiatext-regular.eot'),
-	url('/noticiatext-regular.svg'),
-	url('/noticiatext-regular.woff');
+	src: url('/fonts/noticiatext-regular.ttf'),
+	url('/fonts/noticiatext-regular.eot'),
+	url('/fonts/noticiatext-regular.svg'),
+	url('/fonts/noticiatext-regular.woff');
 }
 
 @font-face {
 	font-family: NoticiaText;
-	src: url('/noticiatext-bold.ttf'),
-	url('/noticiatext-bold.eot'),
-	url('/noticiatext-bold.svg'),
-	url('/noticiatext-bold.woff');
+	src: url('/fonts/noticiatext-bold.ttf'),
+	url('/fonts/noticiatext-bold.eot'),
+	url('/fonts/noticiatext-bold.svg'),
+	url('/fonts/noticiatext-bold.woff');
 	font-weight: bold;
 }
 
 @font-face {
 	font-family: NoticiaText;
-	src: url('/noticiatext-italic.ttf'),
-	url('/noticiatext-italic.eot'),
-	url('/noticiatext-italic.svg'),
-	url('/noticiatext-italic.woff');
+	src: url('/fonts/noticiatext-italic.ttf'),
+	url('/fonts/noticiatext-italic.eot'),
+	url('/fonts/noticiatext-italic.svg'),
+	url('/fonts/noticiatext-italic.woff');
 	font-style: italic;
 }
 
 @font-face {
 	font-family: NoticiaText;
-	src: url('/noticiatext-bolditalic.ttf'),
-	url('/noticiatext-bolditalic.eot'),
-	url('/noticiatext-bolditalic.svg'),
-	url('/noticiatext-bolditalic.woff');
+	src: url('/fonts/noticiatext-bolditalic.ttf'),
+	url('/fonts/noticiatext-bolditalic.eot'),
+	url('/fonts/noticiatext-bolditalic.svg'),
+	url('/fonts/noticiatext-bolditalic.woff');
 	font-weight: bold;
 	font-style: italic;
 }
