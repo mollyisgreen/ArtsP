@@ -4,34 +4,28 @@
 	<div class="title">Name</div>
 	<div class="slogan">one up-and-coming artist per day</div>
 
-	<div id="artist-form" class="row">
-		<div class="interview">
-			<form>
-				<div class="form-group">
-
-					<!-- BIND THIS VALUE TO formData.text IN ANGULAR ng-model="formData.text" -->
-					<input type="date" class="formfield" ng-model="formData.artistdate"></br>
-					<input type="text" class="formfield" placeholder="Artist name" ng-model="formData.artistname"></br>
-					<input type="text" class="formfield" placeholder="City" ng-model="formData.artistcity"></br>
-					<input type="text" class="formfield" placeholder="Description" ng-model="formData.artistdescription"></br>
-					<input type="text" class="formfield" placeholder="Question" ng-model="formData.artistquestion"></br>
-					<input type="text" class="formfield" placeholder="Answer" ng-model="formData.artistanswer"></br>
-
-				</div>
-
-				<button type="submit" ng-click="createArtist()">Add</button>
-			</form>
-		</div>
+	<div id="artist-form">
+		<form>
+			<!-- BIND THIS VALUE TO formData.text IN ANGULAR ng-model="formData.text" -->
+			<input type="date" class="formfield" ng-model="formData.artistdate"></br>
+			<input type="text" class="formfield" placeholder="Artist name" ng-model="formData.artistname"></br>
+			<input type="text" class="formfield" placeholder="City" ng-model="formData.artistcity"></br>
+			<input type="text" class="formfield" placeholder="Description" ng-model="formData.artistdescription"></br>
+			<input type="text" class="formfield" placeholder="Question" ng-model="formData.artistquestion"></br>
+			<input type="text" class="formfield" placeholder="Answer" ng-model="formData.artistanswer"></br>
+			<button type="submit" ng-click="createArtist()">Add</button>
+		</form>
 	</div>
 
+	<img src="line.png"></br>
+
 	<!-- Artist List -->
-	<div id="artist-list" class="row">
+	<div id="artist-list">
 		<div class="col-sm-4 col-sm-offset-4">
 
 			<!-- LOOP OVER THE ARTISTS IN $scope.todos -->
-			<div class="checkbox" ng-repeat="artist in artists | orderBy:'date'">
-				<label>
-					<input type="checkbox" ng-click="deleteArtist(artist._id)"> 
+			<div class="artistlist" ng-repeat="artist in artists | orderBy:'date'">
+					<button ng-click="deleteArtist(artist._id)">Delete</button>
 					<a href="#/edit/{{artist._id}}">Edit</a>
 					<a href="#/preview/{{artist._id}}">Preview</a>
 
@@ -45,7 +39,6 @@
 					{{ artist.city }}</br>
 					{{ artist.question }}</br>
 					{{ artist.answer }}
-				</label>
 			</div>
 
 		</div>

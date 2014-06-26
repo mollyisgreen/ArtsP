@@ -22,3 +22,17 @@
 .formfield {
 	border-style: none;
 }
+
+
+.artistlist {
+	text-align: left;
+	background-color: #F2F2F2;
+	padding: 20px 20px 20px 20px;
+	margin-bottom: 30px;
+}
+
+.addartist {
+	font-family: NoticiaText;
+	background-color: #F2F2F2;
+	padding: 20px 20px 20px 20px;
+}
