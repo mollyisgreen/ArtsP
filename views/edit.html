@@ -11,12 +11,12 @@
 
 			<!-- enter feature -->
 			<form class="interview" name="revisionForm">
+
 				<button ng-click="textfeature=!textfeature">Text</button>
 					<span ng-hide="textfeature">
 					    <input type="text" id="textcontent" ng-model="artist.textfeature"/>
 					    <button ng-click="saveTextFeature(artist._id, $index)">Save Feature</button>
 					</span>
-	 				<span ng-show="custom"></span>
 
 	 			<button ng-click="embedfeature=!embedfeature">Embedded Link</button></br>
 					<span ng-hide="embedfeature">
@@ -25,27 +25,24 @@
 					    iframe height: <input type="text" id="from" ng-model="artist.embedheight"/></br>
 					    <button ng-click="saveEmbedFeature(artist._id, $index)">Save Feature</button>
 					</span>
-	 				<span ng-show="embedfeature"></span>
+
+	 			<button ng-click="imagefeature=!imagefeature">Visual Art</button>
+					<span ng-hide="imagefeature">
+						<div ng-file-drop="uploadVisualContent($files)" class="addPhoto" 
+							ng-file-drag-over-class="dropOverPhoto" ng-model="artist.imagefeature">Drop visual here</div>
+					    <button ng-click="saveImageFeature(artist._id, $index)">Save Feature</button>
+					</span>
 
 			</form>
 
+<img class="editPhotoDisplay" src={{artist.photoPath}} alt="displayartistphoto">
 
 			<!-- interview -->
 			<div class="interview">
 
-				<script type="text/javascript">
-				    if (0){
-				        $("#yesPhoto").show();
-				    } else {
-				        $("#noPhoto").show();
-				    }
-				</script>
+				<div ng-file-drop="uploadArtistPhoto($files)" class="addPhoto" 
+					ng-file-drag-over-class="dropOverPhoto" ng-model="artist.photo">Drop photo here</div>
 
-				<img id="yesPhoto" class="artistPhoto" src={{artist.photoPath}} alt="artistphoto" style="display: none">
-
-				<div id="noPhoto" ng-file-drop="onFileSelect($files)" class="addPhoto" 
-					ng-file-drag-over-class="dropOverPhoto" ng-model="artist.photo" style="display: none">Drop photo here</div>
-					
 				<form class="interview" name="revisionForm">
 					{{artist.date}}</br>
 					Date (YY/MM/DD): <input type="date" class="formfield" ng-model="artist.date"></br>

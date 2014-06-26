@@ -131,7 +131,8 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 	};
 
 
-	$scope.onFileSelect = function($files) {
+	$scope.uploadArtistPhoto = function($files) {
+		console.log("onfileselectthing");
 		console.log($files[0]);
 
 	    //$files: an array of files selected, each file has name, size, and type.
@@ -159,7 +160,39 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 	      //.error(...)
 	      //.then(success, error, progress); 
 	      //.xhr(function(xhr){xhr.upload.addEventListener(...)})// access and attach any event listener to XMLHttpRequest.
-	    }
-  	//};
+	    //}
+  	};
+
+  	$scope.uploadVisualContent = function($files) {
+		console.log("onfileselectthing");
+		console.log($files[0]);
+
+	    //$files: an array of files selected, each file has name, size, and type.
+	    // FOR MULTIPLE FILES
+	    // for (var i = 0; i < $files.length; i++) {
+	      // var file = $files[i];
+	    $scope.upload = $upload.upload({
+	        url: 'saveVisualContent/' + $scope.artist[0]._id, //upload.php script, node.js route, or servlet url
+	        // method: 'POST' or 'PUT',
+	        // headers: {'header-key': 'header-value'},
+	        // withCredentials: true,
+	        // data: {myObj: $scope.artist[0].photo},
+	        // file: file,
+	        file: $files[0], // or list of files: $files for html5 only
+	        /* set the file formData name ('Content-Desposition'). Default is 'file' */
+	        //fileFormDataName: myFile, //or a list of names for multiple files (html5).
+	        /* customize how data is added to formData. See #40#issuecomment-28612000 for sample code */
+	        //formDataAppender: function(formData, key, val){}
+	      }).progress(function(evt) {
+	        console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
+	      }).success(function(data, status, headers, config) {
+	        // file is uploaded successfully
+	        console.log(data);
+	      });
+	      //.error(...)
+	      //.then(success, error, progress); 
+	      //.xhr(function(xhr){xhr.upload.addEventListener(...)})// access and attach any event listener to XMLHttpRequest.
+	    //}
+  	};
 
 });

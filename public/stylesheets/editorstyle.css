@@ -36,3 +36,9 @@
 	background-color: #F2F2F2;
 	padding: 20px 20px 20px 20px;
 }
+
+.editPhotoDisplay {
+	-moz-box-shadow:    0px 0px 5px 0px rgba(0,0,0,0.50);
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.50);
+	box-shadow:         0px 0px 5px 0px rgba(0,0,0,0.50);
+}
