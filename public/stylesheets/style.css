@@ -40,7 +40,7 @@ body {
 	text-align: center;
 	border-color: #F2F2F2;
 	border-width: 30px;
-	padding: 50px 0px 50px 0px;
+	padding-top: 50px;
 	color: #4A4A4A;
 }
 
@@ -93,7 +93,7 @@ a:hover, a:visited, a:link, a:active
 
 .interviewblock {
 	margin-top: 20px;
-	margin-left: -35px;
+	margin-right: -33px;
 	padding: 0px 0px 0px 0px;
 }
 
@@ -112,8 +112,9 @@ a:hover, a:visited, a:link, a:active
 	background-repeat: no-repeat;
 	text-align: right;
 	height: 320px;
-	width: 80%;
-	padding: 50px 50px 50px 50px;
+	width: 90%;
+	padding: 30px 30px 50px 30px;
+	position: relative;
 }
 
 .interview {
@@ -129,7 +130,16 @@ a:hover, a:visited, a:link, a:active
 	-moz-box-shadow:    0px 0px 5px 0px rgba(0,0,0,0.50);
 	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.50);
 	box-shadow:         0px 0px 5px 0px rgba(0,0,0,0.50);
-	height: 290px;
+	height: 340px;
+	position: absolute;
+	margin-top: -10px;
+	margin-left: 200px;
 }
 
+
+.discover {
+	background-color: #F2F2F2;
+	height: 400px;
+	margin-top: 400px;
+}
 
