@@ -5,7 +5,6 @@
 
 		<a href="#/">Dashboard</a>
 
-
 		<!-- TODO: is this correct directive? -->
 		<div ng-repeat="artist in artist">
 
@@ -13,12 +12,14 @@
 			<form class="interview" name="revisionForm">
 
 				<button ng-click="textfeature=!textfeature">Text</button>
+				<button ng-click="embedfeature=!embedfeature">Embedded Link</button>
+				<button ng-click="imagefeature=!imagefeature">Visual Art</button></br>
+
 					<span ng-hide="textfeature">
 					    <input type="text" id="textcontent" ng-model="artist.textfeature"/>
 					    <button ng-click="saveTextFeature(artist._id, $index)">Save Feature</button>
 					</span>
 
-	 			<button ng-click="embedfeature=!embedfeature">Embedded Link</button></br>
 					<span ng-hide="embedfeature">
 					    iframe link: <input type="text" id="from" ng-model="artist.embedlink"/></br>
 					    iframe width: <input type="text" id="from" ng-model="artist.embedwidth"/></br>
@@ -26,7 +27,6 @@
 					    <button ng-click="saveEmbedFeature(artist._id, $index)">Save Feature</button>
 					</span>
 
-	 			<button ng-click="imagefeature=!imagefeature">Visual Art</button>
 					<span ng-hide="imagefeature">
 						<div ng-file-drop="uploadVisualContent($files)" class="addPhoto" 
 							ng-file-drag-over-class="dropOverPhoto" ng-model="artist.imagefeature">Drop visual here</div>
@@ -35,7 +35,7 @@
 
 			</form>
 
-<img class="editPhotoDisplay" src={{artist.photoPath}} alt="displayartistphoto">
+			<img class="editPhotoDisplay" src={{artist.photoPath}} alt="displayartistphoto">
 
 			<!-- interview -->
 			<div class="interview">

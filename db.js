@@ -214,7 +214,8 @@ exports.saveTextFeature = function(req, res){
             $unset: { 
                         embedlink: "",
                         embedheight: "",
-                        embedwidth: ""
+                        embedwidth: "",
+                        visualContentPath: ""
                     }
         },
         function (err, result) {
@@ -231,7 +232,8 @@ exports.saveEmbedFeature = function(req, res){
                     embedheight    : req.body.embedheight,
                     embedwidth     : req.body.embedwidth
             },
-            $unset: { textfeature: "" }
+            $unset: { textfeature: "",
+                        visualContentPath: "" }
         },
         function (err, result) {
             if (err) throw err;
@@ -293,7 +295,14 @@ exports.saveVisualContent = function(req, res){
     db.collection("artists").update(
         { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
         // is req.files sufficient? should i go deeper into that?
-        { $set: { 'visualContentPath' : saved_path } },
+        { 
+            $set: { 'visualContentPath' : saved_path },
+            $unset: { textfeature: "",
+                        embedlink: "",
+                        embedheight: "",
+                        embedwidth: ""
+                    }
+        },
         function (err, result) {
             if (err) throw err;
         }
