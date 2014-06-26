@@ -62,7 +62,7 @@ a:hover, a:visited, a:link, a:active
 .slogan {
 	font-size: 18px;
 	margin-top: 15px;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 	font-family: Courier;
 }
 
@@ -92,18 +92,19 @@ a:hover, a:visited, a:link, a:active
 }
 
 .interviewblock {
+	margin-top: 20px;
 	border: solid;
 	border-color: #4A4A4A;
-	margin-left: -30px;
+	margin-left: -35px;
 	margin-right: -35px;
 	padding: 0px 0px 0px 0px;
 }
 
 
 .leftinterview {
-	height: 400px;
 	float: left;
-	margin-left: -200px;
+	width: 30%;
+	height: 210px;
 }
 
 .rightinterview {
@@ -112,7 +113,8 @@ a:hover, a:visited, a:link, a:active
 	background-size: 100%;
 	background-repeat: no-repeat;
 	text-align: right;
-	padding: 50px 50px 50px 100px;
+	height: 200px;
+	width: 70%;
 }
 
 .interview {
