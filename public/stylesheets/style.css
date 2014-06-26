@@ -94,7 +94,7 @@ a:hover, a:visited, a:link, a:active
 .interviewblock {
 	margin-top: 20px;
 	margin-right: -33px;
-	padding: 0px 0px 0px 0px;
+	padding-bottom: 370px;
 }
 
 
@@ -132,7 +132,7 @@ a:hover, a:visited, a:link, a:active
 	box-shadow:         0px 0px 5px 0px rgba(0,0,0,0.50);
 	height: 340px;
 	position: absolute;
-	margin-top: -10px;
+	margin-top: -380px;
 	margin-left: 200px;
 }
 
@@ -140,6 +140,5 @@ a:hover, a:visited, a:link, a:active
 .discover {
 	background-color: #F2F2F2;
 	height: 400px;
-	margin-top: 400px;
 }
 
