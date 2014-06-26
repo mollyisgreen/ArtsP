@@ -1,35 +1,35 @@
 @font-face {
 	font-family: NoticiaText;
-	src: url('/fonts/noticiatext-regular.ttf'),
-	url('/fonts/noticiatext-regular.eot'),
-	url('/fonts/noticiatext-regular.svg'),
-	url('/fonts/noticiatext-regular.woff');
+	src: url('../fonts/noticiatext-regular.ttf'),
+	url('../fonts/noticiatext-regular.eot'),
+	url('../fonts/noticiatext-regular.svg'),
+	url('../fonts/noticiatext-regular.woff');
 }
 
 @font-face {
 	font-family: NoticiaText;
-	src: url('/fonts/noticiatext-bold.ttf'),
-	url('/fonts/noticiatext-bold.eot'),
-	url('/fonts/noticiatext-bold.svg'),
-	url('/fonts/noticiatext-bold.woff');
+	src: url('../fonts/noticiatext-bold.ttf'),
+	url('../fonts/noticiatext-bold.eot'),
+	url('../fonts/noticiatext-bold.svg'),
+	url('../fonts/noticiatext-bold.woff');
 	font-weight: bold;
 }
 
 @font-face {
 	font-family: NoticiaText;
-	src: url('/fonts/noticiatext-italic.ttf'),
-	url('/fonts/noticiatext-italic.eot'),
-	url('/fonts/noticiatext-italic.svg'),
-	url('/fonts/noticiatext-italic.woff');
+	src: url('../fonts/noticiatext-italic.ttf'),
+	url('../fonts/noticiatext-italic.eot'),
+	url('../fonts/noticiatext-italic.svg'),
+	url('../fonts/noticiatext-italic.woff');
 	font-style: italic;
 }
 
 @font-face {
 	font-family: NoticiaText;
-	src: url('/fonts/noticiatext-bolditalic.ttf'),
-	url('/fonts/noticiatext-bolditalic.eot'),
-	url('/fonts/noticiatext-bolditalic.svg'),
-	url('/fonts/noticiatext-bolditalic.woff');
+	src: url('../fonts/noticiatext-bolditalic.ttf'),
+	url('../fonts/noticiatext-bolditalic.eot'),
+	url('../fonts/noticiatext-bolditalic.svg'),
+	url('../fonts/noticiatext-bolditalic.woff');
 	font-weight: bold;
 	font-style: italic;
 }
@@ -94,14 +94,13 @@ a:hover, a:visited, a:link, a:active
 .interviewblock {
 	margin-top: 20px;
 	margin-left: -35px;
-	margin-right: -35px;
 	padding: 0px 0px 0px 0px;
 }
 
 
 .leftinterview {
 	float: left;
-	width: 25%;
+	width: 20%;
 	height: 320px;
 	background-size: auto 100%;
 }
@@ -113,7 +112,7 @@ a:hover, a:visited, a:link, a:active
 	background-repeat: no-repeat;
 	text-align: right;
 	height: 320px;
-	width: 75%;
+	width: 80%;
 	padding: 50px 50px 50px 50px;
 }
 
