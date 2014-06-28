@@ -6,10 +6,9 @@ var currentYear = pageDate.getFullYear();
 var todayInMill = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
 
 
-
 var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 
-.config(function($routeProvider) {
+.config(function($routeProvider, $locationProvider) {
   	$routeProvider
 	    .when('/', {
 	    	redirectTo: '/show/' + todayInMill,
@@ -27,6 +26,8 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 	    .otherwise({
 	      redirectTo:'/'
     });
+
+	$locationProvider.hashPrefix('!');
 })
 
 .controller('indexController', function($scope, $routeParams, $http, $sce, $location) {
@@ -39,7 +40,11 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 			console.log("showpageshowing");
 			$scope.artist = data;
 
-			console.log(data);
+			$scope.$parent.seo = {
+		        pageTitle : "{{artist[0].name}}",
+		        pageDescription: 'Showcasing the artist of the day: {{artist[0].name}}'
+		    };
+
 
 			$scope.releaseDate = $routeParams.date;
 
