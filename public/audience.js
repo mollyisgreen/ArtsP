@@ -40,6 +40,7 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 			console.log("showpageshowing");
 			$scope.artist = data;
 
+			// prerender SEO
 			$scope.$parent.seo = {
 		        pageTitle : $scope.artist[0].name,
 		        pageDescription: 'Showcasing the artist of the day: ' + $scope.artist[0].name
