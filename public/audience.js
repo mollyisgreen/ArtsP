@@ -41,8 +41,8 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 			$scope.artist = data;
 
 			$scope.$parent.seo = {
-		        pageTitle : "{{artist[0].name}}",
-		        pageDescription: 'Showcasing the artist of the day: {{artist[0].name}}'
+		        pageTitle : $scope.artist[0].name,
+		        pageDescription: 'Showcasing the artist of the day: ' + $scope.artist[0].name
 		    };
 
 
