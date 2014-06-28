@@ -1,3 +1,6 @@
+<a id="bookmarkme" href="#" rel="sidebar" title="bookmark this page">Bookmark This Page</a>
+
+
 <div class="title">Atom Review</div>
 <div class="slogan">one up-and-coming artist per day</div>
 
@@ -15,7 +18,7 @@
 
 <div class="textfeature">{{artist[0].textfeature}}</div>
 
-<img class="imagefeature" src={{artist[0].visualContentPath}}>
+<img class="imagefeature" src={{artist[0].visualContentPath}} alt={{artist[0].name}}>
 
 <div class="iframefeature">
 	<iframe src={{iframesrc}} width={{artist[0].embedwidth}} height={{artist[0].embedheight}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -40,7 +43,7 @@
 </div>
 
 
-<img class="artistPhoto" src={{artist[0].photoPath}}>
+<img class="artistPhoto" src={{artist[0].photoPath}} alt={{artist[0].name}}>
 
 <div class="discover">Discover the works of other great artists!</div>
 

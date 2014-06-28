@@ -3,7 +3,11 @@
 	<head>		
 		<link rel="icon" type="image/png" href="/gravatar.png">
 
+		<meta name="fragment" content="!">
+
 		<title>The Atom Review</title>
+		<meta name="description" content="{{ seo.metaDescription }}">
+
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 		
@@ -35,6 +39,23 @@
 		  ga('create', 'UA-51904358-1', 'atomreview.com');
 		  ga('send', 'pageview');
 
+		</script>
+
+		<script type="text/javascript">
+		    $(function() {
+		        $('#bookmarkme').click(function() {
+		            if (window.sidebar && window.sidebar.addPanel) { // Mozilla Firefox Bookmark
+		                window.sidebar.addPanel(document.title,window.location.href,'');
+		            } else if(window.external && ('AddFavorite' in window.external)) { // IE Favorite
+		                window.external.AddFavorite(location.href,document.title); 
+		            } else if(window.opera && window.print) { // Opera Hotlist
+		                this.title=document.title;
+		                return true;
+		            } else { // webkit - safari/chrome
+		                alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != - 1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
+		            }
+		        });
+		    });
 		</script>
 
 	</head>

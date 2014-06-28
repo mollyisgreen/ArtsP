@@ -45,6 +45,7 @@ app.configure(function() {
 	app.use(passport.session()); // persistent login sessions
 
 	app.use(app.router);
+	app.use(require('prerender-node').set('prerenderToken', 'ujBPewAcfG8JKKgBWYfe'));
 	app.use(express.static(path.join(__dirname, 'public')));
 
  	// Handle 404
