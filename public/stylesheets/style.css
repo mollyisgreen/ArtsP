@@ -98,22 +98,15 @@ a:hover, a:visited, a:link, a:active
 }
 
 
-.leftinterview {
-	float: left;
-	width: 20%;
-	height: 320px;
-	background-size: auto 100%;
-}
-
 .rightinterview {
 	float: right;
 	background-image: url('../rightinterview.png');
 	background-size: auto 100%;
 	background-repeat: no-repeat;
 	text-align: right;
-	height: 420px;
-	width: 90%;
-	padding: 30px 30px 50px 100px;
+	height: 400px;
+	width: 80%;
+	padding: 30px 30px 10px 100px;
 	position: relative;
 }
 
@@ -130,7 +123,7 @@ a:hover, a:visited, a:link, a:active
 	-moz-box-shadow:    0px 0px 5px 0px rgba(0,0,0,0.50);
 	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.50);
 	box-shadow:         0px 0px 5px 0px rgba(0,0,0,0.50);
-	height: 450px;
+	height: 460px;
 	position: absolute;
 	margin-top: -510px;
 	margin-left: 200px;

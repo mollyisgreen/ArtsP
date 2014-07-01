@@ -12,12 +12,15 @@
 
 <img src="line.png"></br>
 
+{{releaseDate}}</br>
+{{previous}}</br>
+{{next}}</br>
 
 <div class="textfeature">{{artist[0].textfeature}}</div>
 
 <img class="imagefeature" src={{artist[0].visualContentPath}} alt={{artist[0].name}}>
 
-<div class="iframefeature">
+<div id="iframefeature" class="iframefeature">
 	<iframe src={{iframesrc}} width={{artist[0].embedwidth}} height={{artist[0].embedheight}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 
@@ -42,18 +45,9 @@
 
 <img class="artistPhoto" src={{artist[0].photoPath}} alt={{artist[0].name}}>
 
+
+<div id="previous"><a href="#!/show/{{previous}}">Previous</a></div>
+<div id="next"><a href="#!/show/{{next}}">Next</a></div>
+
 <div class="discover">Discover the works of other great artists!</div>
-
-
-<!--
-<div id="previous"><a href="#/show/{{previous}}">Previous</a></div>
-<div id="next"><a href="#/show/{{next}}">Next</a></div>
-
--->
-
-
-<meta property="og:title" content="Molly" /> 
-<meta property="og:description" content="Molly Yang." />  
-<meta property="og:image" content="http://i2.ytimg.com/vi/1F7DKyFt5pY/default.jpg" /> 
-
 
