@@ -39,21 +39,25 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 		.success(function(data) {
 			console.log("showpageshowing");
 			$scope.artist = data;
+			console.log(data);
 
-			// prerender SEO
-			$scope.$parent.seo = {
-		        pageTitle : $scope.artist[0].name,
-		        pageDescription: 'Showcasing the artist of the day: ' + $scope.artist[0].name
-		    };
+			// if artist doesn't exist, redirect
+			if ($scope.artist[0]) {
+				// prerender SEO
+				$scope.$parent.seo = {
+			        pageTitle : $scope.artist[0].name,
+			        pageDescription: 'Showcasing the artist of the day: ' + $scope.artist[0].name
+			    };
+			} else {
+				$location.path('/');
+			}
 
 			$scope.releaseDate = $routeParams.date;
 
 			// yesterday
 			$scope.next = ($scope.releaseDate - 86400000);
-			console.log($scope.next);
 			// tomorrow
 			$scope.previous = (parseInt($scope.releaseDate) + 86400000);
-			console.log($scope.previous);
 
 			// if on today's page, hide button that allows you to go to tomorrow's content
 			if($scope.releaseDate == todayInMill)
@@ -70,8 +74,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 			} else {
 				document.getElementById('iframefeature').style.display = 'none'; 
 			}
-
-			console.log(data);
 		})
 		.error(function(data) {
 			console.log('Error: ' + data);
