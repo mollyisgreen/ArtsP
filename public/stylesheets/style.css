@@ -1,35 +1,35 @@
 @font-face {
 	font-family: NoticiaText;
-	src: url('../fonts/noticiatext-regular.ttf'),
-	url('../fonts/noticiatext-regular.eot'),
-	url('../fonts/noticiatext-regular.svg'),
-	url('../fonts/noticiatext-regular.woff');
+	src: url('/fonts/noticiatext-regular.ttf'),
+	url('/fonts/noticiatext-regular.eot'),
+	url('/fonts/noticiatext-regular.svg'),
+	url('/fonts/noticiatext-regular.woff');
 }
 
 @font-face {
 	font-family: NoticiaText;
-	src: url('../fonts/noticiatext-bold.ttf'),
-	url('../fonts/noticiatext-bold.eot'),
-	url('../fonts/noticiatext-bold.svg'),
-	url('../fonts/noticiatext-bold.woff');
+	src: url('/fonts/noticiatext-bold.ttf'),
+	url('/fonts/noticiatext-bold.eot'),
+	url('/fonts/noticiatext-bold.svg'),
+	url('/fonts/noticiatext-bold.woff');
 	font-weight: bold;
 }
 
 @font-face {
 	font-family: NoticiaText;
-	src: url('../fonts/noticiatext-italic.ttf'),
-	url('../fonts/noticiatext-italic.eot'),
-	url('../fonts/noticiatext-italic.svg'),
-	url('../fonts/noticiatext-italic.woff');
+	src: url('/fonts/noticiatext-italic.ttf'),
+	url('/fonts/noticiatext-italic.eot'),
+	url('/fonts/noticiatext-italic.svg'),
+	url('/fonts/noticiatext-italic.woff');
 	font-style: italic;
 }
 
 @font-face {
 	font-family: NoticiaText;
-	src: url('../fonts/noticiatext-bolditalic.ttf'),
-	url('../fonts/noticiatext-bolditalic.eot'),
-	url('../fonts/noticiatext-bolditalic.svg'),
-	url('../fonts/noticiatext-bolditalic.woff');
+	src: url('/fonts/noticiatext-bolditalic.ttf'),
+	url('/fonts/noticiatext-bolditalic.eot'),
+	url('/fonts/noticiatext-bolditalic.svg'),
+	url('/fonts/noticiatext-bolditalic.woff');
 	font-weight: bold;
 	font-style: italic;
 }
@@ -100,13 +100,13 @@ a:hover, a:visited, a:link, a:active
 
 .rightinterview {
 	float: right;
-	background-image: url('../rightinterview.png');
+	background-image: url('/rightinterview.png');
 	background-size: auto 100%;
 	background-repeat: no-repeat;
 	text-align: right;
-	height: 400px;
+	height: 380px;
 	width: 80%;
-	padding: 30px 30px 10px 100px;
+	padding: 50px 30px 10px 100px;
 	position: relative;
 }
 
