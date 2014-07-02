@@ -129,9 +129,29 @@ a:hover, a:visited, a:link, a:active
 	margin-left: 200px;
 }
 
+/********** discover *********/
 
 .discover {
 	background-color: #F2F2F2;
 	height: 400px;
 }
 
+/********** error page *********/
+
+.error {
+	font-family: Courier;
+	font-size: 20px;
+	padding-top: 50px;
+}
+
+
+#sketch {
+	margin-top: 30px;
+	height: 300px;
+}
+
+#nikicredit {
+	font-size: 10px;
+	margin-left: 350px;
+	padding-bottom: 50px;
+}
