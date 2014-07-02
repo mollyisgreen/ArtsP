@@ -80,4 +80,9 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 	});
 
 
+})
+
+.controller('discoverController', function($scope, $http) {
+
+
 });
