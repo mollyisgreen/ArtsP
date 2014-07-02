@@ -37,7 +37,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 	
 	$http.get('/show/' + $routeParams.date)
 		.success(function(data) {
-			console.log("showpageshowing");
 			$scope.artist = data;
 			console.log(data);
 
@@ -49,7 +48,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 			        pageDescription: 'Showcasing the artist of the day: ' + $scope.artist[0].name
 			    };
 			} else {
-				console.log("pleleeeease");
 				$location.path('/');
 			}
 
@@ -77,6 +75,7 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 			}
 		})
 		.error(function(data) {
+			$location.path('/');
 			console.log('Error: ' + data);
 	});
 
