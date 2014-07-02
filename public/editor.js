@@ -22,6 +22,7 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 
 
 .controller('mainController', function($scope, $http) {
+
 	$scope.formData = {};
 
 	// when landing on the page, get all artists and show them

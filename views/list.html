@@ -1,47 +1,41 @@
-<div class="middle">
-<div class="middleInner">
+<div class="title">Name</div>
+<div class="slogan">one up-and-coming artist per day</div>
 
-	<div class="title">Name</div>
-	<div class="slogan">one up-and-coming artist per day</div>
+<div id="artist-form">
+	<form>
+		<!-- BIND THIS VALUE TO formData.text IN ANGULAR ng-model="formData.text" -->
+		<input type="date" class="formfield" ng-model="formData.artistdate"></br>
+		<input type="text" class="formfield" placeholder="Artist name" ng-model="formData.artistname"></br>
+		<input type="text" class="formfield" placeholder="City" ng-model="formData.artistcity"></br>
+		<input type="text" class="formfield" placeholder="Description" ng-model="formData.artistdescription"></br>
+		<button type="submit" ng-click="createArtist()">Add</button>
+	</form>
+</div>
+</br>
 
-	<div id="artist-form">
-		<form>
-			<!-- BIND THIS VALUE TO formData.text IN ANGULAR ng-model="formData.text" -->
-			<input type="date" class="formfield" ng-model="formData.artistdate"></br>
-			<input type="text" class="formfield" placeholder="Artist name" ng-model="formData.artistname"></br>
-			<input type="text" class="formfield" placeholder="City" ng-model="formData.artistcity"></br>
-			<input type="text" class="formfield" placeholder="Description" ng-model="formData.artistdescription"></br>
-			<button type="submit" ng-click="createArtist()">Add</button>
-		</form>
-	</div>
+<!-- Artist List -->
+<div id="artist-list">
+	
+	Search: <input ng-model="query"></br></br>
+	
+	<div class="col-sm-offset-4">
+		<div class="artistlist" ng-repeat="artist in artists | filter:query | orderBy:'date':true | limitTo: 10">
+			<a href="#/edit/{{artist._id}}">Edit</a>
+			<a href="#/preview/{{artist._id}}">Preview</a>
 
-	<img src="line.png"></br>
+			<form name="editDate">
+				{{artist.date | date: fullDate}}</br>
+				Change to date: <input class="formfield" type="date" ng-model="artist.date">
+				<button ng-click="changeDate(artist._id, artist)">Save</button>
+			</form>
 
-	<!-- Artist List -->
-	<div id="artist-list">
-		<div class="col-sm-4 col-sm-offset-4">
+			{{ artist.name }}</br>
+			{{ artist.description }}</br>
 
-			<!-- LOOP OVER THE ARTISTS IN $scope.todos -->
-			Search: <input ng-model="query"></br>
-			
-			<div class="artistlist" ng-repeat="artist in artists | filter:query | orderBy:'date':true">
-					<a href="#/edit/{{artist._id}}">Edit</a>
-					<a href="#/preview/{{artist._id}}">Preview</a>
-
-					<form name="editDate">
-						{{artist.date | date: fullDate}}</br>
-						Change to date: <input class="formfield" type="date" ng-model="artist.date">
-						<button ng-click="changeDate(artist._id, artist)">Save</button>
-					</form>
-
-					{{ artist.name }}</br>
-					{{ artist.description }}</br>
-
-					<button ng-click="deleteArtist(artist._id)">Delete</button>
-			</div>
-
+			<button ng-click="deleteArtist(artist._id)">Delete</button>
 		</div>
 	</div>
-	
 </div>
-</div>
+
+
+
