@@ -16,6 +16,7 @@
     "connect-flash" : "~0.1.1",
     "gridfs-stream" : "0.4.1",
     "bcrypt-nodejs" : "latest",
-    "prerender-node": "latest"
+    "prerender-node": "latest",
+    "angulartics" : "latest"
   }
 }

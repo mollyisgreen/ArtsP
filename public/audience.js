@@ -6,7 +6,7 @@ var currentYear = pageDate.getFullYear();
 var todayInMill = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
 
 
-var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
+var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'angulartics', 'angulartics.google.analytics'])
 
 .config(function($routeProvider, $locationProvider) {
   	$routeProvider
