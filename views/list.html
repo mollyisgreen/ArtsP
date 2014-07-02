@@ -22,18 +22,20 @@
 		<div class="col-sm-4 col-sm-offset-4">
 
 			<!-- LOOP OVER THE ARTISTS IN $scope.todos -->
-			<div class="artistlist" ng-repeat="artist in artists | orderBy:'date'">
+			Search: <input ng-model="query"></br>
+			
+			<div class="artistlist" ng-repeat="artist in artists | filter:query | orderBy:'date':true">
 					<a href="#/edit/{{artist._id}}">Edit</a>
 					<a href="#/preview/{{artist._id}}">Preview</a>
 
 					<form name="editDate">
-						{{artist.date}}</br>
-						Date (YY/MM/DD): <input type="date" ng-model="artist.date"></br>
+						{{artist.date | date: fullDate}}</br>
+						Change to date: <input class="formfield" type="date" ng-model="artist.date">
 						<button ng-click="changeDate(artist._id, artist)">Save</button>
 					</form>
 
 					{{ artist.name }}</br>
-					{{ artist.city }}</br>
+					{{ artist.description }}</br>
 
 					<button ng-click="deleteArtist(artist._id)">Delete</button>
 			</div>
