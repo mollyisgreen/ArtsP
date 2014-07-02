@@ -49,6 +49,7 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload'])
 			        pageDescription: 'Showcasing the artist of the day: ' + $scope.artist[0].name
 			    };
 			} else {
+				console.log("pleleeeease");
 				$location.path('/');
 			}
 
