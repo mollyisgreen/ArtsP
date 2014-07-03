@@ -29,10 +29,18 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 	$http.get('/artists')
 		.success(function(data) {
 			$scope.artists = data;
+
+			// variables for editor pagination, ng-repeat
+			$scope.pageSize = 10;
+			$scope.currentPage = 0;
+			$scope.numberOfPages=function(){
+		        return Math.ceil(data.length/$scope.pageSize);                
+		    }
 		})
 		.error(function(data) {
 			console.log('Error: ' + data);
 		});
+
 
 	// when submitting the add form, send the text to the node API
 	$scope.createArtist = function() {
@@ -76,6 +84,14 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 			});
 	};
 
+})
+
+// startFrom filter for ng-repeat, allows pagination
+.filter('startFrom', function() {
+    return function(input, start) {
+        start = +start; //parse to int
+        return input.slice(start);
+    }
 })
 
 .controller('editController', function($scope, $routeParams, $http, $upload) {

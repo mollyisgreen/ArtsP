@@ -15,7 +15,7 @@
 	<div class="editorSearch">Search: <input ng-model="query"></div>
 	
 	<div class="col-sm-offset-4">
-		<div class="artistlist" ng-repeat="artist in artists | filter:query | orderBy:'date':true | limitTo: 10">
+		<div class="artistlist" ng-repeat="artist in artists | filter:query | orderBy:'date':true | startFrom:currentPage*pageSize | limitTo:pageSize">
 			<a href="#/edit/{{artist._id}}">Edit</a>
 			<a href="#/preview/{{artist._id}}">Preview</a>
 
@@ -30,6 +30,12 @@
 
 			<button ng-click="deleteArtist(artist._id)">Delete</button>
 		</div>
+
+		<button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">Previous</button>
+	    {{currentPage+1}}/{{numberOfPages()}}
+	    <button ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">Next</button>
+
+
 	</div>
 </div>
 
