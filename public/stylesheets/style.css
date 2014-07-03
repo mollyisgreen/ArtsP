@@ -136,6 +136,11 @@ a:hover, a:visited, a:link, a:active
 	margin-left: 20px;
 }
 
+.largetext {
+	font-family: Courier;
+	font-size: 30px;
+}
+
 /********** features *********/
 
 
@@ -145,10 +150,6 @@ a:hover, a:visited, a:link, a:active
 
 /********** error page *********/
 
-.error {
-	font-family: Courier;
-	font-size: 30px;
-}
 
 
 #sketch {
