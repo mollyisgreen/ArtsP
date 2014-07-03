@@ -10,12 +10,7 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'angu
 
 .config(function($routeProvider, $locationProvider) {
   	$routeProvider
-	    .when('/', {
-	    	redirectTo: '/show/' + todayInMill,
-	      	//controller:'indexController',
-	      	//templateUrl:'show'
-	    })
-	    .when('/show/:date', {
+  		.when('/show/:date', {
 	      controller:'indexController',
 	      templateUrl:'show'
 	    })
@@ -24,6 +19,11 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'angu
 	    })
 	    .when('/contact', {
 	      templateUrl:'contact'
+	    })
+	    .when('/', {
+	    	redirectTo: '/show/' + todayInMill,
+	      	//controller:'indexController',
+	      	//templateUrl:'show'
 	    })
 	    .otherwise({
 	      redirectTo:'/'
@@ -84,7 +84,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'angu
 			}
 		})
 		.error(function(data) {
-			$location.path('/');
 			console.log('Error: ' + data);
 	});
 
