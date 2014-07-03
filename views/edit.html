@@ -1,10 +1,11 @@
-<a href="#/">Dashboard</a>
-
 <!-- TODO: is this correct directive? -->
 <div ng-repeat="artist in artist">
 
+	<a href="#/">Dashboard</a>
+	<button ng-click="saveChange(artist._id, $index)">Save</button>
+
 	<!-- enter feature -->
-	<form class="interview" name="revisionForm">
+	<form class="featureform" name="revisionForm">
 
 		<button ng-click="textfeature=!textfeature">Text</button>
 		<button ng-click="embedfeature=!embedfeature">Embedded Link</button>
@@ -30,26 +31,23 @@
 
 	</form>
 
-	<img class="editPhotoDisplay" src={{artist.photoPath}} alt="displayartistphoto">
+	<div class="artistinfo">
+		<img class="editPhotoDisplay" src={{artist.photoPath}} alt="displayartistphoto">
 
-	<!-- interview -->
-	<div class="interview">
-
-		<div ng-file-drop="uploadArtistPhoto($files)" class="addPhoto" 
-			ng-file-drag-over-class="dropOverPhoto" ng-model="artist.photo">Drop photo here</div>
-
-		<form class="interview" name="revisionForm">
-			{{artist.date}}</br>
-			Date (YY/MM/DD): <input type="date" class="formfield" ng-model="artist.date"></br>
-			Artist: <input type="text" class="formfield" ng-model="artist.name"></br>
-			City: <input type="text" class="formfield" ng-model="artist.city"></br>
-			Description: <input type="text" class="formfield" ng-model="artist.description"></br>
-			Question: <input type="text" class="formfield" ng-model="artist.question"></br>
-			Answer: <input type="text" class="formfield" ng-model="artist.answer"></br>
+		<!-- interview -->
+		<form class="editinterview" name="revisionForm">
+			{{artist.date | date: fullDate}}</br>
+			<b>Change to date:</b> <input type="date" class="formfield" ng-model="artist.date"></br>
+			<b>Artist:</b> <input type="text" class="formfield" ng-model="artist.name"></br>
+			<b>City:</b> <input type="text" class="formfield" ng-model="artist.city"></br>
+			<b>Description:</b> <input type="text" class="formfield" ng-model="artist.description"></br>
+			<b>Question:</b> <input type="text" class="formfield" ng-model="artist.question"></br>
+			<b>Answer:</b> <input type="text" class="formfield" ng-model="artist.answer"></br>
 			<br>
-			<a href="#/" class="btn">Cancel</a>
-			<button ng-click="saveChange(artist._id, $index)">Save</button>
-			<button ng-click="destroy()" ng-show="project.$remove">Delete</button>
+			<button ng-click="deleteArtist(artist._id)">Delete</button>
 		</form>
 	</div>
+
+	<div ng-file-drop="uploadArtistPhoto($files)" class="addPhoto" 
+		ng-file-drag-over-class="dropOverPhoto" ng-model="artist.photo">Drop bio photo here</div>
 </div>

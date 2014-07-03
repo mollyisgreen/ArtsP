@@ -21,7 +21,7 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 })
 
 
-.controller('mainController', function($scope, $http) {
+.controller('mainController', function($scope, $http, $location) {
 
 	$scope.formData = {};
 
@@ -64,6 +64,7 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 			.success(function(data) {
 				$scope.artists = data;
 				console.log(data);
+				$location.path('#/');
 			})
 			.error(function(data) {
 				console.log('Error: ' + data);
