@@ -97,7 +97,6 @@ a:hover, a:visited, a:link, a:active
 	padding-bottom: 500px;
 }
 
-
 .rightinterview {
 	float: right;
 	background-image: url('/rightinterview.png');
@@ -127,6 +126,14 @@ a:hover, a:visited, a:link, a:active
 	position: absolute;
 	margin-top: -510px;
 	margin-left: 200px;
+}
+
+#previous {
+	margin-right: 20px;
+}
+
+#next {
+	margin-left: 20px;
 }
 
 
