@@ -136,6 +136,12 @@ a:hover, a:visited, a:link, a:active
 	margin-left: 20px;
 }
 
+/********** features *********/
+
+
+.imagefeature {
+	width: 800px;
+}
 
 /********** error page *********/
 

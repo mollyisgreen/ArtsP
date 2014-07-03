@@ -78,7 +78,7 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'angu
 				$scope.iframesrc = $sce.trustAsResourceUrl($scope.artist[0].embedlink);
 				document.getElementById('imagefeature').style.display = 'none'; 
 				document.getElementById('textfeature').style.display = 'none'; 
-			} else if(artist[0].visualContentPath) {
+			} else if($scope.artist[0].visualContentPath) {
 				document.getElementById('iframefeature').style.display = 'none'; 
 				document.getElementById('textfeature').style.display = 'none'; 
 			}
