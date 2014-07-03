@@ -1,4 +1,4 @@
-<div id="artist-form">
+<div id="artist-form" class="addArtistForm">
 	<form>
 		<!-- BIND THIS VALUE TO formData.text IN ANGULAR ng-model="formData.text" -->
 		<input type="date" class="formfield" ng-model="formData.artistdate"></br>
@@ -8,12 +8,11 @@
 		<button type="submit" ng-click="createArtist()">Add</button>
 	</form>
 </div>
-</br>
 
 <!-- Artist List -->
 <div id="artist-list">
 	
-	Search: <input ng-model="query"></br></br>
+	<div class="editorSearch">Search: <input ng-model="query"></div>
 	
 	<div class="col-sm-offset-4">
 		<div class="artistlist" ng-repeat="artist in artists | filter:query | orderBy:'date':true | limitTo: 10">
