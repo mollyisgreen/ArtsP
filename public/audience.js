@@ -23,6 +23,12 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'angu
 	      controller:'indexController',
 	      templateUrl:'show'
 	    })
+	    .when('/about', {
+	      templateUrl:'about'
+	    })
+	    .when('/contact', {
+	      templateUrl:'contact'
+	    })
 	    .otherwise({
 	      redirectTo:'/'
     });
@@ -66,11 +72,19 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'angu
 			if($scope.releaseDate == firstPostMill)
 				document.getElementById('next').style.display = 'none'; 
 
+			// only relevant feature is visible
 			if($scope.artist[0].embedlink) {
 				// safe iframe src link
 				$scope.iframesrc = $sce.trustAsResourceUrl($scope.artist[0].embedlink);
-			} else {
+				document.getElementById('imagefeature').style.display = 'none'; 
+				document.getElementById('textfeature').style.display = 'none'; 
+			} else if(artist[0].visualContentPath) {
 				document.getElementById('iframefeature').style.display = 'none'; 
+				document.getElementById('textfeature').style.display = 'none'; 
+			}
+			else {
+				document.getElementById('iframefeature').style.display = 'none'; 
+				document.getElementById('imagefeature').style.display = 'none'; 
 			}
 		})
 		.error(function(data) {

@@ -1,5 +1,25 @@
 <% include audienceheader.html %>
 	
-	<div ng-view></div>
+<div class="title">Atom Review</div>
+<div class="slogan">showcasing one rising artist per day</div>
+
+<div class="menubar">
+	<img src="line.png">
+
+	<div id="categorycontainer">
+		<a class="categories" href="/">film</a>
+		<a class="categories" href="/">music</a>
+		<a class="categories" href="/">performance</a>
+		<a class="categories" href="/">written</a>
+		<div class="categories">|</div>
+		<a class="categories" href="#!/about">about</a>
+		<a class="categories" href="#!/contact">contact</a>
+	</div>
+
+	<img src="line.png"></br>
+</div>
+
+
+<div ng-view></div>
 
 <% include footer.html %>
