@@ -19,10 +19,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'angu
 	      controller:'indexController',
 	      templateUrl:'show'
 	    })
-	    .when('/show/:date', {
-	      controller:'indexController',
-	      templateUrl:'show'
-	    })
 	    .when('/about', {
 	      templateUrl:'about'
 	    })
