@@ -39,10 +39,11 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 
 .controller('indexController', function($scope, $routeParams, $http, $sce, $location) {
 	
+	console.log("basdfasdfasdfas");
+
 	$http.get('/show/' + $routeParams.date)
 		.success(function(data) {
 			$scope.artist = data;
-			console.log(data);
 
 			// if artist doesn't exist, redirect
 			if ($scope.artist[0]) {
@@ -101,7 +102,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 	$http.get('/show/' + discoverMillisecond)
 		.success(function(data) {
 			$scope.artist = data;
-			console.log(data);
 			$scope.artist[0].discoverlink1 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink1);
 			$scope.artist[0].discoverlink2 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink2);
 			$scope.artist[0].discoverlink3 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink3);
