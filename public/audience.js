@@ -37,7 +37,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 .controller('indexController', function($scope, $routeParams, $http, $sce, $location) {
 
 	var firstPostMill = Date.parse("6/25/2014");
-	console.log(firstPostMill);
 	
 	$http.get('/show/' + $routeParams.date)
 		.success(function(data) {
