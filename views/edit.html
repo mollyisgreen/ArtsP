@@ -49,5 +49,32 @@
 	</div>
 
 	<div ng-file-drop="uploadArtistPhoto($files)" class="addPhoto" 
-		ng-file-drag-over-class="dropOverPhoto" ng-model="artist.photo">Drop bio photo here</div>
+		ng-file-drag-over-class="dropOverPhoto" ng-model="artist.photo">Drop bio photo here
+	</div>
+
+
+	<div class="discoverSection">
+		<div class="discoverForm">
+			<b>Discover 1:</b></br>
+			iframe link: <input type="text" ng-model="artist.discoverlink1"/></br>
+			iframe width: <input type="text" ng-model="artist.discoverwidth1"/></br>
+			iframe height: <input type="text" ng-model="artist.discoverheight1"/></br>
+		</div>
+
+		<div class="discoverForm">
+			<b>Discover 2:</b></br>
+			iframe link: <input type="text" ng-model="artist.discoverlink2"/></br>
+			iframe width: <input type="text" ng-model="artist.discoverwidth2"/></br>
+			iframe height: <input type="text" ng-model="artist.discoverheight2"/></br>
+		</div>
+
+		<div class="discoverForm">
+			<b>Discover 3:</b></br>
+			iframe link: <input type="text" ng-model="artist.discoverlink3"/></br>
+			iframe width: <input type="text" ng-model="artist.discoverwidth3"/></br>
+			iframe height: <input type="text" ng-model="artist.discoverheight3"/></br>
+		</div>
+		<button ng-click="saveDiscovers(artist._id, $index)">Save Discover Links</button>
+	</div>
+
 </div>
