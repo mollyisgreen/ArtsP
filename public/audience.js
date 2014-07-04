@@ -6,7 +6,9 @@ var currentYear = pageDate.getFullYear();
 var todayInMill = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
 
 
-var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'angulartics', 'angulartics.google.analytics'])
+var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 
+	'angulartics', 'angulartics.google.analytics', 
+	'infinite-scroll'])
 
 .config(function($routeProvider, $locationProvider) {
   	$routeProvider
@@ -90,7 +92,16 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'angu
 
 })
 
-.controller('discoverController', function($scope, $http) {
+.controller('discoverController', function($scope, $routeParams, $http, $sce, $location) {
+
+	$scope.images = [1, 2, 3, 4, 5, 6, 7, 8];
+
+	$scope.myPagingFunction = function() {
+	    var last = $scope.images[$scope.images.length - 1];
+	    for(var i = 1; i <= 8; i++) {
+	      $scope.images.push(last + i);
+	    }
+	};
 
 
 });
