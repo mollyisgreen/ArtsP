@@ -1,14 +1,16 @@
 /********** discover *********/
 
+.discover {
+	background-color: #F2F2F2;
+	margin-top: 50px;
+}
+
 .discoverTitle {
 	font-family: NoticiaText;
 	font-size: 18px;
 	padding-top: 30px;
 }
 
-
-.discover {
-	background-color: #F2F2F2;
-	margin-top: 50px;
+.discoverUnit {
+	margin: 20px 20px 20px 20px;
 }
-
