@@ -5,6 +5,9 @@ var currentDate = pageDate.getDate();
 var currentYear = pageDate.getFullYear();
 var todayInMill = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
 
+// first/release date of atom review
+var firstPostMill = Date.parse("6/25/2014");
+
 
 var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 
 	'angulartics', 'angulartics.google.analytics', 
@@ -35,8 +38,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 })
 
 .controller('indexController', function($scope, $routeParams, $http, $sce, $location) {
-
-	var firstPostMill = Date.parse("6/25/2014");
 	
 	$http.get('/show/' + $routeParams.date)
 		.success(function(data) {
@@ -93,14 +94,24 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 
 .controller('discoverController', function($scope, $routeParams, $http, $sce, $location) {
 
-	$scope.images = [1, 2, 3, 4, 5, 6, 7, 8];
-
 	$scope.myPagingFunction = function() {
-	    var last = $scope.images[$scope.images.length - 1];
+	    var last = $scope.artists[$scope.artists.length - 1];
 	    for(var i = 1; i <= 8; i++) {
-	      $scope.images.push(last + i);
+	      $scope.artists.push(last + i);
 	    }
 	};
+	
+	$http.get('/show/' + todayInMill)
+		.success(function(data) {
+			$scope.artists = data;
+			console.log(data);
+			$scope.discoveriframe1 = $sce.trustAsResourceUrl($scope.artists[0].discoverlink1);
+			$scope.discoveriframe2 = $sce.trustAsResourceUrl($scope.artists[0].discoverlink2);
+			$scope.discoveriframe3 = $sce.trustAsResourceUrl($scope.artists[0].discoverlink3);
+		})
+		.error(function(data) {
+			console.log('Error: ' + data);
+	});
 
 
 });
