@@ -117,18 +117,24 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 
 	    $http.get('/show/' + discoverMillisecond)
 			.success(function(data) {
-				console.log(discoverMillisecond);
 				$scope.artist = data;
 				console.log(data);
 
-				$scope.artist[0].discoverlink1 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink1);
-				$scope.artist[0].discoverlink2 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink2);
-				$scope.artist[0].discoverlink3 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink3);
-				$scope.artistList.push($scope.artist[0]);
+				// if artist doesn't exist, stop scrolling
+				if ($scope.artist[0]) {
+					$scope.artist[0].discoverlink1 = 
+					$sce.trustAsResourceUrl($scope.artist[0].discoverlink1);
+					$scope.artist[0].discoverlink2 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink2);
+					$scope.artist[0].discoverlink3 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink3);
+					$scope.artistList.push($scope.artist[0]);
+			    } else {
+					$scope.endOfList = true;
+				}
 			})
 			.error(function(data) {
 				console.log('Error: ' + data);
 				$scope.endOfList = true;
+				console.log("isthiseverhappeningherehaasdfasdfasdf");
 		});
 
 	};
