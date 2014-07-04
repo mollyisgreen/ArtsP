@@ -76,7 +76,6 @@ exports.indexArtist = function(req, res){
     // millisecond for date you want to find
     var millConvert = new Date(+req.params.date);
     var searchDate = millConvert.toISOString();
-    console.log(searchDate);
 
     Artist.find({
         date : searchDate
@@ -169,10 +168,6 @@ exports.deleteArtist = function(req, res){
 
 
 exports.saveChange = function(req, res){
-/*
-    var dateLong = req.body.date;
-    var dateShort = dateLong.substring(0, 10);
-*/
 
     db.collection("artists").update(
         { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
@@ -223,6 +218,28 @@ exports.saveTextFeature = function(req, res){
         });
 }
 
+exports.saveDiscoverLinks = function(req, res){
+    db.collection("artists").update(
+        { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
+        {
+            $set: {
+                    discoverlink1      : req.body.discoverlink1,
+                    discoverheight1    : req.body.discoverheight1,
+                    discoverwidth1     : req.body.discoverwidth1,
+                    discoverlink2      : req.body.discoverlink2,
+                    discoverheight2    : req.body.discoverheight2,
+                    discoverwidth2     : req.body.discoverwidth2,
+                    discoverlink3      : req.body.discoverlink1,
+                    discoverheight3    : req.body.discoverheight3,
+                    discoverwidth3     : req.body.discoverwidth3,
+            }
+        },
+        function (err, result) {
+            if (err) throw err;
+        });
+}
+
+
 exports.saveEmbedFeature = function(req, res){
     db.collection("artists").update(
         { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
@@ -238,38 +255,6 @@ exports.saveEmbedFeature = function(req, res){
         function (err, result) {
             if (err) throw err;
         });
-}
-
-
-
-exports.savePhoto = function(req, res){
-
-    console.log(req.files.file.path);
-
-    // get the temporary location of the file
-    var tmp_path = req.files.file.path;
-    var target_path = './public/artistphotos/' + req.params.artist_id + '.png';
-    var saved_path = '/artistphotos/' + req.params.artist_id + '.png';
-    
-    // move the file from the temporary location to the intended location
-    fs.rename(tmp_path, target_path, function(err) {
-        if (err) throw err;
-        // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
-        fs.unlink(tmp_path, function() {
-            if (err) throw err;
-            res.send('File uploaded to: ' + target_path + ' - ' + req.files.file.size + ' bytes');
-        });
-    });
-
-    db.collection("artists").update(
-        { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
-        // is req.files sufficient? should i go deeper into that?
-        { $set: { 'photoPath' : saved_path } },
-        function (err, result) {
-            if (err) throw err;
-        }
-    );
-
 }
 
 
@@ -303,6 +288,36 @@ exports.saveVisualContent = function(req, res){
                         embedwidth: ""
                     }
         },
+        function (err, result) {
+            if (err) throw err;
+        }
+    );
+
+}
+
+exports.savePhoto = function(req, res){
+
+    console.log(req.files.file.path);
+
+    // get the temporary location of the file
+    var tmp_path = req.files.file.path;
+    var target_path = './public/artistphotos/' + req.params.artist_id + '.png';
+    var saved_path = '/artistphotos/' + req.params.artist_id + '.png';
+    
+    // move the file from the temporary location to the intended location
+    fs.rename(tmp_path, target_path, function(err) {
+        if (err) throw err;
+        // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
+        fs.unlink(tmp_path, function() {
+            if (err) throw err;
+            res.send('File uploaded to: ' + target_path + ' - ' + req.files.file.size + ' bytes');
+        });
+    });
+
+    db.collection("artists").update(
+        { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
+        // is req.files sufficient? should i go deeper into that?
+        { $set: { 'photoPath' : saved_path } },
         function (err, result) {
             if (err) throw err;
         }

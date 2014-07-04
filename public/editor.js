@@ -148,6 +148,16 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 			});
 	};
 
+	$scope.saveDiscoverLinks = function(id, index) {
+		$http.post('/saveDiscoverLinks/' + id, $scope.artist[index])
+			.success(function(data) {
+				$scope.artist = data;
+				console.log(data);
+			})
+			.error(function(data) {
+				console.log('Error: ' + data);
+			});
+	};
 
 	$scope.uploadArtistPhoto = function($files) {
 		console.log("onfileselectthing");

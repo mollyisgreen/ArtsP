@@ -95,6 +95,7 @@ app.post('/savePhoto/:artist_id', db.savePhoto);
 app.post('/saveVisualContent/:artist_id', db.saveVisualContent);
 app.post('/saveTextFeature/:artist_id', db.saveTextFeature);
 app.post('/saveEmbedFeature/:artist_id', db.saveEmbedFeature);
+app.post('/saveDiscoverLinks/:artist_id', db.saveDiscoverLinks);
 
 
 http.createServer(app).listen(app.get('port'), function(){
