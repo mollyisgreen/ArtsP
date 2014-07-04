@@ -30,14 +30,3 @@
 
 <a id="previous" href="#!/show/{{previous}}"><img src="leftarrow.png"></a>
 <a id="next" href="#!/show/{{next}}"><img src="rightarrow.png"></a>
-
-
-
-<div class="discover" ng-controller="discoverController" infinite-scroll="myPagingFunction()" infinite-scroll-distance="3">
-
-	<div class="discoverTitle">Discover other artists</div>
-
-    <img ng-repeat='image in images' ng-src='http://placehold.it/225x250&text={{image}}'>
-
-
-</div>
