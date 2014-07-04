@@ -229,7 +229,7 @@ exports.saveDiscoverLinks = function(req, res){
                     discoverlink2      : req.body.discoverlink2,
                     discoverheight2    : req.body.discoverheight2,
                     discoverwidth2     : req.body.discoverwidth2,
-                    discoverlink3      : req.body.discoverlink1,
+                    discoverlink3      : req.body.discoverlink3,
                     discoverheight3    : req.body.discoverheight3,
                     discoverwidth3     : req.body.discoverwidth3,
             }

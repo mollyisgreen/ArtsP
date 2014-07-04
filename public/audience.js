@@ -96,6 +96,20 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 
 	var discoverMillisecond = todayInMill;
 	$scope.endOfList = false;
+	$scope.artistList = [];
+
+	$http.get('/show/' + discoverMillisecond)
+		.success(function(data) {
+			$scope.artist = data;
+			console.log(data);
+			$scope.artistList.push($scope.artist[0]);
+				//$scope.discoveriframe1 = $sce.trustAsResourceUrl($scope.artists[0].discoverlink1);
+				//$scope.discoveriframe2 = $sce.trustAsResourceUrl($scope.artists[0].discoverlink2);
+				//$scope.discoveriframe3 = $sce.trustAsResourceUrl($scope.artists[0].discoverlink3);
+			})
+			.error(function(data) {
+				console.log('Error: ' + data);
+			});
 
 	$scope.myPagingFunction = function() {
 
@@ -106,32 +120,21 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 	    }
 	    */
 	    
-	    discoverMillisecond -= 86400000;
+	    discoverMillisecond = todayInMill - 86400000;
 
 	    $http.get('/show/' + discoverMillisecond)
 			.success(function(data) {
-				console.log("si this even happn");
+				console.log(discoverMillisecond);
 				$scope.artist = data;
 				console.log(data);
-				$scope.endOfList=true;
+				$scope.artistList.push($scope.artist[0]);
 			})
 			.error(function(data) {
 				console.log('Error: ' + data);
+				$scope.endOfList = true;
 		});
 
 	};
-
-	$http.get('/show/' + discoverMillisecond)
-		.success(function(data) {
-			$scope.artist = data;
-			console.log(data);
-				//$scope.discoveriframe1 = $sce.trustAsResourceUrl($scope.artists[0].discoverlink1);
-				//$scope.discoveriframe2 = $sce.trustAsResourceUrl($scope.artists[0].discoverlink2);
-				//$scope.discoveriframe3 = $sce.trustAsResourceUrl($scope.artists[0].discoverlink3);
-			})
-			.error(function(data) {
-				console.log('Error: ' + data);
-		});
 
 
 });
