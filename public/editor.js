@@ -95,7 +95,7 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
     }
 })
 
-.controller('editController', function($scope, $routeParams, $http, $upload) {
+.controller('editController', function($scope, $routeParams, $http, $upload, $sce) {
 	
 	// hide all feature embedding options
 	$scope.textfeature = true;
@@ -107,6 +107,9 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 		.success(function(data) {
 			$scope.artist = data;
 			console.log(data);
+			$scope.discoveriframe1 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink1);
+			$scope.discoveriframe2 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink2);
+			$scope.discoveriframe3 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink3);
 		})
 		.error(function(data) {
 			console.log('Error: ' + data);
