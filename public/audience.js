@@ -113,9 +113,7 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 
 	$scope.myPagingFunction = function() {
 	    
-	    //discoverMillisecond -= 86400000;
-	    discoverMillisecond = todayInMill - 86400000;
-
+	    discoverMillisecond -= 86400000;
 
 	    $http.get('/show/' + discoverMillisecond)
 			.success(function(data) {
