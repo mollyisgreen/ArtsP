@@ -2,7 +2,6 @@
 <div ng-repeat="artist in artist">
 
 	<a href="#/">Dashboard</a>
-	<button ng-click="saveChange(artist._id, $index)">Save</button>
 
 	<!-- enter feature -->
 	<form class="featureform" name="revisionForm">
@@ -32,7 +31,17 @@
 	</form>
 
 	<div class="artistinfo">
+		<!--
 		<img class="editPhotoDisplay" src={{artist.photoPath}} alt="displayartistphoto">
+-->
+
+		<form>
+			<input type="file" id="files" onchange="uploadBioPic()">
+			<p id="status">Upload artist bio photo</p>
+				<!--<div style="border:1px solid gray;width:300px;"  id="preview">
+					<img src="/images/default.png" style="width:300px;" /></div>-->
+		</form>
+
 
 		<!-- interview -->
 		<form class="editinterview" name="revisionForm">
@@ -44,16 +53,30 @@
 			<b>Question:</b> <input type="text" class="formfield" ng-model="artist.question"></br>
 			<b>Answer:</b> <input type="text" class="formfield" ng-model="artist.answer"></br>
 			<br>
+			<button ng-click="saveChange(artist._id, $index)">Save</button>
 			<button ng-click="deleteArtist(artist._id)">Delete</button>
 		</form>
 	</div>
 
+<!--
 	<div ng-file-drop="uploadArtistPhoto($files)" class="addPhoto" 
 		ng-file-drag-over-class="dropOverPhoto" ng-model="artist.photo">Drop bio photo here
 	</div>
 
 
-	
+
+
+<form method="POST" action="/submit_form/">
+    <input type="hidden" id="avatar_url" name="avatar_url" value="/public/images/default.png" />
+    <input type="submit" value="Update profile" />
+</form>
+-->
+
+
+
+
+
+
 
 
 	<div class="discoverSection">

@@ -163,7 +163,6 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 	};
 
 	$scope.uploadArtistPhoto = function($files) {
-		console.log("onfileselectthing");
 		console.log($files[0]);
 
 	    //$files: an array of files selected, each file has name, size, and type.

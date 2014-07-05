@@ -10,6 +10,7 @@ dotenv.load();
 
 var flash = require('connect-flash');
 var express = require('express');
+var crypto = require('crypto');
 var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
@@ -64,6 +65,10 @@ app.configure(function() {
 
 });
 
+// amazon s3
+var AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY;
+var AWS_SECRET_KEY = process.env.AWS_SECRET_KEY;
+var S3_BUCKET = process.env.S3_BUCKET
 
 require('./routes/index.js')(app, passport);
 require('./routes/dashboard.js')(app, passport);
@@ -96,6 +101,31 @@ app.post('/saveVisualContent/:artist_id', db.saveVisualContent);
 app.post('/saveTextFeature/:artist_id', db.saveTextFeature);
 app.post('/saveEmbedFeature/:artist_id', db.saveEmbedFeature);
 app.post('/saveDiscoverLinks/:artist_id', db.saveDiscoverLinks);
+
+// amazon s3
+app.get('/sign_s3', function(req, res){
+    var object_name = req.query.s3_object_name;
+    var mime_type = req.query.s3_object_type;
+
+    var now = new Date();
+    var expires = Math.ceil((now.getTime() + 10000)/1000); // 10 seconds from now
+    var amz_headers = "x-amz-acl:public-read";
+
+    var put_request = "PUT\n\n"+mime_type+"\n"+expires+"\n"+amz_headers+"\n/"+S3_BUCKET+"/"+object_name;
+
+    var signature = crypto.createHmac('sha1', AWS_SECRET_KEY).update(put_request).digest('base64');
+    signature = encodeURIComponent(signature.trim());
+    signature = signature.replace('%2B','+');
+
+    var url = 'https://'+S3_BUCKET+'.s3.amazonaws.com/'+object_name;
+
+    var credentials = {
+        signed_request: url+"?AWSAccessKeyId="+AWS_ACCESS_KEY+"&Expires="+expires+"&Signature="+signature,
+        url: url
+    };
+    res.write(JSON.stringify(credentials));
+    res.end();
+});
 
 
 http.createServer(app).listen(app.get('port'), function(){
