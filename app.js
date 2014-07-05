@@ -97,7 +97,7 @@ app.post('/saveTextFeature/:artist_id', db.saveTextFeature);
 app.post('/saveEmbedFeature/:artist_id', db.saveEmbedFeature);
 app.post('/saveDiscoverLinks/:artist_id', db.saveDiscoverLinks);
 
-// amazon s3
+
 
 // amazon s3
 var AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY;
@@ -128,6 +128,7 @@ app.get('/sign_s3', function(req, res){
     res.write(JSON.stringify(credentials));
     res.end();
 });
+
 
 
 http.createServer(app).listen(app.get('port'), function(){
