@@ -41,8 +41,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 })
 
 .controller('indexController', function($scope, $routeParams, $http, $sce, $location) {
-	
-	console.log("basdfasdfasdfas");
 
 	$http.get('/show/' + $routeParams.date)
 		.success(function(data) {
@@ -125,7 +123,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 				$scope.artist[0].discoverwidth2 = bandcampSize;
 				$scope.artist[0].discoverheight2 = bandcampSize;				
 			}
-
 
 			$scope.artist[0].discoverlink3 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink3);
 

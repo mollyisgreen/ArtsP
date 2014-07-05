@@ -3,12 +3,12 @@
 .discover {
 	background-color: #F2F2F2;
 	margin-top: 50px;
+	padding-top: 30px;
 }
 
 .discoverTitle {
 	font-family: NoticiaText;
 	font-size: 25px;
-	padding-top: 30px;
 	font-weight: bold;
 	margin-bottom: 20px;
 }
