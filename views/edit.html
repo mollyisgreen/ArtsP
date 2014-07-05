@@ -54,26 +54,27 @@
 
 
 	<div class="discoverSection">
-		<div class="discoverForm">
+		<form class="discoverForm">
 			<b>Discover 1:</b></br>
 			iframe link: <input type="text" ng-model="artist.discoverlink1"/></br>
-			iframe width: <input type="text" ng-model="artist.discoverwidth1"/></br>
-			iframe height: <input type="text" ng-model="artist.discoverheight1"/></br>
-		</div>
+			<input type="radio" name="linktype" value="vimeo" ng-model="artist.discoverlink1type">Vimeo</br>
+			<input type="radio" name="linktype" value="bandcamp" ng-model="artist.discoverlink1type">Bandcamp</br>
+		</form>
 
-		<div class="discoverForm">
+		<form class="discoverForm">
 			<b>Discover 2:</b></br>
 			iframe link: <input type="text" ng-model="artist.discoverlink2"/></br>
-			iframe width: <input type="text" ng-model="artist.discoverwidth2"/></br>
-			iframe height: <input type="text" ng-model="artist.discoverheight2"/></br>
-		</div>
+			<input type="radio" name="linktype" value="vimeo" ng-model="artist.discoverlink2type">Vimeo</br>
+			<input type="radio" name="linktype" value="bandcamp" ng-model="artist.discoverlink2type">Bandcamp</br>
+		</form>
 
-		<div class="discoverForm">
+		<form class="discoverForm">
 			<b>Discover 3:</b></br>
 			iframe link: <input type="text" ng-model="artist.discoverlink3"/></br>
-			iframe width: <input type="text" ng-model="artist.discoverwidth3"/></br>
-			iframe height: <input type="text" ng-model="artist.discoverheight3"/></br>
-		</div>
+			<input type="radio" name="linktype" value="vimeo" ng-model="artist.discoverlink3type">Vimeo</br>
+			<input type="radio" name="linktype" value="bandcamp" ng-model="artist.discoverlink3type">Bandcamp</br>
+		</form>
+
 		<button ng-click="saveDiscoverLinks(artist._id, $index)">Save Discover Links</button>
 	</div>
 

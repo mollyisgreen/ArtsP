@@ -14,38 +14,6 @@ mongoose.connect(uristring, function (err, db) {
 
 var db          = mongoose.connection;
 
-
-//////////////////////////////////////////////////////////////////////////////////////////
-
-// suggestions
-var suggestionSchema = mongoose.Schema({
-    content    : String,
-    updated_at : Date
-}) 
- 
-var Suggestion = mongoose.model( 'Suggestion', suggestionSchema );
-
-
-// create a suggestion
-exports.submitSuggestion = function(req, res){
-
-    var suggestion = new Suggestion({
-        content    : req.body.suggest,
-        updated_at : Date.now()   
-    });
-
-    suggestion.save(function (err) {
-        if (!err) {
-            return res.send(suggestion);        
-        } else {
-            console.log(err);
-            return res.send(404, { error: "Suggestion was not saved." });
-        }
-    });
-
-    return res.send(suggestion);
-}
-
 //////////////////////////////////////////////////////////////////////////////////////////
 
 var Artist = mongoose.model('Artist', {
@@ -97,7 +65,6 @@ exports.createArtist = function(req, res){
         description : req.body.artistdescription,
         answer      : req.body.artistanswer,
         date        : req.body.artistdate
-        //date        : dateShort
     });
 
     artist.save(function(err, artist) {
@@ -179,7 +146,6 @@ exports.saveChange = function(req, res){
                 'question'   : req.body.question,
                 'answer'    : req.body.answer,
                 'date'      : new Date(req.body.date)
-                //'date'      : dateShort
             }
         },
         function (err, result) {
@@ -224,14 +190,11 @@ exports.saveDiscoverLinks = function(req, res){
         {
             $set: {
                     discoverlink1      : req.body.discoverlink1,
-                    discoverheight1    : req.body.discoverheight1,
-                    discoverwidth1     : req.body.discoverwidth1,
+                    discoverlink1type  : req.body.discoverlink1type,
                     discoverlink2      : req.body.discoverlink2,
-                    discoverheight2    : req.body.discoverheight2,
-                    discoverwidth2     : req.body.discoverwidth2,
+                    discoverlink2type  : req.body.discoverlink2type,
                     discoverlink3      : req.body.discoverlink3,
-                    discoverheight3    : req.body.discoverheight3,
-                    discoverwidth3     : req.body.discoverwidth3,
+                    discoverlink3type  : req.body.discoverlink3type
             }
         },
         function (err, result) {
