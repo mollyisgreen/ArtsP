@@ -8,6 +8,9 @@ var todayInMill = Date.parse(currentMonth + '/' + currentDate + '/' + currentYea
 // first/release date of atom review
 var firstPostMill = Date.parse("6/25/2014");
 
+var vimeoWidth = 356;
+var vimeoHeight = 200;
+var bandcampSize = 200;
 
 var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 
 	'angulartics', 'angulartics.google.analytics', 
@@ -103,8 +106,37 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 		.success(function(data) {
 			$scope.artist = data;
 			$scope.artist[0].discoverlink1 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink1);
+
+			if($scope.artist[0].discoverlink1type=="vimeo"){
+				$scope.artist[0].discoverwidth1 = vimeoWidth;
+				$scope.artist[0].discoverheight1 = vimeoHeight;
+			} else {
+				$scope.artist[0].discoverwidth1 = bandcampSize;
+				$scope.artist[0].discoverheight1 = bandcampSize;				
+			}
+
+
 			$scope.artist[0].discoverlink2 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink2);
+
+			if($scope.artist[0].discoverlink2type=="vimeo"){
+				$scope.artist[0].discoverwidth2 = vimeoWidth;
+				$scope.artist[0].discoverheight2 = vimeoHeight;
+			} else {
+				$scope.artist[0].discoverwidth2 = bandcampSize;
+				$scope.artist[0].discoverheight2 = bandcampSize;				
+			}
+
+
 			$scope.artist[0].discoverlink3 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink3);
+
+			if($scope.artist[0].discoverlink3type=="vimeo"){
+				$scope.artist[0].discoverwidth3 = vimeoWidth;
+				$scope.artist[0].discoverheight3 = vimeoHeight;
+			} else {
+				$scope.artist[0].discoverwidth3 = bandcampSize;
+				$scope.artist[0].discoverheight3 = bandcampSize;				
+			}
+
 			$scope.artistList.push($scope.artist[0]);
 			})
 			.error(function(data) {
@@ -124,8 +156,37 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 				if ($scope.artist[0]) {
 					$scope.artist[0].discoverlink1 = 
 					$sce.trustAsResourceUrl($scope.artist[0].discoverlink1);
+
+					if($scope.artist[0].discoverlink1type=="vimeo"){
+						$scope.artist[0].discoverwidth1 = vimeoWidth;
+						$scope.artist[0].discoverheight1 = vimeoHeight;
+					} else {
+						$scope.artist[0].discoverwidth1 = bandcampSize;
+						$scope.artist[0].discoverheight1 = bandcampSize;				
+					}
+
+
 					$scope.artist[0].discoverlink2 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink2);
+
+					if($scope.artist[0].discoverlink2type=="vimeo"){
+						$scope.artist[0].discoverwidth2 = vimeoWidth;
+						$scope.artist[0].discoverheight2 = vimeoHeight;
+					} else {
+						$scope.artist[0].discoverwidth2 = bandcampSize;
+						$scope.artist[0].discoverheight2 = bandcampSize;				
+					}
+
+
 					$scope.artist[0].discoverlink3 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink3);
+
+					if($scope.artist[0].discoverlink3type=="vimeo"){
+						$scope.artist[0].discoverwidth3 = vimeoWidth;
+						$scope.artist[0].discoverheight3 = vimeoHeight;
+					} else {
+						$scope.artist[0].discoverwidth3 = bandcampSize;
+						$scope.artist[0].discoverheight3 = bandcampSize;				
+					}
+
 					$scope.artistList.push($scope.artist[0]);
 			    } else {
 					$scope.endOfList = true;
@@ -134,7 +195,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 			.error(function(data) {
 				console.log('Error: ' + data);
 				$scope.endOfList = true;
-				console.log("isthiseverhappeningherehaasdfasdfasdf");
 		});
 
 	};
