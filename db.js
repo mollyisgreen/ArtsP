@@ -265,8 +265,10 @@ exports.savePhoto = function(req, res){
     // get the temporary location of the file
     var tmp_path = req.files.file.path;
     var target_path = './public/artistphotos/' + req.params.artist_id + '.png';
-    var saved_path = '/artistphotos/' + req.params.artist_id + '.png';
-    
+    //var saved_path = '/artistphotos/' + req.params.artist_id + '.png';
+    //var saved_path = 'public/artistphotos/' + req.params.artist_id + '.png'
+
+
     // move the file from the temporary location to the intended location
     fs.rename(tmp_path, target_path, function(err) {
         if (err) throw err;
@@ -277,6 +279,7 @@ exports.savePhoto = function(req, res){
         });
     });
 
+/*
     db.collection("artists").update(
         { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
         // is req.files sufficient? should i go deeper into that?
@@ -285,5 +288,16 @@ exports.savePhoto = function(req, res){
             if (err) throw err;
         }
     );
+*/
+
+    db.collection("artists").update(
+        { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
+        // is req.files sufficient? should i go deeper into that?
+        { $set: { 'photoPath' : target_path } },
+        function (err, result) {
+            if (err) throw err;
+        }
+    );
+
 
 }
