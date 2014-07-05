@@ -36,7 +36,7 @@
 			function uploadBioPic(){
 				console.log("amazonbaby");
 			    var s3upload = new S3Upload({
-			        file_dom_selector: '#files',
+			        file_dom_selector: 'biopic',
 			        s3_sign_put_url: '/sign_s3',
 			        onProgress: function(percent, message) {
 			            $('#status').html('Upload progress: ' + percent + '% ' + message);
@@ -47,8 +47,7 @@
 			            $("#preview").html('<img src="'+public_url+'" style="width:300px;" />');
 			        },
 			        onError: function(status) {
-			            $('#status').html('Upload error: ' + status);
-			            console.log("asdfasdf");
+			            console.log(status);
 			        }
 			    });
 			}

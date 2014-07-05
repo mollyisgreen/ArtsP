@@ -34,13 +34,15 @@
 		<!--
 		<img class="editPhotoDisplay" src={{artist.photoPath}} alt="displayartistphoto">
 -->
-
 		<form>
-			<input type="file" id="files" onchange="uploadBioPic()">
+			<input type="file" id="biopic" name="files" onchange="uploadBioPic()">
 			<p id="status">Upload artist bio photo</p>
-				<!--<div style="border:1px solid gray;width:300px;"  id="preview">
-					<img src="/images/default.png" style="width:300px;" /></div>-->
 		</form>
+				<!--
+				ng-file-select="uploadBioPic()"
+
+				<div style="border:1px solid gray;width:300px;"  id="preview">
+					<img src="/images/default.png" style="width:300px;" /></div>-->
 
 
 		<!-- interview -->

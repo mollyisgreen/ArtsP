@@ -65,11 +65,6 @@ app.configure(function() {
 
 });
 
-// amazon s3
-var AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY;
-var AWS_SECRET_KEY = process.env.AWS_SECRET_KEY;
-var S3_BUCKET = process.env.S3_BUCKET
-
 require('./routes/index.js')(app, passport);
 require('./routes/dashboard.js')(app, passport);
 require('./passport')(passport);
@@ -103,6 +98,13 @@ app.post('/saveEmbedFeature/:artist_id', db.saveEmbedFeature);
 app.post('/saveDiscoverLinks/:artist_id', db.saveDiscoverLinks);
 
 // amazon s3
+
+// amazon s3
+var AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY;
+var AWS_SECRET_KEY = process.env.AWS_SECRET_KEY;
+var S3_BUCKET = process.env.S3_BUCKET
+
+
 app.get('/sign_s3', function(req, res){
     var object_name = req.query.s3_object_name;
     var mime_type = req.query.s3_object_type;
