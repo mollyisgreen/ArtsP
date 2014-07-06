@@ -100,12 +100,16 @@ app.post('/saveDiscoverLinks/:artist_id', db.saveDiscoverLinks);
 
 
 // amazon s3
-var AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY;
-var AWS_SECRET_KEY = process.env.AWS_SECRET_KEY;
+var AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY_ID;
+var AWS_SECRET_KEY = process.env.AWS_SECRET_ACCESS_KEY;
 var S3_BUCKET = process.env.S3_BUCKET
 
 
 app.get('/sign_s3', function(req, res){
+  console.log(AWS_SECRET_KEY);
+  console.log(AWS_ACCESS_KEY);
+  console.log(S3_BUCKET);
+  
     var object_name = req.query.s3_object_name;
     var mime_type = req.query.s3_object_type;
 
@@ -116,6 +120,7 @@ app.get('/sign_s3', function(req, res){
     var put_request = "PUT\n\n"+mime_type+"\n"+expires+"\n"+amz_headers+"\n/"+S3_BUCKET+"/"+object_name;
 
     var signature = crypto.createHmac('sha1', AWS_SECRET_KEY).update(put_request).digest('base64');
+        console.log("what about here?");
     signature = encodeURIComponent(signature.trim());
     signature = signature.replace('%2B','+');
 
@@ -126,6 +131,7 @@ app.get('/sign_s3', function(req, res){
         url: url
     };
     res.write(JSON.stringify(credentials));
+
     res.end();
 });
 
