@@ -3,6 +3,8 @@
 
 	<a href="#/">Dashboard</a>
 
+		<img src="https://atomreview.s3.amazonaws.com/visualfeature53b8b535ab13764e30000001">
+
 	<!-- enter feature -->
 	<form class="featureform" name="revisionForm">
 
@@ -23,9 +25,12 @@
 		</span>
 
 		<span ng-hide="imagefeature">
-			<div ng-file-drop="uploadVisualContent($files)" class="addPhoto" 
+			<!--<div ng-file-drop="uploadVisualContent($files)" class="addPhoto" 
 				ng-file-drag-over-class="dropOverPhoto" ng-model="artist.imagefeature">Drop visual here</div>
-			<button ng-click="saveImageFeature(artist._id, $index)">Save Feature</button>
+
+						<button ng-click="saveImageFeature(artist._id, $index)">Save Feature</button>-->
+			<input type="file" id="visualfeature" name="files" ng-file-select="uploadVisualFeature(artist._id, $files)">
+
 		</span>
 
 	</form>
@@ -34,7 +39,7 @@
 		
 		<img class="editPhotoDisplay" src={{bioPhotoPath}} alt="displayartistphoto">
 
-		<input type="file" id="biopic" name="files" ng-file-select="uploadBioPic(artist._id, $files)">
+		<input type="file" id="biopic" name="files" ng-file-select="uploadBioPic(artist._id)">
 		<p id="status">Upload artist bio photo</p>
 				<!--
 				<div style="border:1px solid gray;width:300px;"  id="preview">

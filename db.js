@@ -175,8 +175,7 @@ exports.saveTextFeature = function(req, res){
             $unset: { 
                         embedlink: "",
                         embedheight: "",
-                        embedwidth: "",
-                        visualContentPath: ""
+                        embedwidth: ""
                     }
         },
         function (err, result) {
@@ -212,8 +211,7 @@ exports.saveEmbedFeature = function(req, res){
                     embedheight    : req.body.embedheight,
                     embedwidth     : req.body.embedwidth
             },
-            $unset: { textfeature: "",
-                        visualContentPath: "" }
+            $unset: { textfeature: "" }
         },
         function (err, result) {
             if (err) throw err;
@@ -221,30 +219,12 @@ exports.saveEmbedFeature = function(req, res){
 }
 
 
-exports.saveVisualContent = function(req, res){
-
-    console.log(req.files.file.path);
-
-    // get the temporary location of the file
-    var tmp_path = req.files.file.path;
-    var target_path = './public/visualcontent/' + req.params.artist_id + '.png';
-    var saved_path = '/visualcontent/' + req.params.artist_id + '.png';
-    
-    // move the file from the temporary location to the intended location
-    fs.rename(tmp_path, target_path, function(err) {
-        if (err) throw err;
-        // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
-        fs.unlink(tmp_path, function() {
-            if (err) throw err;
-            res.send('File uploaded to: ' + target_path + ' - ' + req.files.file.size + ' bytes');
-        });
-    });
+exports.saveVisualFeature = function(req, res){
 
     db.collection("artists").update(
         { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
         // is req.files sufficient? should i go deeper into that?
         { 
-            $set: { 'visualContentPath' : saved_path },
             $unset: { textfeature: "",
                         embedlink: "",
                         embedheight: "",

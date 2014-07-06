@@ -92,7 +92,7 @@ app.get('/show/:date', db.indexArtist);
 app.post('/saveChange/:artist_id', db.saveChange);
 app.post('/changeDate/:artist_id', db.changeDate);
 //app.post('/savePhoto/:artist_id', db.savePhoto);
-app.post('/saveVisualContent/:artist_id', db.saveVisualContent);
+app.post('/saveVisualFeature/:artist_id', db.saveVisualFeature);
 app.post('/saveTextFeature/:artist_id', db.saveTextFeature);
 app.post('/saveEmbedFeature/:artist_id', db.saveEmbedFeature);
 app.post('/saveDiscoverLinks/:artist_id', db.saveDiscoverLinks);

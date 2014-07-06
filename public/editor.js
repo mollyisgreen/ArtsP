@@ -132,7 +132,7 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 	};
 
 	// upload artist's bio pic
-	$scope.uploadBioPic = function(id, $files) {
+	$scope.uploadBioPic = function(id) {
 
 		var s3upload = new S3Upload({
 				s3_object_name: 'biopic'+id,
@@ -176,6 +176,36 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 			});
 	};
 
+	$scope.uploadVisualFeature = function(id) {
+
+		var s3upload = new S3Upload({
+				s3_object_name: 'visualfeature'+id,
+			    file_dom_selector: 'visualfeature',
+			    s3_sign_put_url: '/sign_s3',
+			    onProgress: function(percent, message) {
+			        $('#status').html('Upload progress: ' + percent + '% ' + message);
+			    },
+			    onFinishS3Put: function(public_url) {
+			        $('#status').html('Upload completed. Uploaded to: '+ public_url);
+			        $("#avatar_url").val(public_url);
+			        $("#preview").html('<img src="'+public_url+'" style="width:300px;" />');
+			    },
+			    onError: function(status) {
+			        console.log(status);
+			    }
+			});
+
+		$http.post('/saveEmbedFeature/' + id, $scope.artist[index])
+			.success(function(data) {
+				$scope.artist = data;
+				console.log(data);
+			})
+			.error(function(data) {
+				console.log('Error: ' + data);
+			});
+	};
+
+
 	$scope.saveDiscoverLinks = function(id, index) {
 		$http.post('/saveDiscoverLinks/' + id, $scope.artist[index])
 			.success(function(data) {
@@ -186,68 +216,5 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 				console.log('Error: ' + data);
 			});
 	};
-
-	$scope.uploadArtistPhoto = function($files) {
-		console.log($files[0]);
-
-	    //$files: an array of files selected, each file has name, size, and type.
-	    // FOR MULTIPLE FILES
-	    // for (var i = 0; i < $files.length; i++) {
-	      // var file = $files[i];
-	    $scope.upload = $upload.upload({
-	        url: 'savePhoto/' + $scope.artist[0]._id, //upload.php script, node.js route, or servlet url
-	        // method: 'POST' or 'PUT',
-	        // headers: {'header-key': 'header-value'},
-	        // withCredentials: true,
-	        // data: {myObj: $scope.artist[0].photo},
-	        // file: file,
-	        file: $files[0], // or list of files: $files for html5 only
-	        /* set the file formData name ('Content-Desposition'). Default is 'file' */
-	        //fileFormDataName: myFile, //or a list of names for multiple files (html5).
-	        /* customize how data is added to formData. See #40#issuecomment-28612000 for sample code */
-	        //formDataAppender: function(formData, key, val){}
-	      }).progress(function(evt) {
-	        console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
-	      }).success(function(data, status, headers, config) {
-	        // file is uploaded successfully
-	        console.log(data);
-	      });
-	      //.error(...)
-	      //.then(success, error, progress); 
-	      //.xhr(function(xhr){xhr.upload.addEventListener(...)})// access and attach any event listener to XMLHttpRequest.
-	    //}
-  	};
-
-  	$scope.uploadVisualContent = function($files) {
-		console.log("onfileselectthing");
-		console.log($files[0]);
-
-	    //$files: an array of files selected, each file has name, size, and type.
-	    // FOR MULTIPLE FILES
-	    // for (var i = 0; i < $files.length; i++) {
-	      // var file = $files[i];
-	    $scope.upload = $upload.upload({
-	        url: 'saveVisualContent/' + $scope.artist[0]._id, //upload.php script, node.js route, or servlet url
-	        // method: 'POST' or 'PUT',
-	        // headers: {'header-key': 'header-value'},
-	        // withCredentials: true,
-	        // data: {myObj: $scope.artist[0].photo},
-	        // file: file,
-	        file: $files[0], // or list of files: $files for html5 only
-	        /* set the file formData name ('Content-Desposition'). Default is 'file' */
-	        //fileFormDataName: myFile, //or a list of names for multiple files (html5).
-	        /* customize how data is added to formData. See #40#issuecomment-28612000 for sample code */
-	        //formDataAppender: function(formData, key, val){}
-	      }).progress(function(evt) {
-	        console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
-	      }).success(function(data, status, headers, config) {
-	        // file is uploaded successfully
-	        console.log(data);
-	      });
-	      //.error(...)
-	      //.then(success, error, progress); 
-	      //.xhr(function(xhr){xhr.upload.addEventListener(...)})// access and attach any event listener to XMLHttpRequest.
-	    //}
-  	};
 
 });

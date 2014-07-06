@@ -53,6 +53,9 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 			        pageTitle : $scope.artist[0].name,
 			        pageDescription: 'Showcasing the artist of the day: ' + $scope.artist[0].name
 			    };
+
+			    $scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;
+			    
 			} else {
 				$location.path('/');
 			}
