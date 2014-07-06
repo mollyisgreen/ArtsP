@@ -107,6 +107,9 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 		.success(function(data) {
 			$scope.artist = data;
 			console.log(data);
+
+			$scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;
+
 			$scope.discoveriframe1 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink1);
 			$scope.discoveriframe2 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink2);
 			$scope.discoveriframe3 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink3);
@@ -117,6 +120,7 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 
 	// save interview/profile edits
 	$scope.saveChange = function(id, index) {
+
 		$http.post('/saveChange/' + id, $scope.artist[index])
 			.success(function(data) {
 				$scope.artist = data;
@@ -127,7 +131,9 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 			});
 	};
 
+	// upload artist's bio pic
 	$scope.uploadBioPic = function(id, $files) {
+
 		var s3upload = new S3Upload({
 				s3_object_name: 'biopic'+id,
 			    file_dom_selector: 'biopic',
@@ -136,16 +142,6 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 			        $('#status').html('Upload progress: ' + percent + '% ' + message);
 			    },
 			    onFinishS3Put: function(public_url) {
-
-			    	$http.post('/savePhoto/' + id, public_url)
-						.success(function(data) {
-							console.log(data);
-						})
-						.error(function(data) {
-							console.log('Error: ' + data);
-						});
-
-
 			        $('#status').html('Upload completed. Uploaded to: '+ public_url);
 			        $("#avatar_url").val(public_url);
 			        $("#preview").html('<img src="'+public_url+'" style="width:300px;" />');

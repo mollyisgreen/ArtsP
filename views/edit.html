@@ -31,9 +31,9 @@
 	</form>
 
 	<div class="artistinfo">
-		<!--
-		<img class="editPhotoDisplay" src={{artist.photoPath}} alt="displayartistphoto">
--->
+		
+		<img class="editPhotoDisplay" src={{bioPhotoPath}} alt="displayartistphoto">
+
 		<input type="file" id="biopic" name="files" ng-file-select="uploadBioPic(artist._id, $files)">
 		<p id="status">Upload artist bio photo</p>
 				<!--
@@ -60,16 +60,7 @@
 	<div ng-file-drop="uploadArtistPhoto($files)" class="addPhoto" 
 		ng-file-drag-over-class="dropOverPhoto" ng-model="artist.photo">Drop bio photo here
 	</div>
-
-
-
-
-<form method="POST" action="/submit_form/">
-    <input type="hidden" id="avatar_url" name="avatar_url" value="/public/images/default.png" />
-    <input type="submit" value="Update profile" />
-</form>
 -->
-
 
 	<div class="discoverSection">
 		<form class="discoverForm">
