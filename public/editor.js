@@ -129,13 +129,23 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 
 	$scope.uploadBioPic = function(id, $files) {
 		var s3upload = new S3Upload({
-				s3_object_name: id,
+				s3_object_name: 'biopic'+id,
 			    file_dom_selector: 'biopic',
 			    s3_sign_put_url: '/sign_s3',
 			    onProgress: function(percent, message) {
 			        $('#status').html('Upload progress: ' + percent + '% ' + message);
 			    },
 			    onFinishS3Put: function(public_url) {
+
+			    	$http.post('/savePhoto/' + id, public_url)
+						.success(function(data) {
+							console.log(data);
+						})
+						.error(function(data) {
+							console.log('Error: ' + data);
+						});
+
+
 			        $('#status').html('Upload completed. Uploaded to: '+ public_url);
 			        $("#avatar_url").val(public_url);
 			        $("#preview").html('<img src="'+public_url+'" style="width:300px;" />');

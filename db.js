@@ -259,6 +259,23 @@ exports.saveVisualContent = function(req, res){
 }
 
 exports.savePhoto = function(req, res){
+    console.log("asdfmeowbix");
+    console.log(req);
+
+    db.collection("artists").update(
+        { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
+        // is req.files sufficient? should i go deeper into that?
+        { $set: { 'photoPath' : req.public_url } },
+        function (err, result) {
+            if (err) throw err;
+        }
+    );
+
+}
+
+
+/*
+exports.savePhoto = function(req, res){
 
     console.log(req.files.file.path);
 
@@ -290,3 +307,4 @@ exports.savePhoto = function(req, res){
 
 
 }
+*/
