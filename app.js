@@ -75,11 +75,9 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-/*
-app.post('/submitSuggestion', db.submitSuggestion);
-app.post('/saveEmail', db.saveEmail);
-app.get('/users', user.list);
-*/
+
+//app.get('/users', user.list);
+
 
 app.get('/artists', db.getArtists);
 app.post('/createArtist', db.createArtist);
@@ -130,7 +128,6 @@ app.get('/sign_s3', function(req, res){
 
     res.end();
 });
-
 
 
 http.createServer(app).listen(app.get('port'), function(){

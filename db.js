@@ -94,26 +94,6 @@ exports.editArtist = function(req, res){
 
 exports.deleteArtist = function(req, res){
 
-    var photoPath;
-
-    // find public folders path of artists folder
-    db.collection("artists").findOne(
-        { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
-        { 'photoPath': 1 },
-        function (err, result) {
-            if (err) throw err;
-
-            photoPath = './public' + result.photoPath;
-            console.log(photoPath);
-
-            // if artist has a photo, delete photo from public folder
-            if(result.photoPath){
-                fs.unlink(photoPath, function (err) {
-                    if (err) res.send(err);
-                    console.log('successfully deleted artist photo');
-                });
-            }
-
             // delete artist from database
             Artist.remove({_id : req.params.artist_id}, 
                 function(err, artist) {
@@ -127,9 +107,6 @@ exports.deleteArtist = function(req, res){
                         res.json(artists);
                     });
             });
-
-        }
-    );
 
 }
 
