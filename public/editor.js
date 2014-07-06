@@ -109,6 +109,7 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 			console.log(data);
 
 			$scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;
+			$scope.visualFeaturePath = "https://atomreview.s3.amazonaws.com/visualfeature" + $scope.artist[0]._id;
 
 			$scope.discoveriframe1 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink1);
 			$scope.discoveriframe2 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink2);
@@ -195,9 +196,8 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 			    }
 			});
 
-		$http.post('/saveEmbedFeature/' + id, $scope.artist[index])
+		$http.post('/saveEmbedFeature/' + id)
 			.success(function(data) {
-				$scope.artist = data;
 				console.log(data);
 			})
 			.error(function(data) {

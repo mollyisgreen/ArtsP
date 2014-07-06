@@ -3,7 +3,7 @@
 
 	<a href="#/">Dashboard</a>
 
-		<img src="https://atomreview.s3.amazonaws.com/visualfeature53b8b535ab13764e30000001">
+	<img src={{visualFeaturePath}}>
 
 	<!-- enter feature -->
 	<form class="featureform" name="revisionForm">
@@ -25,12 +25,7 @@
 		</span>
 
 		<span ng-hide="imagefeature">
-			<!--<div ng-file-drop="uploadVisualContent($files)" class="addPhoto" 
-				ng-file-drag-over-class="dropOverPhoto" ng-model="artist.imagefeature">Drop visual here</div>
-
-						<button ng-click="saveImageFeature(artist._id, $index)">Save Feature</button>-->
 			<input type="file" id="visualfeature" name="files" ng-file-select="uploadVisualFeature(artist._id, $files)">
-
 		</span>
 
 	</form>
@@ -41,10 +36,6 @@
 
 		<input type="file" id="biopic" name="files" ng-file-select="uploadBioPic(artist._id)">
 		<p id="status">Upload artist bio photo</p>
-				<!--
-				<div style="border:1px solid gray;width:300px;"  id="preview">
-					<img src="/images/default.png" style="width:300px;" /></div>-->
-
 
 		<!-- interview -->
 		<form class="editinterview" name="revisionForm">
@@ -61,11 +52,6 @@
 		</form>
 	</div>
 
-<!--
-	<div ng-file-drop="uploadArtistPhoto($files)" class="addPhoto" 
-		ng-file-drag-over-class="dropOverPhoto" ng-model="artist.photo">Drop bio photo here
-	</div>
--->
 
 	<div class="discoverSection">
 		<form class="discoverForm">

@@ -55,6 +55,7 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 			    };
 
 			    $scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;
+			    $scope.visualFeaturePath = "https://atomreview.s3.amazonaws.com/visualfeature" + $scope.artist[0]._id;
 			    
 			} else {
 				$location.path('/');
@@ -81,13 +82,13 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 				$scope.iframesrc = $sce.trustAsResourceUrl($scope.artist[0].embedlink);
 				document.getElementById('imagefeature').style.display = 'none'; 
 				document.getElementById('textfeature').style.display = 'none'; 
-			} else if($scope.artist[0].visualContentPath) {
-				document.getElementById('iframefeature').style.display = 'none'; 
-				document.getElementById('textfeature').style.display = 'none'; 
+			} else if($scope.artist[0].textfeature) {
+				document.getElementById('iframefeature').style.display = 'none';
+				document.getElementById('imagefeature').style.display = 'none';  
 			}
 			else {
 				document.getElementById('iframefeature').style.display = 'none'; 
-				document.getElementById('imagefeature').style.display = 'none'; 
+				document.getElementById('textfeature').style.display = 'none'; 
 			}
 		})
 		.error(function(data) {
