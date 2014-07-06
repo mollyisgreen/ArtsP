@@ -196,7 +196,7 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 			    }
 			});
 
-		$http.post('/saveEmbedFeature/' + id)
+		$http.post('/saveVisualFeature/' + id)
 			.success(function(data) {
 				console.log(data);
 			})

@@ -34,8 +34,11 @@
 		
 		<img class="editPhotoDisplay" src={{bioPhotoPath}} alt="displayartistphoto">
 
-		<input type="file" id="biopic" name="files" ng-file-select="uploadBioPic(artist._id)">
-		<p id="status">Upload artist bio photo</p>
+		Upload Artist Bio Pic:<input type="file" id="biopic" name="files" ng-file-select="uploadBioPic(artist._id)">
+				<!--
+				<div style="border:1px solid gray;width:300px;"  id="preview">
+					<img src="/images/default.png" style="width:300px;" /></div>-->
+
 
 		<!-- interview -->
 		<form class="editinterview" name="revisionForm">
