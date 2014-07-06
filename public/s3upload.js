@@ -2,7 +2,7 @@
 
   window.S3Upload = (function() {
 
-    S3Upload.prototype.s3_object_name = 'default_name';
+    //S3Upload.prototype.s3_object_name = 'tits';
 
     S3Upload.prototype.s3_sign_put_url = '/signS3put';
 
@@ -27,6 +27,7 @@
       }
       this.handleFileSelect(document.getElementById(this.file_dom_selector));
     }
+
 
     S3Upload.prototype.handleFileSelect = function(file_element) {
       var f, files, output, _i, _len, _results;

@@ -34,13 +34,9 @@
 		<!--
 		<img class="editPhotoDisplay" src={{artist.photoPath}} alt="displayartistphoto">
 -->
-		<form>
-			<input type="file" id="biopic" name="files" onchange="uploadBioPic()">
-			<p id="status">Upload artist bio photo</p>
-		</form>
+		<input type="file" id="biopic" name="files" ng-file-select="uploadBioPic(artist._id, $files)">
+		<p id="status">Upload artist bio photo</p>
 				<!--
-				ng-file-select="uploadBioPic()"
-
 				<div style="border:1px solid gray;width:300px;"  id="preview">
 					<img src="/images/default.png" style="width:300px;" /></div>-->
 
@@ -73,12 +69,6 @@
     <input type="submit" value="Update profile" />
 </form>
 -->
-
-
-
-
-
-
 
 
 	<div class="discoverSection">

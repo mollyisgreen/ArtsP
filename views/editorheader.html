@@ -30,29 +30,6 @@
 		<!-- AddThis -->
 		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53a0beae4c9aa27c"></script>
 
-		<!-- Amazon S3 script -->
-		<script>
-			//function s3_upload(){
-			function uploadBioPic(){
-				console.log("amazonbaby");
-			    var s3upload = new S3Upload({
-			        file_dom_selector: 'biopic',
-			        s3_sign_put_url: '/sign_s3',
-			        onProgress: function(percent, message) {
-			            $('#status').html('Upload progress: ' + percent + '% ' + message);
-			        },
-			        onFinishS3Put: function(public_url) {
-			            $('#status').html('Upload completed. Uploaded to: '+ public_url);
-			            $("#avatar_url").val(public_url);
-			            $("#preview").html('<img src="'+public_url+'" style="width:300px;" />');
-			        },
-			        onError: function(status) {
-			            console.log(status);
-			        }
-			    });
-			}
-		</script>
-
 	</head>
 
 	<body>

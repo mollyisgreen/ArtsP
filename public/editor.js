@@ -127,6 +127,25 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 			});
 	};
 
+	$scope.uploadBioPic = function(id, $files) {
+		var s3upload = new S3Upload({
+				s3_object_name: id,
+			    file_dom_selector: 'biopic',
+			    s3_sign_put_url: '/sign_s3',
+			    onProgress: function(percent, message) {
+			        $('#status').html('Upload progress: ' + percent + '% ' + message);
+			    },
+			    onFinishS3Put: function(public_url) {
+			        $('#status').html('Upload completed. Uploaded to: '+ public_url);
+			        $("#avatar_url").val(public_url);
+			        $("#preview").html('<img src="'+public_url+'" style="width:300px;" />');
+			    },
+			    onError: function(status) {
+			        console.log(status);
+			    }
+			});
+	};
+
 	// save feature edits
 	$scope.saveTextFeature = function(id, index) {
 		$http.post('/saveTextFeature/' + id, $scope.artist[index])
