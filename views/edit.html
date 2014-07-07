@@ -3,7 +3,15 @@
 
 	<a href="#/">Dashboard</a>
 
-	<img src={{visualFeaturePath}}>
+	<img class="imagefeature" id="imagefeature" src={{visualFeaturePath}}>
+
+	<div class="textfeature" id="textfeature">{{artist.textfeature}}</div>
+
+	<div id="iframefeature">
+		<iframe src={{iframesrc}} width={{artist.embedwidth}} height={{artist.embedheight}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+
+
 
 	<!-- enter feature -->
 	<form class="featureform" name="revisionForm">
