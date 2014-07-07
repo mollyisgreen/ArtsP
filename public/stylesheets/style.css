@@ -118,18 +118,6 @@ a:hover, a:visited, a:link, a:active
 	float: left;
 }
 
-/*
-.artistPhoto {
-	-moz-box-shadow:    0px 0px 5px 0px rgba(0,0,0,0.50);
-	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.50);
-	box-shadow:         0px 0px 5px 0px rgba(0,0,0,0.50);
-	height: 460px;
-	position: absolute;
-	margin-top: -510px;
-	margin-left: 200px;
-}
-*/
-
 .artistPhoto {
 	-moz-box-shadow:    0px 0px 5px 0px rgba(0,0,0,0.50);
 	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.50);
@@ -156,12 +144,10 @@ a:hover, a:visited, a:link, a:active
 
 
 .imagefeature {
-	width: 800px;
+	height: 500px;
 }
 
 /********** error page *********/
-
-
 
 #sketch {
 	margin-top: 30px;
