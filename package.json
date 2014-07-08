@@ -19,9 +19,5 @@
     "prerender-node": "latest",
     "angulartics" : "latest",
     "crypto": "*"
-  },
-  "engines": {
-    "node": "0.10.29",
-    "npm": "0.8.27"
-  } 
+  }
 }
