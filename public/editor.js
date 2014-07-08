@@ -110,24 +110,26 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 
 			$scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;
 
-			// only relevant feature is visible
-			if($scope.artist[0].embedlink) {
-				// safe iframe src link
-								console.log("1111");
-				$scope.iframesrc = $sce.trustAsResourceUrl($scope.artist[0].embedlink);
-				document.getElementById('imagefeatureDisplay').style.display = 'none'; 
-				document.getElementById('textfeatureDisplay').style.display = 'none'; 
-			} else if($scope.artist[0].textfeature) {
-								console.log("2222");
-				document.getElementById('imagefeatureDisplay').style.display = 'none';  
-				document.getElementById('iframefeatureDisplay').style.display = 'none';
-			}
-			else {
-								console.log("3333");
-				$scope.visualFeaturePath = "https://atomreview.s3.amazonaws.com/visualfeature" + $scope.artist[0]._id;
-				document.getElementById('iframefeatureDisplay').style.display = 'none'; 
-				document.getElementById('textfeatureDisplay').style.display = 'none'; 
-			}
+			// when dom loads, hide irrelevant features
+ 			addEventListener('load', load, false);
+	        function load(){
+	            // only relevant feature is visible
+				if($scope.artist[0].embedlink) {
+					// safe iframe src link
+					$scope.iframesrc = $sce.trustAsResourceUrl($scope.artist[0].embedlink);
+					document.getElementById('imagefeatureDisplay').style.display = 'none'; 
+					document.getElementById('textfeatureDisplay').style.display = 'none'; 
+				} else if($scope.artist[0].textfeature) {
+					document.getElementById('imagefeatureDisplay').style.display = 'none';  
+					document.getElementById('iframefeatureDisplay').style.display = 'none';
+				}
+				else {
+					$scope.visualFeaturePath = "https://atomreview.s3.amazonaws.com/visualfeature" + $scope.artist[0]._id;
+					document.getElementById('iframefeatureDisplay').style.display = 'none'; 
+					document.getElementById('textfeatureDisplay').style.display = 'none'; 
+				}
+	        }
+
 
 			$scope.discoveriframe1 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink1);
 			$scope.discoveriframe2 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink2);
