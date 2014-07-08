@@ -1,7 +1,9 @@
 <!-- TODO: is this correct directive? -->
 <div ng-repeat="artist in artist">
-
-	<a href="#/">Dashboard</a></br>
+<div class="editContainer">
+	
+	<a href="#/">Dashboard</a>
+	<a href="#/preview/{{artist._id}}">Preview</a>
 
 	<!-- Features -->
 	<img id="imagefeatureDisplay" class="imagefeature" src={{visualFeaturePath}}>
@@ -12,7 +14,6 @@
 		<iframe src={{iframesrc}} width={{artist.embedwidth}} height={{artist.embedheight}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</div>
 
-
 	<!-- Upload feature -->
 	<form class="featureform" name="revisionForm">
 
@@ -22,14 +23,14 @@
 
 		<span ng-hide="textfeature">
 			<textarea type="text" id="textcontent" ng-model="artist.textfeature"/></textarea>
-			<button ng-click="saveTextFeature(artist._id, $index)">Save Feature</button>
+			</br><button ng-click="saveTextFeature(artist._id, $index)">Save Feature</button>
 		</span>
 
 		<span ng-hide="embedfeature">
 			iframe link: <input type="text" id="from" ng-model="artist.embedlink"/></br>
 			iframe width: <input type="text" id="from" ng-model="artist.embedwidth"/></br>
 			iframe height: <input type="text" id="from" ng-model="artist.embedheight"/></br>
-			<button ng-click="saveEmbedFeature(artist._id, $index)">Save Feature</button>
+			</br><button ng-click="saveEmbedFeature(artist._id, $index)">Save Feature</button>
 		</span>
 
 		<span ng-hide="imagefeature">
@@ -40,17 +41,17 @@
 
 
 	<div class="artistinfo">
-		
-		<img class="editPhotoDisplay" src={{bioPhotoPath}}>
 
-		Upload Artist Bio Pic:<input type="file" id="biopic" name="files" ng-file-select="uploadBioPic(artist._id)">
 				<!--
 				<div style="border:1px solid gray;width:300px;"  id="preview">
 					<img src="/images/default.png" style="width:300px;" /></div>-->
 
 		<!-- interview -->
-		<form class="editinterview" name="revisionForm">
-			{{artist.date | date: fullDate}}</br>
+		<form name="revisionForm">
+			<img class="editPhotoDisplay" src={{bioPhotoPath}}>
+			<input type="file" id="biopic" name="files" ng-file-select="uploadBioPic(artist._id)">
+
+			</br>{{artist.date | date: fullDate}}</br>
 			<b>Change to date:</b> <input type="date" class="formfield" ng-model="artist.date"></br>
 			<b>Artist:</b> <input type="text" class="formfield" ng-model="artist.name"></br>
 			<b>City:</b> <input type="text" class="formfield" ng-model="artist.city"></br>
@@ -88,6 +89,8 @@
 
 		<button ng-click="saveDiscoverLinks(artist._id, $index)">Save Discover Links</button>
 	</div>
+
+</div>
 
 	<!-- Display discover features -->
 	<iframe src={{discoveriframe1}} width={{artist.discoverwidth1}} height={{artist.discoverheight1}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

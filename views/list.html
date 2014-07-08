@@ -19,8 +19,8 @@
 		<a href="#/preview/{{artist._id}}">Preview</a>
 
 		<form name="editDate">
-			{{artist.date | date: fullDate}}</br>
-			Change to date: <input class="formfield" type="date" ng-model="artist.date">
+			<b>{{artist.date | date: fullDate}}</b>
+			change to: <input class="formfield" type="date" ng-model="artist.date">
 			<button ng-click="changeDate(artist._id, artist)">Save</button>
 		</form>
 

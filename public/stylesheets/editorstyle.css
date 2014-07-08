@@ -1,3 +1,9 @@
+.editContainer {
+	width: 600px;
+	text-align: center;
+	margin: 0 auto;
+}
+
 .addArtistForm {
 	margin-bottom: 40px;
 }
@@ -27,14 +33,8 @@
 }
 
 .artistinfo {
-	text-align: center;
-	width: 600px;
-	margin: 0 auto;
-}
-
-.editinterview {
 	text-align: left;
-	padding-left: 250px;
+	margin: 0 auto;
 }
 
 .artistRect {
@@ -47,7 +47,6 @@
 
 .discoverForm {
 	width: 300px;
-	margin: 20px 20px 0px 20px;
+	margin-top: 20px;
 	text-align: left;
 }
-
