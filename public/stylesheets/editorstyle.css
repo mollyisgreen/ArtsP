@@ -50,3 +50,11 @@
 	text-align: left;
 	float: left;
 }
+
+.editButton {
+	padding: 10px 10px 10px 10px;
+	font-family: NoticiaText;
+	border-style: none;
+	background-color: #5B8FCC;
+	color: #FFFFFF;
+}
