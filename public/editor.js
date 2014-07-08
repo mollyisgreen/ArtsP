@@ -113,17 +113,20 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 			// only relevant feature is visible
 			if($scope.artist[0].embedlink) {
 				// safe iframe src link
+								console.log("1111");
 				$scope.iframesrc = $sce.trustAsResourceUrl($scope.artist[0].embedlink);
-				document.getElementById('imagefeature').style.display = 'none'; 
-				document.getElementById('textfeature').style.display = 'none'; 
+				document.getElementById('imagefeatureDisplay').style.display = 'none'; 
+				document.getElementById('textfeatureDisplay').style.display = 'none'; 
 			} else if($scope.artist[0].textfeature) {
-				document.getElementById('iframefeature').style.display = 'none';
-				document.getElementById('imagefeature').style.display = 'none';  
+								console.log("2222");
+				document.getElementById('imagefeatureDisplay').style.display = 'none';  
+				document.getElementById('iframefeatureDisplay').style.display = 'none';
 			}
 			else {
+								console.log("3333");
 				$scope.visualFeaturePath = "https://atomreview.s3.amazonaws.com/visualfeature" + $scope.artist[0]._id;
-				document.getElementById('iframefeature').style.display = 'none'; 
-				document.getElementById('textfeature').style.display = 'none'; 
+				document.getElementById('iframefeatureDisplay').style.display = 'none'; 
+				document.getElementById('textfeatureDisplay').style.display = 'none'; 
 			}
 
 			$scope.discoveriframe1 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink1);

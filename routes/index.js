@@ -27,20 +27,20 @@ module.exports = function(app, passport) {
 	  res.render('show.html', { title: 'Express' });
 	});
 
-	app.get('/list', isLoggedIn, function(req, res){
+	app.get('/list', function(req, res){
 	  res.render('list.html', { title: 'Express' });
 	});
 
-	app.get('/preview', isLoggedIn, function(req, res){
+	app.get('/preview', function(req, res){
 		console.log("meow?");
 	  res.render('preview.html', { title: 'Express' });
 	});
 
-	app.get('/edit', isLoggedIn, function(req, res){
+	app.get('/edit', function(req, res){
 	  	res.render('edit.html', { title: 'Express' });
 	});
 
-	app.get('/editordashboard', isLoggedIn, function(req, res){
+	app.get('/editordashboard', function(req, res){
 	  	res.render('editordashboard.html', { 
 	  		user : req.user // get the user out of session and pass to template
 	  	});

@@ -1,19 +1,19 @@
 <!-- TODO: is this correct directive? -->
 <div ng-repeat="artist in artist">
 
-	<a href="#/">Dashboard</a>
+	<a href="#/">Dashboard</a></br>
 
-	<img class="imagefeature" id="imagefeature" src={{visualFeaturePath}}>
+	<!-- Features -->
+	<img id="imagefeatureDisplay" class="imagefeature" src={{visualFeaturePath}}>
 
-	<div class="textfeature" id="textfeature">{{artist.textfeature}}</div>
+	<div id="textfeatureDisplay" class="textfeature">{{artist.textfeature}}</div>
 
-	<div id="iframefeature">
+	<div id="iframefeatureDisplay">
 		<iframe src={{iframesrc}} width={{artist.embedwidth}} height={{artist.embedheight}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</div>
 
 
-
-	<!-- enter feature -->
+	<!-- Upload feature -->
 	<form class="featureform" name="revisionForm">
 
 		<button ng-click="textfeature=!textfeature">Text</button>
@@ -21,7 +21,7 @@
 		<button ng-click="imagefeature=!imagefeature">Visual Art</button></br>
 
 		<span ng-hide="textfeature">
-			<input type="text" id="textcontent" ng-model="artist.textfeature"/>
+			<textarea type="text" id="textcontent" ng-model="artist.textfeature"/></textarea>
 			<button ng-click="saveTextFeature(artist._id, $index)">Save Feature</button>
 		</span>
 
@@ -38,15 +38,15 @@
 
 	</form>
 
+
 	<div class="artistinfo">
 		
-		<img class="editPhotoDisplay" src={{bioPhotoPath}} alt="displayartistphoto">
+		<img class="editPhotoDisplay" src={{bioPhotoPath}}>
 
 		Upload Artist Bio Pic:<input type="file" id="biopic" name="files" ng-file-select="uploadBioPic(artist._id)">
 				<!--
 				<div style="border:1px solid gray;width:300px;"  id="preview">
 					<img src="/images/default.png" style="width:300px;" /></div>-->
-
 
 		<!-- interview -->
 		<form class="editinterview" name="revisionForm">
@@ -63,7 +63,7 @@
 		</form>
 	</div>
 
-
+	<!-- Upload discover features -->
 	<div class="discoverSection">
 		<form class="discoverForm">
 			<b>Discover 1:</b></br>
@@ -89,6 +89,7 @@
 		<button ng-click="saveDiscoverLinks(artist._id, $index)">Save Discover Links</button>
 	</div>
 
+	<!-- Display discover features -->
 	<iframe src={{discoveriframe1}} width={{artist.discoverwidth1}} height={{artist.discoverheight1}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 	<iframe src={{discoveriframe2}} width={{artist.discoverwidth2}} height={{artist.discoverheight2}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

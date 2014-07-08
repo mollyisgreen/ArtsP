@@ -90,6 +90,7 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 				document.getElementById('iframefeature').style.display = 'none'; 
 				document.getElementById('textfeature').style.display = 'none'; 
 			}
+
 		})
 		.error(function(data) {
 			console.log('Error: ' + data);
