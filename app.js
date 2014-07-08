@@ -47,7 +47,7 @@ app.configure(function() {
 
 	app.use(app.router);
 	app.use(require('prerender-node').set('prerenderToken', 'ujBPewAcfG8JKKgBWYfe'));
-	//app.use(express.static(path.join(__dirname, 'public')));
+	app.use(express.static(path.join(__dirname, 'public')));
   app.use(express.static(process.cwd() + './public'));
 
 
