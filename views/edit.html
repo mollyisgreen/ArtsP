@@ -59,8 +59,8 @@
 			<b>Question:</b> <input type="text" class="formfield" ng-model="artist.question"></br>
 			<b>Answer:</b> <input type="text" class="formfield" ng-model="artist.answer"></br>
 			<br>
-			<button ng-click="saveChange(artist._id, $index)">Save</button>
-			<button ng-click="deleteArtist(artist._id)">Delete</button>
+			<button ng-click="saveChange(artist._id, $index)">Save Artist Changes</button>
+			<button ng-click="deleteArtist(artist._id)">Delete Artist</button>
 		</form>
 	</div>
 
@@ -90,7 +90,7 @@
 		<button ng-click="saveDiscoverLinks(artist._id, $index)">Save Discover Links</button>
 	</div>
 
-</div>
+</div></br>
 
 	<!-- Display discover features -->
 	<iframe src={{discoveriframe1}} width={{artist.discoverwidth1}} height={{artist.discoverheight1}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
