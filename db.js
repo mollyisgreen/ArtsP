@@ -167,10 +167,13 @@ exports.saveDiscoverLinks = function(req, res){
             $set: {
                     discoverlink1      : req.body.discoverlink1,
                     discoverlink1type  : req.body.discoverlink1type,
+                    discoverlink1description  : req.body.discoverlink1description,
                     discoverlink2      : req.body.discoverlink2,
                     discoverlink2type  : req.body.discoverlink2type,
+                    discoverlink2description  : req.body.discoverlink2description,
                     discoverlink3      : req.body.discoverlink3,
-                    discoverlink3type  : req.body.discoverlink3type
+                    discoverlink3type  : req.body.discoverlink3type,
+                    discoverlink3description  : req.body.discoverlink3description
             }
         },
         function (err, result) {
