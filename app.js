@@ -78,11 +78,6 @@ if ('development' == app.get('env')) {
 
 
 //app.get('/users', user.list);
-
-app.get('/', function (req, res) {
-    res.sendfile('./views/index.html');
-});
-
 app.get('/artists', db.getArtists);
 app.post('/createArtist', db.createArtist);
 // TODO: should pass artist_id to db.deleteArtist but haven't gotten around yet
