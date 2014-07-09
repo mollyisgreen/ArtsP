@@ -45,6 +45,12 @@
 				<img class="editPhotoDisplay" src={{bioPhotoPath}}>
 				<input type="file" id="biopic" name="files" ng-file-select="uploadBioPic(artist._id)">
 
+				<select ng-model="artist.category">
+					<option value="music">Music</option>
+					<option value="film">Film</option>
+					<option value="performance">Performance</option>
+					<option value="written">Written</option>
+				</select>
 				</br>{{artist.date | date: fullDate}}</br>
 				<b>Change to date:</b> <input type="date" class="formfield" ng-model="artist.date"></br>
 				<b>Artist:</b> <input type="text" class="formfield" ng-model="artist.name"></br>
