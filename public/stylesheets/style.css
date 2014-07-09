@@ -51,7 +51,7 @@ a:hover, a:visited, a:link, a:active
 }
 
 
-/********** artist feature *********/
+/********** nav bar *********/
 
 .title {
 	font-size: 48px;
@@ -81,6 +81,12 @@ a:hover, a:visited, a:link, a:active
 	margin-right: 20px;
 	margin-left: 20px;
 	font-family: Courier;
+}
+
+/********** artist *********/
+
+.textfeature {
+	font-family: NoticiaText;
 }
 
 .description {
