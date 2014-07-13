@@ -33,7 +33,7 @@
 	font-weight: bold;
 	font-style: italic;
 }
-
+/*
 body {
 	margin: 0px 0px 0px 0px;
 	border: solid;
@@ -42,6 +42,31 @@ body {
 	border-width: 30px;
 	padding-top: 50px;
 	color: #4A4A4A;
+}*/
+
+body {
+	margin: 0px 0px 0px 0px;
+	text-align: center;
+	color: #4A4A4A;
+}
+
+.top {
+	margin: 0px 0px 0px 0px;
+	border-top: solid #F2F2F2 30px;
+	border-left: solid #F2F2F2 30px;
+	border-right: solid #F2F2F2 30px;
+	text-align: center;
+	padding-top: 50px;
+	color: #4A4A4A;
+	padding-bottom: 50px;
+}
+
+.middle {
+	margin: 0px 0px 0px 0px;
+	border-top: solid #98C1B7 15px;
+	border-bottom: solid #98C1B7 15px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 a:hover, a:visited, a:link, a:active
@@ -95,7 +120,6 @@ a:hover, a:visited, a:link, a:active
 	color: #4A4A4A;
 	line-height: 25px;
 	margin-top: 30px;
-	margin-bottom: 80px;
 }
 /*
 .interviewblock {
