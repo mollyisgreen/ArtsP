@@ -6,9 +6,9 @@
 		<a class="editButton" href="#/preview/{{artist._id}}">Preview</a>
 
 		<!-- Features -->
-		<img id="imagefeatureDisplay" class="imagefeature" src={{visualFeaturePath}}>
+		<img id="imagefeatureDisplay" src={{visualFeaturePath}}>
 
-		<div id="textfeatureDisplay" class="textfeature">{{artist.textfeature}}</div>
+		<div id="textfeatureDisplay">{{artist.textfeature}}</div>
 
 		<div id="iframefeatureDisplay">
 			<iframe src={{iframesrc}} width={{artist.embedwidth}} height={{artist.embedheight}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -56,8 +56,8 @@
 				<b>Artist:</b> <input type="text" class="formfield" ng-model="artist.name"></br>
 				<b>City:</b> <input type="text" class="formfield" ng-model="artist.city"></br>
 				<b>Description:</b> <input type="text" class="formfield" ng-model="artist.description"></br>
-				<b>Question:</b> <input type="text" class="formfield" ng-model="artist.question"></br>
-				<b>Answer:</b> <input type="text" class="formfield" ng-model="artist.answer"></br>
+				<b>Question:</b> <textarea type="text" ng-model="artist.question"/></textarea>
+				<b>Answer:</b> <textarea type="text" ng-model="artist.answer"/></textarea>
 				<br>
 				<button class="editButton" ng-click="saveChange(artist._id, $index)">Save Artist Changes</button>
 				<button class="editButton" ng-click="saveDiscoverLinks(artist._id, $index)">Save Discovery Changes</button>

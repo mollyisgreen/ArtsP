@@ -116,14 +116,17 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 	            // only relevant feature is visible
 				if($scope.artist[0].embedlink) {
 					// safe iframe src link
+					console.log("meow1");
 					$scope.iframesrc = $sce.trustAsResourceUrl($scope.artist[0].embedlink);
 					document.getElementById('imagefeatureDisplay').style.display = 'none'; 
 					document.getElementById('textfeatureDisplay').style.display = 'none'; 
 				} else if($scope.artist[0].textfeature) {
+										console.log("meow2");
 					document.getElementById('imagefeatureDisplay').style.display = 'none';  
 					document.getElementById('iframefeatureDisplay').style.display = 'none';
 				}
 				else {
+										console.log("meow3");
 					$scope.visualFeaturePath = "https://atomreview.s3.amazonaws.com/visualfeature" + $scope.artist[0]._id;
 					document.getElementById('iframefeatureDisplay').style.display = 'none'; 
 					document.getElementById('textfeatureDisplay').style.display = 'none'; 
