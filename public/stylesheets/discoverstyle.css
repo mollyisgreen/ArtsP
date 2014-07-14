@@ -5,6 +5,9 @@
 	padding-top: 50px;
 	padding-bottom: 50px;
 	color: #FFFFFF;
+	-moz-box-shadow:    inset 0px 3px 5px 0px #60746F;
+	-webkit-box-shadow: inset 0px 3px 5px 0px #60746F;
+	box-shadow:         inset 0px 3px 5px 0px #60746F;
 }
 
 .discoverTitle {
