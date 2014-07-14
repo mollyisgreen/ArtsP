@@ -42,10 +42,6 @@
 		<form name="revisionForm">
 			<img class="editPhotoDisplay" src={{bioPhotoPath}}></br></br>
 			<input type="file" id="biopic" name="files" ng-file-select="uploadBioPic(artist[0]._id)"></br></br>
-			
-			<b>Category:</b>
-			<select ng-model="artist[0].category" data-ng-options="category for category in categories">
-			</select></br>
 
 			<b>Showcase date:</b> {{artist[0].date | date: fullDate}}</br>
 			<b>Change to date:</b> <input type="date" class="formfield" ng-model="artist[0].date"></br>
