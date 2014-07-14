@@ -1,3 +1,7 @@
+var vimeoWidth = 444;
+var vimeoHeight = 250;
+var bandcampSize = 250;
+
 
 var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 
@@ -108,35 +112,52 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 			$scope.artist = data;
 			console.log(data);
 
-			$scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;
-
-			// when dom loads, hide irrelevant features
- 			addEventListener('load', load, false);
-	        function load(){
-	            // only relevant feature is visible
-				if($scope.artist[0].embedlink) {
-					// safe iframe src link
-					console.log("meow1");
-					$scope.iframesrc = $sce.trustAsResourceUrl($scope.artist[0].embedlink);
-					document.getElementById('imagefeatureDisplay').style.display = 'none'; 
-					document.getElementById('textfeatureDisplay').style.display = 'none'; 
-				} else if($scope.artist[0].textfeature) {
-										console.log("meow2");
-					document.getElementById('imagefeatureDisplay').style.display = 'none';  
-					document.getElementById('iframefeatureDisplay').style.display = 'none';
-				}
-				else {
-										console.log("meow3");
-					$scope.visualFeaturePath = "https://atomreview.s3.amazonaws.com/visualfeature" + $scope.artist[0]._id;
-					document.getElementById('iframefeatureDisplay').style.display = 'none'; 
-					document.getElementById('textfeatureDisplay').style.display = 'none'; 
-				}
-	        }
-
+			// only relevant feature is visible
+			if($scope.artist[0].embedlink) {
+				// safe iframe src link
+				$scope.iframesrc = $sce.trustAsResourceUrl($scope.artist[0].embedlink);
+				//document.getElementById('imagefeatureDisplay').style.display = 'none'; 
+				//document.getElementById('textfeatureDisplay').style.display = 'none'; 
+			} else if($scope.artist[0].textfeature) {
+				//document.getElementById('imagefeatureDisplay').style.display = 'none';  
+				//document.getElementById('iframefeatureDisplay').style.display = 'none';
+			}
+			else {
+				$scope.visualFeaturePath = "https://atomreview.s3.amazonaws.com/visualfeature" + $scope.artist[0]._id;
+				//document.getElementById('iframefeatureDisplay').style.display = 'none'; 
+				//document.getElementById('textfeatureDisplay').style.display = 'none'; 
+			}
 
 			$scope.discoveriframe1 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink1);
 			$scope.discoveriframe2 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink2);
 			$scope.discoveriframe3 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink3);
+
+			if($scope.artist[0].discoverlink1type=="vimeo"){
+				$scope.artist.discoverwidth1 = vimeoWidth;
+				$scope.artist.discoverheight1 = vimeoHeight;
+			} else {
+				$scope.artist.discoverwidth1 = bandcampSize;
+				$scope.artist.discoverheight1 = bandcampSize;				
+			}
+
+			if($scope.artist[0].discoverlink2type=="vimeo"){
+				$scope.artist.discoverwidth2 = vimeoWidth;
+				$scope.artist.discoverheight2 = vimeoHeight;
+			} else {
+				$scope.artist.discoverwidth2 = bandcampSize;
+				$scope.artist.discoverheight2 = bandcampSize;				
+			}
+
+			if($scope.artist[0].discoverlink3type=="vimeo"){
+				$scope.artist.discoverwidth3 = vimeoWidth;
+				$scope.artist.discoverheight3 = vimeoHeight;
+			} else {
+				$scope.artist.discoverwidth3 = bandcampSize;
+				$scope.artist.discoverheight3 = bandcampSize;				
+			}
+
+			$scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;
+
 		})
 		.error(function(data) {
 			console.log('Error: ' + data);

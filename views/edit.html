@@ -1,9 +1,8 @@
 <!-- TODO: is this correct directive? -->
 <div ng-repeat="artist in artist">
-	<div class="editContainer">
-		
+	<div class="editContainer">		
 		<a class="editButton" href="#/">Dashboard</a>
-		<a class="editButton" href="#/preview/{{artist._id}}">Preview</a>
+		<a class="editButton" href="#/preview/{{artist._id}}">Preview</a></br></br>
 
 		<!-- Features -->
 		<img id="imagefeatureDisplay" src={{visualFeaturePath}}>
@@ -19,7 +18,9 @@
 
 			<button class="editButton" ng-click="textfeature=!textfeature">Text</button>
 			<button class="editButton" ng-click="embedfeature=!embedfeature">Embedded Link</button>
-			<button class="editButton" ng-click="imagefeature=!imagefeature">Visual Art</button></br>
+			<button class="editButton" ng-click="imagefeature=!imagefeature">Visual Art</button>
+
+			</br></br></br>
 
 			<span ng-hide="textfeature">
 				<textarea type="text" id="textcontent" ng-model="artist.textfeature"/></textarea>
@@ -42,23 +43,29 @@
 
 		<div class="artistinfo">
 			<form name="revisionForm">
-				<img class="editPhotoDisplay" src={{bioPhotoPath}}>
-				<input type="file" id="biopic" name="files" ng-file-select="uploadBioPic(artist._id)">
+				<img class="editPhotoDisplay" src={{bioPhotoPath}}></br></br>
+				<input type="file" id="biopic" name="files" ng-file-select="uploadBioPic(artist._id)"></br></br>
 
+				<b>Category:</b>
 				<select ng-model="artist.category">
 					<option value="music">Music</option>
 					<option value="film">Film</option>
 					<option value="performance">Performance</option>
 					<option value="written">Written</option>
 				</select>
-				</br>{{artist.date | date: fullDate}}</br>
+				</br>
+				<b>Showcase date:</b> {{artist.date | date: fullDate}}</br>
 				<b>Change to date:</b> <input type="date" class="formfield" ng-model="artist.date"></br>
 				<b>Artist:</b> <input type="text" class="formfield" ng-model="artist.name"></br>
 				<b>City:</b> <input type="text" class="formfield" ng-model="artist.city"></br>
-				<b>Description:</b> <textarea type="text" ng-model="artist.description"></textarea>
-				<b>Question:</b> <textarea type="text" ng-model="artist.question"/></textarea>
-				<b>Answer:</b> <textarea type="text" ng-model="artist.answer"/></textarea>
-				<br>
+				<b>Description:</b></br> 
+					<textarea type="text" class="textAreaClass" ng-model="artist.description"></textarea></br>
+				<b>Question:</b></br>
+					<textarea type="text" class="textAreaClass" ng-model="artist.question"/></textarea></br>
+				<b>Answer:</b></br>
+					<textarea type="text" class="textAreaClass" ng-model="artist.answer"/></textarea></br>
+
+				</br></br>
 				<button class="editButton" ng-click="saveChange(artist._id, $index)">Save Artist Changes</button>
 				<button class="editButton" ng-click="saveDiscoverLinks(artist._id, $index)">Save Discovery Changes</button>
 			</form>
@@ -90,8 +97,7 @@
 				<input type="type" ng-model="artist.discoverlink3description" placeholder="Description">
 			</form>
 		</div>
-
-	</div></br>
+</div>
 
 	<!-- Display discover features -->
 	<iframe src={{discoveriframe1}} width={{artist.discoverwidth1}} height={{artist.discoverheight1}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -101,5 +107,5 @@
 	<iframe src={{discoveriframe3}} width={{artist.discoverwidth3}} height={{artist.discoverheight3}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>	
 
 	</br></br><button class="editButton" ng-click="deleteArtist(artist._id)">Delete Artist</button>
-
+	
 </div>

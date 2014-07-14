@@ -61,20 +61,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 				$location.path('/');
 			}
 
-			$scope.releaseDate = $routeParams.date;
-
-			// yesterday
-			$scope.next = ($scope.releaseDate - 86400000);
-			// tomorrow
-			$scope.previous = (parseInt($scope.releaseDate) + 86400000);
-
-			// if on today's page, hide button that allows you to go to tomorrow's content
-			if($scope.releaseDate == todayInMill)
-				document.getElementById('previous').style.display = 'none'; 
-
-			// if on first day's page, hide button that allows you to go further into past
-			if($scope.releaseDate == firstPostMill)
-				document.getElementById('next').style.display = 'none'; 
 
 			// only relevant feature is visible
 			if($scope.artist[0].embedlink) {
@@ -90,6 +76,24 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 				document.getElementById('iframefeature').style.display = 'none'; 
 				document.getElementById('textfeature').style.display = 'none'; 
 			}
+
+
+			$scope.releaseDate = $routeParams.date;
+
+			// yesterday
+			$scope.next = ($scope.releaseDate - 86400000);
+			// tomorrow
+			$scope.previous = (parseInt($scope.releaseDate) + 86400000);
+/*
+			// if on today's page, hide button that allows you to go to tomorrow's content
+			if($scope.releaseDate == todayInMill)
+				document.getElementById('previous').style.display = 'none'; 
+
+			// if on first day's page, hide button that allows you to go further into past
+			if($scope.releaseDate == firstPostMill)
+				document.getElementById('next').style.display = 'none'; 
+*/
+
 
 		})
 		.error(function(data) {
