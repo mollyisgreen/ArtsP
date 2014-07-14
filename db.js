@@ -94,19 +94,19 @@ exports.editArtist = function(req, res){
 
 exports.deleteArtist = function(req, res){
 
-            // delete artist from database
-            Artist.remove({_id : req.params.artist_id}, 
-                function(err, artist) {
-                    if (err)
-                        res.send(err);
+    // delete artist from database
+    Artist.remove({_id : req.params.artist_id}, 
+        function(err, artist) {
+            if (err)
+                res.send(err);
                     
-                    // get and return all the todos after you create another
-                    Artist.find(function(err, artists) {
-                        if (err)
-                            res.send(err)
-                        res.json(artists);
-                    });
+            // get and return all the todos after you create another
+            Artist.find(function(err, artists) {
+                if (err)
+                    res.send(err)
+                res.json(artists);
             });
+        });
 
 }
 
@@ -122,7 +122,8 @@ exports.saveChange = function(req, res){
                 'description' : req.body.description,
                 'question'   : req.body.question,
                 'answer'    : req.body.answer,
-                'date'      : new Date(req.body.date)
+                'date'      : new Date(req.body.date),
+                'category'  : req.body.category
             }
         },
         function (err, result) {

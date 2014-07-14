@@ -29,6 +29,19 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 
 	$scope.formData = {};
 
+	// category dropdown
+    $scope.categories =
+    [
+        "Film",
+        "Music",
+        "Performance",
+        "Visual",
+        "Written"
+    ];
+    
+    $scope.selectedCategory = $scope.categories[0];
+
+
 	// when landing on the page, get all artists and show them
 	$http.get('/artists')
 		.success(function(data) {

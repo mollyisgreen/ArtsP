@@ -43,6 +43,10 @@
 			<img class="editPhotoDisplay" src={{bioPhotoPath}}></br></br>
 			<input type="file" id="biopic" name="files" ng-file-select="uploadBioPic(artist[0]._id)"></br></br>
 			
+			<b>Category:</b>
+			<select ng-model="artist[0].category" data-ng-options="category for category in categories">
+			</select></br>
+
 			<b>Showcase date:</b> {{artist[0].date | date: fullDate}}</br>
 			<b>Change to date:</b> <input type="date" class="formfield" ng-model="artist[0].date"></br>
 			<b>Artist:</b> <input type="text" class="formfield" ng-model="artist[0].name"></br>
@@ -61,29 +65,29 @@
 	</div>
 
 	<!-- Upload discover features -->
-		<form class="discoverForm">
-			<b>Discover 1:</b></br>
-			iframe link: <input type="text" ng-model="artist[0].discoverlink1"/></br>
-			<input type="radio" name="linktype" value="vimeo" ng-model="artist[0].discoverlink1type">Vimeo</br>
-			<input type="radio" name="linktype" value="bandcamp" ng-model="artist[0].discoverlink1type">Bandcamp</br>
-			<input type="type" ng-model="artist[0].discoverlink1description" placeholder="Description">
-		</form>
+	<form class="discoverForm">
+		<b>Discover 1:</b></br>
+		iframe link: <input type="text" ng-model="artist[0].discoverlink1"/></br>
+		<input type="radio" name="linktype" value="vimeo" ng-model="artist[0].discoverlink1type">Vimeo</br>
+		<input type="radio" name="linktype" value="bandcamp" ng-model="artist[0].discoverlink1type">Bandcamp</br>
+		<input type="type" ng-model="artist[0].discoverlink1description" placeholder="Description">
+	</form>
 
-		<form class="discoverForm">
-			<b>Discover 2:</b></br>
-			iframe link: <input type="text" ng-model="artist[0].discoverlink2"/></br>
-			<input type="radio" name="linktype" value="vimeo" ng-model="artist[0].discoverlink2type">Vimeo</br>
-			<input type="radio" name="linktype" value="bandcamp" ng-model="artist[0].discoverlink2type">Bandcamp</br>
-			<input type="type" ng-model="artist[0].discoverlink2description" placeholder="Description">
-		</form>
+	<form class="discoverForm">
+		<b>Discover 2:</b></br>
+		iframe link: <input type="text" ng-model="artist[0].discoverlink2"/></br>
+		<input type="radio" name="linktype" value="vimeo" ng-model="artist[0].discoverlink2type">Vimeo</br>
+		<input type="radio" name="linktype" value="bandcamp" ng-model="artist[0].discoverlink2type">Bandcamp</br>
+		<input type="type" ng-model="artist[0].discoverlink2description" placeholder="Description">
+	</form>
 
-		<form class="discoverForm">
-			<b>Discover 3:</b></br>
-			iframe link: <input type="text" ng-model="artist[0].discoverlink3"/></br>
-			<input type="radio" name="linktype" value="vimeo" ng-model="artist[0].discoverlink3type">Vimeo</br>
-			<input type="radio" name="linktype" value="bandcamp" ng-model="artist[0].discoverlink3type">Bandcamp</br>
-			<input type="type" ng-model="artist[0].discoverlink3description" placeholder="Description">
-		</form>
+	<form class="discoverForm">
+		<b>Discover 3:</b></br>
+		iframe link: <input type="text" ng-model="artist[0].discoverlink3"/></br>
+		<input type="radio" name="linktype" value="vimeo" ng-model="artist[0].discoverlink3type">Vimeo</br>
+		<input type="radio" name="linktype" value="bandcamp" ng-model="artist[0].discoverlink3type">Bandcamp</br>
+		<input type="type" ng-model="artist[0].discoverlink3description" placeholder="Description">
+	</form>
 </div>
 
 <!-- Display discover features -->
