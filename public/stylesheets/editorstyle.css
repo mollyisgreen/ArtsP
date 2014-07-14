@@ -59,13 +59,10 @@
 	border-style: none;
 }
 
-.discoverSection {
-	margin-top: 30px;
-}
-
 .discoverForm {
 	width: 200px;
-	margin-top: 20px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 	text-align: left;
 	float: left;
 }

@@ -133,27 +133,29 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 			$scope.discoveriframe3 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink3);
 
 			if($scope.artist[0].discoverlink1type=="vimeo"){
-				$scope.artist.discoverwidth1 = vimeoWidth;
-				$scope.artist.discoverheight1 = vimeoHeight;
+				console.log("meow1");
+				$scope.artist[0].discoverwidth1 = vimeoWidth;
+				$scope.artist[0].discoverheight1 = vimeoHeight;
 			} else {
-				$scope.artist.discoverwidth1 = bandcampSize;
-				$scope.artist.discoverheight1 = bandcampSize;				
+								console.log("meow2");
+				$scope.artist[0].discoverwidth1 = bandcampSize;
+				$scope.artist[0].discoverheight1 = bandcampSize;				
 			}
 
 			if($scope.artist[0].discoverlink2type=="vimeo"){
-				$scope.artist.discoverwidth2 = vimeoWidth;
-				$scope.artist.discoverheight2 = vimeoHeight;
+				$scope.artist[0].discoverwidth2 = vimeoWidth;
+				$scope.artist[0].discoverheight2 = vimeoHeight;
 			} else {
-				$scope.artist.discoverwidth2 = bandcampSize;
-				$scope.artist.discoverheight2 = bandcampSize;				
+				$scope.artist[0].discoverwidth2 = bandcampSize;
+				$scope.artist[0].discoverheight2 = bandcampSize;				
 			}
 
 			if($scope.artist[0].discoverlink3type=="vimeo"){
-				$scope.artist.discoverwidth3 = vimeoWidth;
-				$scope.artist.discoverheight3 = vimeoHeight;
+				$scope.artist[0].discoverwidth3 = vimeoWidth;
+				$scope.artist[0].discoverheight3 = vimeoHeight;
 			} else {
-				$scope.artist.discoverwidth3 = bandcampSize;
-				$scope.artist.discoverheight3 = bandcampSize;				
+				$scope.artist[0].discoverwidth3 = bandcampSize;
+				$scope.artist[0].discoverheight3 = bandcampSize;				
 			}
 
 			$scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;

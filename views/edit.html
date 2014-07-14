@@ -72,7 +72,6 @@
 		</div>
 
 		<!-- Upload discover features -->
-		<div class="discoverSection">
 			<form class="discoverForm">
 				<b>Discover 1:</b></br>
 				iframe link: <input type="text" ng-model="artist.discoverlink1"/></br>
@@ -96,15 +95,14 @@
 				<input type="radio" name="linktype" value="bandcamp" ng-model="artist.discoverlink3type">Bandcamp</br>
 				<input type="type" ng-model="artist.discoverlink3description" placeholder="Description">
 			</form>
-		</div>
-</div>
+	</div>
 
 	<!-- Display discover features -->
-	<iframe src={{discoveriframe1}} width={{artist.discoverwidth1}} height={{artist.discoverheight1}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	<iframe class="discoverUnit" src={{discoveriframe1}} width={{artist.discoverwidth1}} height={{artist.discoverheight1}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-	<iframe src={{discoveriframe2}} width={{artist.discoverwidth2}} height={{artist.discoverheight2}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	<iframe class="discoverUnit" src={{discoveriframe2}} width={{artist.discoverwidth2}} height={{artist.discoverheight2}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-	<iframe src={{discoveriframe3}} width={{artist.discoverwidth3}} height={{artist.discoverheight3}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>	
+	<iframe class="discoverUnit" src={{discoveriframe3}} width={{artist.discoverwidth3}} height={{artist.discoverheight3}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>	
 
 	</br></br><button class="editButton" ng-click="deleteArtist(artist._id)">Delete Artist</button>
 	
