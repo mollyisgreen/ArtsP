@@ -1,109 +1,105 @@
-<!-- TODO: is this correct directive? -->
-<div ng-repeat="artist in artist">
-	<div class="editContainer">		
-		<a class="editButton" href="#/">Dashboard</a>
-		<a class="editButton" href="#/preview/{{artist._id}}">Preview</a></br></br>
+<div class="editContainer">		
+	<a class="editButton" href="#/">Dashboard</a>
+	<a class="editButton" href="#/preview/{{artist[0]._id}}">Preview</a></br></br>
 
-		<!-- Features -->
-		<img id="imagefeatureDisplay" src={{visualFeaturePath}}>
+	<!-- Features -->
+	<img id="imagefeatureDisplay" src={{visualFeaturePath}}>
 
-		<div id="textfeatureDisplay">{{artist.textfeature}}</div>
+	<div id="textfeatureDisplay">{{artist[0].textfeature}}</div>
 
-		<div id="iframefeatureDisplay">
-			<iframe src={{iframesrc}} width={{artist.embedwidth}} height={{artist.embedheight}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-		</div>
-
-		<!-- Upload feature -->
-		<form class="featureform" name="revisionForm">
-
-			<button class="editButton" ng-click="textfeature=!textfeature">Text</button>
-			<button class="editButton" ng-click="embedfeature=!embedfeature">Embedded Link</button>
-			<button class="editButton" ng-click="imagefeature=!imagefeature">Visual Art</button>
-
-			</br></br></br>
-
-			<span ng-hide="textfeature">
-				<textarea type="text" id="textcontent" ng-model="artist.textfeature"/></textarea>
-				</br><button class="editButton" ng-click="saveTextFeature(artist._id, $index)">Save Feature</button>
-			</span>
-
-			<span ng-hide="embedfeature">
-				iframe link: <input type="text" id="from" ng-model="artist.embedlink"/></br>
-				iframe width: <input type="text" id="from" ng-model="artist.embedwidth"/></br>
-				iframe height: <input type="text" id="from" ng-model="artist.embedheight"/></br>
-				</br><button class="editButton" ng-click="saveEmbedFeature(artist._id, $index)">Save Feature</button>
-			</span>
-
-			<span ng-hide="imagefeature">
-				<input type="file" id="visualfeature" name="files" ng-file-select="uploadVisualFeature(artist._id, $files)">
-			</span>
-
-		</form>
-
-
-		<div class="artistinfo">
-			<form name="revisionForm">
-				<img class="editPhotoDisplay" src={{bioPhotoPath}}></br></br>
-				<input type="file" id="biopic" name="files" ng-file-select="uploadBioPic(artist._id)"></br></br>
-
-				<b>Category:</b>
-				<select ng-model="artist.category">
-					<option value="music">Music</option>
-					<option value="film">Film</option>
-					<option value="performance">Performance</option>
-					<option value="written">Written</option>
-				</select>
-				</br>
-				<b>Showcase date:</b> {{artist.date | date: fullDate}}</br>
-				<b>Change to date:</b> <input type="date" class="formfield" ng-model="artist.date"></br>
-				<b>Artist:</b> <input type="text" class="formfield" ng-model="artist.name"></br>
-				<b>City:</b> <input type="text" class="formfield" ng-model="artist.city"></br>
-				<b>Description:</b></br> 
-					<textarea type="text" class="textAreaClass" ng-model="artist.description"></textarea></br>
-				<b>Question:</b></br>
-					<textarea type="text" class="textAreaClass" ng-model="artist.question"/></textarea></br>
-				<b>Answer:</b></br>
-					<textarea type="text" class="textAreaClass" ng-model="artist.answer"/></textarea></br>
-
-				</br></br>
-				<button class="editButton" ng-click="saveChange(artist._id, $index)">Save Artist Changes</button>
-				<button class="editButton" ng-click="saveDiscoverLinks(artist._id, $index)">Save Discovery Changes</button>
-			</form>
-		</div>
-
-		<!-- Upload discover features -->
-			<form class="discoverForm">
-				<b>Discover 1:</b></br>
-				iframe link: <input type="text" ng-model="artist.discoverlink1"/></br>
-				<input type="radio" name="linktype" value="vimeo" ng-model="artist.discoverlink1type">Vimeo</br>
-				<input type="radio" name="linktype" value="bandcamp" ng-model="artist.discoverlink1type">Bandcamp</br>
-				<input type="type" ng-model="artist.discoverlink1description" placeholder="Description">
-			</form>
-
-			<form class="discoverForm">
-				<b>Discover 2:</b></br>
-				iframe link: <input type="text" ng-model="artist.discoverlink2"/></br>
-				<input type="radio" name="linktype" value="vimeo" ng-model="artist.discoverlink2type">Vimeo</br>
-				<input type="radio" name="linktype" value="bandcamp" ng-model="artist.discoverlink2type">Bandcamp</br>
-				<input type="type" ng-model="artist.discoverlink2description" placeholder="Description">
-			</form>
-
-			<form class="discoverForm">
-				<b>Discover 3:</b></br>
-				iframe link: <input type="text" ng-model="artist.discoverlink3"/></br>
-				<input type="radio" name="linktype" value="vimeo" ng-model="artist.discoverlink3type">Vimeo</br>
-				<input type="radio" name="linktype" value="bandcamp" ng-model="artist.discoverlink3type">Bandcamp</br>
-				<input type="type" ng-model="artist.discoverlink3description" placeholder="Description">
-			</form>
+	<div id="iframefeatureDisplay">
+		<iframe src={{iframesrc}} width={{artist[0].embedwidth}} height={{artist[0].embedheight}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</div>
 
-	<!-- Display discover features -->
-	<iframe class="discoverUnit" src={{discoveriframe1}} width={{artist.discoverwidth1}} height={{artist.discoverheight1}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	<!-- Upload feature -->
+	<form class="featureform" name="revisionForm">
 
-	<iframe class="discoverUnit" src={{discoveriframe2}} width={{artist.discoverwidth2}} height={{artist.discoverheight2}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<button class="editButton" ng-click="textfeature=!textfeature">Text</button>
+		<button class="editButton" ng-click="embedfeature=!embedfeature">Embedded Link</button>
+		<button class="editButton" ng-click="imagefeature=!imagefeature">Visual Art</button>
+		</br></br></br>
 
-	<iframe class="discoverUnit" src={{discoveriframe3}} width={{artist.discoverwidth3}} height={{artist.discoverheight3}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>	
+		<span ng-hide="textfeature">
+			<textarea type="text" id="textcontent" ng-model="artist[0].textfeature"/></textarea>
+			</br><button class="editButton" ng-click="saveTextFeature(artist[0]._id, $index)">Save Feature</button>
+		</span>
 
-	</br></br><button class="editButton" ng-click="deleteArtist(artist._id)">Delete Artist</button>
-	
+		<span ng-hide="embedfeature">
+			iframe link: <input type="text" id="from" ng-model="artist[0].embedlink"/></br>
+			iframe width: <input type="text" id="from" ng-model="artist[0].embedwidth"/></br>
+			iframe height: <input type="text" id="from" ng-model="artist[0].embedheight"/></br>
+			</br><button class="editButton" ng-click="saveEmbedFeature(artist[0]._id, $index)">Save Feature</button>
+		</span>
+
+		<span ng-hide="imagefeature">
+			<input type="file" id="visualfeature" name="files" ng-file-select="uploadVisualFeature(artist[0]._id, $files)">
+		</span>
+
+	</form>
+
+
+	<div class="artistinfo">
+		<form name="revisionForm">
+			<img class="editPhotoDisplay" src={{bioPhotoPath}}></br></br>
+			<input type="file" id="biopic" name="files" ng-file-select="uploadBioPic(artist[0]._id)"></br></br>
+
+			<b>Category:</b>
+			<select ng-model="artist[0].category">
+				<option value="music">Music</option>
+				<option value="film">Film</option>
+				<option value="performance">Performance</option>
+				<option value="written">Written</option>
+			</select></br>
+			
+			<b>Showcase date:</b> {{artist[0].date | date: fullDate}}</br>
+			<b>Change to date:</b> <input type="date" class="formfield" ng-model="artist[0].date"></br>
+			<b>Artist:</b> <input type="text" class="formfield" ng-model="artist[0].name"></br>
+			<b>City:</b> <input type="text" class="formfield" ng-model="artist[0].city"></br>
+			<b>Description:</b></br> 
+				<textarea type="text" class="textAreaClass" ng-model="artist[0].description"></textarea></br>
+			<b>Question:</b></br>
+				<textarea type="text" class="textAreaClass" ng-model="artist[0].question"/></textarea></br>
+			<b>Answer:</b></br>
+				<textarea type="text" class="textAreaClass" ng-model="artist[0].answer"/></textarea></br>
+
+			</br></br>
+			<button class="editButton" ng-click="saveChange(artist[0]._id, $index)">Save Artist Changes</button>
+			<button class="editButton" ng-click="saveDiscoverLinks(artist[0]._id, $index)">Save Discovery Changes</button>
+		</form>
+	</div>
+
+	<!-- Upload discover features -->
+		<form class="discoverForm">
+			<b>Discover 1:</b></br>
+			iframe link: <input type="text" ng-model="artist[0].discoverlink1"/></br>
+			<input type="radio" name="linktype" value="vimeo" ng-model="artist[0].discoverlink1type">Vimeo</br>
+			<input type="radio" name="linktype" value="bandcamp" ng-model="artist[0].discoverlink1type">Bandcamp</br>
+			<input type="type" ng-model="artist[0].discoverlink1description" placeholder="Description">
+		</form>
+
+		<form class="discoverForm">
+			<b>Discover 2:</b></br>
+			iframe link: <input type="text" ng-model="artist[0].discoverlink2"/></br>
+			<input type="radio" name="linktype" value="vimeo" ng-model="artist[0].discoverlink2type">Vimeo</br>
+			<input type="radio" name="linktype" value="bandcamp" ng-model="artist[0].discoverlink2type">Bandcamp</br>
+			<input type="type" ng-model="artist[0].discoverlink2description" placeholder="Description">
+		</form>
+
+		<form class="discoverForm">
+			<b>Discover 3:</b></br>
+			iframe link: <input type="text" ng-model="artist[0].discoverlink3"/></br>
+			<input type="radio" name="linktype" value="vimeo" ng-model="artist[0].discoverlink3type">Vimeo</br>
+			<input type="radio" name="linktype" value="bandcamp" ng-model="artist[0].discoverlink3type">Bandcamp</br>
+			<input type="type" ng-model="artist[0].discoverlink3description" placeholder="Description">
+		</form>
 </div>
+
+<!-- Display discover features -->
+<iframe class="discoverUnit" src={{discoveriframe1}} width={{artist[0].discoverwidth1}} height={{artist[0].discoverheight1}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<iframe class="discoverUnit" src={{discoveriframe2}} width={{artist[0].discoverwidth2}} height={{artist[0].discoverheight2}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<iframe class="discoverUnit" src={{discoveriframe3}} width={{artist[0].discoverwidth3}} height={{artist[0].discoverheight3}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>	
+
+</br></br><button class="editButton" ng-click="deleteArtist(artist[0]._id)">Delete Artist</button>
+	
