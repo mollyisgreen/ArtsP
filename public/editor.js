@@ -133,11 +133,9 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 			$scope.discoveriframe3 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink3);
 
 			if($scope.artist[0].discoverlink1type=="vimeo"){
-				console.log("meow1");
 				$scope.artist[0].discoverwidth1 = vimeoWidth;
 				$scope.artist[0].discoverheight1 = vimeoHeight;
 			} else {
-								console.log("meow2");
 				$scope.artist[0].discoverwidth1 = bandcampSize;
 				$scope.artist[0].discoverheight1 = bandcampSize;				
 			}
@@ -158,7 +156,7 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 				$scope.artist[0].discoverheight3 = bandcampSize;				
 			}
 
-			$scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;
+			//$scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;
 
 		})
 		.error(function(data) {
@@ -168,7 +166,7 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 	// save interview/profile edits
 	$scope.saveChange = function(id, index) {
 
-		$http.post('/saveChange/' + id, $scope.artist[index])
+		$http.post('/saveChange/' + id, $scope.artist[0])
 			.success(function(data) {
 				$scope.artist = data;
 				console.log(data);
@@ -201,7 +199,7 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 
 	// save feature edits
 	$scope.saveTextFeature = function(id, index) {
-		$http.post('/saveTextFeature/' + id, $scope.artist[index])
+		$http.post('/saveTextFeature/' + id, $scope.artist[0])
 			.success(function(data) {
 				$scope.artist = data;
 				console.log(data);
@@ -213,7 +211,7 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 
 
 	$scope.saveEmbedFeature = function(id, index) {
-		$http.post('/saveEmbedFeature/' + id, $scope.artist[index])
+		$http.post('/saveEmbedFeature/' + id, $scope.artist[0])
 			.success(function(data) {
 				$scope.artist = data;
 				console.log(data);
@@ -253,7 +251,7 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 
 
 	$scope.saveDiscoverLinks = function(id, index) {
-		$http.post('/saveDiscoverLinks/' + id, $scope.artist[index])
+		$http.post('/saveDiscoverLinks/' + id, $scope.artist[0])
 			.success(function(data) {
 				$scope.artist = data;
 				console.log(data);

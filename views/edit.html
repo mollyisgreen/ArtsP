@@ -21,14 +21,14 @@
 
 		<span ng-hide="textfeature">
 			<textarea type="text" id="textcontent" ng-model="artist[0].textfeature"/></textarea>
-			</br><button class="editButton" ng-click="saveTextFeature(artist[0]._id, $index)">Save Feature</button>
+			</br><button class="editButton" ng-click="saveTextFeature(artist[0]._id)">Save Feature</button>
 		</span>
 
 		<span ng-hide="embedfeature">
 			iframe link: <input type="text" id="from" ng-model="artist[0].embedlink"/></br>
 			iframe width: <input type="text" id="from" ng-model="artist[0].embedwidth"/></br>
 			iframe height: <input type="text" id="from" ng-model="artist[0].embedheight"/></br>
-			</br><button class="editButton" ng-click="saveEmbedFeature(artist[0]._id, $index)">Save Feature</button>
+			</br><button class="editButton" ng-click="saveEmbedFeature(artist[0]._id)">Save Feature</button>
 		</span>
 
 		<span ng-hide="imagefeature">
@@ -42,14 +42,6 @@
 		<form name="revisionForm">
 			<img class="editPhotoDisplay" src={{bioPhotoPath}}></br></br>
 			<input type="file" id="biopic" name="files" ng-file-select="uploadBioPic(artist[0]._id)"></br></br>
-
-			<b>Category:</b>
-			<select ng-model="artist[0].category">
-				<option value="music">Music</option>
-				<option value="film">Film</option>
-				<option value="performance">Performance</option>
-				<option value="written">Written</option>
-			</select></br>
 			
 			<b>Showcase date:</b> {{artist[0].date | date: fullDate}}</br>
 			<b>Change to date:</b> <input type="date" class="formfield" ng-model="artist[0].date"></br>
@@ -63,8 +55,8 @@
 				<textarea type="text" class="textAreaClass" ng-model="artist[0].answer"/></textarea></br>
 
 			</br></br>
-			<button class="editButton" ng-click="saveChange(artist[0]._id, $index)">Save Artist Changes</button>
-			<button class="editButton" ng-click="saveDiscoverLinks(artist[0]._id, $index)">Save Discovery Changes</button>
+			<button class="editButton" ng-click="saveChange(artist[0]._id)">Save Artist Changes</button>
+			<button class="editButton" ng-click="saveDiscoverLinks(artist[0]._id)">Save Discovery Changes</button>
 		</form>
 	</div>
 
