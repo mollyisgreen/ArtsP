@@ -8,9 +8,15 @@ var todayInMill = Date.parse(currentMonth + '/' + currentDate + '/' + currentYea
 // first/release date of atom review
 var firstPostMill = Date.parse("6/25/2014");
 
+/*
 var vimeoWidth = 444;
 var vimeoHeight = 250;
 var bandcampSize = 250;
+*/
+
+var vimeoWidth = 700;
+var vimeoHeight = 393;
+var bandcampSize = 393;
 
 var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 
 	'angulartics', 'angulartics.google.analytics', 
