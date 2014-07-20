@@ -136,6 +136,10 @@ a:hover, a:visited, a:link, a:active
 	margin: 0px 40px 40px 0px;
 }
 
+.addthis_sharing_toolbox {
+	clear: both;
+}
+
 #previous {
 	margin-right: 20px;
 }
