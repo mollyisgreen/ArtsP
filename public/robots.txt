@@ -1,2 +1,2 @@
-Sitemap: https://www.atomreview.com/sitemap.xml
+Sitemap: http://floating-fjord-7190.herokuapp.com/sitemap.xml
 User-agent: *
