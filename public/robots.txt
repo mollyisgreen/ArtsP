@@ -1,0 +1,2 @@
+Sitemap: http://www.http://floating-fjord-7190.herokuapp.com/sitemap.xml
+User-agent: *

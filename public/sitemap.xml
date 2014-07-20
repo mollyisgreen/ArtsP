@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url> 
+    <loc>https://floating-fjord-7190.herokuapp.com/#!/show/1405839600000</loc> 
+    <image:image>
+       <image:loc>https://atomreview.s3.amazonaws.com/biopic53c20fddfd40c60f1a000001</image:loc> 
+    </image:image>
+    <video:video>     
+      <video:content_loc>
+        http://youtu.be/FEk5LSEon5w
+      </video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">
+        http://youtu.be/FEk5LSEon5w
+      </video:player_loc>
+      <video:title>Notes on the existence of ghosts</video:title>  
+      <video:description>
+        Franny Choi
+      </video:description>
+    </video:video>
+  </url>
+</urlset>
