@@ -14,9 +14,9 @@ var vimeoHeight = 250;
 var bandcampSize = 250;
 */
 
-var vimeoWidth = 700;
-var vimeoHeight = 393;
-var bandcampSize = 393;
+var vimeoWidth = 500;
+var vimeoHeight = 281;
+var bandcampSize = 281;
 
 var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 
 	'angulartics', 'angulartics.google.analytics', 
