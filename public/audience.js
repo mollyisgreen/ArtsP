@@ -61,7 +61,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 			    };
 
 			    $scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;
-			    $scope.visualFeaturePath = "https://atomreview.s3.amazonaws.com/visualfeature" + $scope.artist[0]._id;
 			    
 			} else {
 				$location.path('/');
@@ -79,6 +78,7 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 				document.getElementById('imagefeature').style.display = 'none';  
 			}
 			else {
+				$scope.visualFeaturePath = "https://atomreview.s3.amazonaws.com/visualfeature" + $scope.artist[0]._id;
 				document.getElementById('iframefeature').style.display = 'none'; 
 				document.getElementById('textfeature').style.display = 'none'; 
 			}
