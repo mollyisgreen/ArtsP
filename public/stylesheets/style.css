@@ -99,6 +99,21 @@ a:hover, a:visited, a:link, a:active
 	font-family: Courier;
 }
 
+/********** about/contact *********/
+
+
+.largetext {
+	font-family: Courier;
+	font-size: 30px;
+}
+
+.contactUs {
+	width: 60%;
+	margin: 0 auto;
+}
+
+
+
 /********** artist *********/
 
 .textfeature {
@@ -146,11 +161,6 @@ a:hover, a:visited, a:link, a:active
 
 #next {
 	margin-left: 30px;
-}
-
-.largetext {
-	font-family: Courier;
-	font-size: 30px;
 }
 
 /********** features *********/

@@ -1,3 +1,13 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
 <div class="top">
 	<a href="/">
 		<div class="title">Atom Review</div>
@@ -5,28 +15,34 @@
 	</a>
 
 	<div class="menubar">
-		<img src="line.png">
-
-		<div id="categorycontainer">
-			<div class="categories">film</div>
-			<div class="categories">music</div>
-			<div class="categories">performance</div>
-			<div class="categories">written</div>
-			<div class="categories">|</div>
-			<a class="categories" href="#!/about">about</a>
-			<a class="categories" href="#!/contact">contact</a>
-		</div>
-
-		<img src="line.png"></br>
+		<img class="arrow" src="line.png">
+			<div class="categorycontainer">
+				<div class="categories">film</div>
+				<div class="categories">music</div>
+				<div class="categories">performance</div>
+				<div class="categories">written</div>
+				<div class="categories">|</div>
+				<a class="categories" href="#!/about">about</a>
+				<a class="categories" href="#!/contact">contact</a>
+			</div>
+		<img class"arrow" src="line.png"></br>
 	</div>
 
-	<div class="largetext">We love to hear from you!</br>
+	<div class="largetext">
+		<div class="contactUs">
+			We love to hear from you!</br>
+			Please send any suggestions, recommendations for artists, or inquiries our way!</br></br>
+			Email us at team@atomreview.com!</br></br>
 
-	Please send any suggestions, recommendations for artists, or inquiries our way!</br>
+			<a href="https://twitter.com/atomreview" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @atomreview</a>
+			<script>
+				!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+			</script>
 
-	Like us on Facebook.</br>
-	Follow us on Twitter.</br>
+			</br></br>
+			<div class="fb-like-box" data-href="https://www.facebook.com/theatomreview" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div></br>
 
-	Email us!</br>
+
+		</div>
 	</div>
 </div>
