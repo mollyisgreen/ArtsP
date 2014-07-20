@@ -35,7 +35,7 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 	      	//templateUrl:'show'
 	    })
 	    .otherwise({
-	      redirectTo:'/contact'
+	      redirectTo:'/error'
     });
 
 	$locationProvider.hashPrefix('!');
