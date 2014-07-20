@@ -8,11 +8,6 @@ var todayInMill = Date.parse(currentMonth + '/' + currentDate + '/' + currentYea
 // first/release date of atom review
 var firstPostMill = Date.parse("6/25/2014");
 
-/*
-var vimeoWidth = 444;
-var vimeoHeight = 250;
-var bandcampSize = 250;
-*/
 
 var vimeoWidth = 500;
 var vimeoHeight = 281;
@@ -40,7 +35,7 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 	      	//templateUrl:'show'
 	    })
 	    .otherwise({
-	      redirectTo:'/'
+	      redirectTo:'/contact'
     });
 
 	$locationProvider.hashPrefix('!');
@@ -63,7 +58,7 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 			    $scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;
 			    
 			} else {
-				$location.path('/');
+				$location.path('/error');
 			}
 
 

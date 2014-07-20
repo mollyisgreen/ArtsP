@@ -39,6 +39,10 @@ module.exports = function(app, passport) {
 	  	res.render('edit.html', { title: 'Express' });
 	});
 
+	app.get('/error', isLoggedIn, function(req, res){
+	  	res.render('error.html', { title: 'Express' });
+	});
+
 	app.get('/editordashboard', isLoggedIn, function(req, res){
 	  	res.render('editordashboard.html', { 
 	  		user : req.user // get the user out of session and pass to template
