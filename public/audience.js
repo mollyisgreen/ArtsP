@@ -29,13 +29,16 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload',
 	    .when('/contact', {
 	      templateUrl:'contact'
 	    })
+	   	.when('/spaerror', {
+	      templateUrl:'spaerror'
+	    })
 	    .when('/', {
 	    	redirectTo: '/show/' + todayInMill,
 	      	//controller:'indexController',
 	      	//templateUrl:'show'
 	    })
 	    .otherwise({
-	      redirectTo:'/error'
+	      redirectTo:'/spaerror'
     });
 
 	$locationProvider.hashPrefix('!');
