@@ -39,12 +39,12 @@ module.exports = function(app, passport) {
 	  	res.render('edit.html', { title: 'Express' });
 	});
 
-	app.get('/error', isLoggedIn, function(req, res){
+	app.get('/error', function(req, res){
 	  	res.render('error.html', { title: 'Express' });
 	});
 
 
-	app.get('/spaerror', isLoggedIn, function(req, res){
+	app.get('/spaerror', function(req, res){
 	  	res.render('spaerror.html', { title: 'Express' });
 	});
 
