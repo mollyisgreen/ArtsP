@@ -13,9 +13,8 @@ var vimeoWidth = 500;
 var vimeoHeight = 281;
 var bandcampSize = 281;
 
-var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 
-	'angulartics', 'angulartics.google.analytics', 
-	'infinite-scroll'])
+var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infinite-scroll',
+	'angulartics', 'angulartics.google.analytics', 'angulartics.scroll'])
 
 .config(function($routeProvider, $locationProvider) {
   	$routeProvider
