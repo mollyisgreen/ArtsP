@@ -34,12 +34,13 @@
 
 		<!-- AddThis -->
 		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53a0beae4c9aa27c"></script>
-		<script>
-			var addthis_share = 
-			{
-				title: {{seo.pageDescription}},
-				templates : {
-					twitter: "{{title}} {{url}} (via @atomreview)"
+		<script type="text/javascript">
+			var addthis_share = addthis_share || {}
+			addthis_share = {
+				passthrough : {
+					twitter: {
+						via: "atomreview"
+					}
 				}
 			}
 		</script>
