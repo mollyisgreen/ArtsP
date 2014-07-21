@@ -40,15 +40,15 @@
 				passthrough : {
 					twitter: {
 						via: "atomreview"
-						//text: "showcasing today's artist "
+						text: {{seo.pageDescription}}
 					}
 				}
 			}
 		</script>
 
 
-		<meta property="og:title" content="Showcasing one indie artist per day: "+={{seo.pageTitle}} /> 
-		<meta property="og:description" content={{artist[0].answer}} />  
+		<meta property="og:title" content={{seo.pageDescription}} /> 
+		<meta property="og:description" content={{seo.pageCaption}} />  
 		<meta property="og:image" content={{bioPhotoPath}} /> 
 
 		<!-- Google Analytics -->

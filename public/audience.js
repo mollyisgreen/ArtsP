@@ -54,7 +54,8 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 				// prerender SEO
 				$scope.$parent.seo = {
 			        pageTitle : $scope.artist[0].name,
-			        pageDescription: 'Showcasing the artist of the day: ' + $scope.artist[0].name
+			        pageDescription: 'Showcasing one indie artist per day: ' + $scope.artist[0].name,
+			        pageCaption: $scope.artist[0].answer
 			    };
 
 			    $scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;
