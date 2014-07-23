@@ -196,8 +196,19 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 			});
 
 	$scope.myPagingFunction = function() {
-	    
-	    discoverMillisecond -= 86400000;
+
+		var dateFromMill = new Date(parseInt(discoverMillisecond));
+		var dayOfWeekFromMill = dateFromMill.getDay();
+		console.log(dayOfWeekFromMill);
+
+		if (dayOfWeekFromMill==1) {
+			// if Monday and trying to go back in time, skip to Friday (or 3 days worth of milliseconds)
+			discoverMillisecond -= 259200000;
+		} else {
+			 discoverMillisecond -= 86400000;
+		}
+
+	    //discoverMillisecond -= 86400000;
 
 	    $http.get('/show/' + discoverMillisecond)
 			.success(function(data) {
