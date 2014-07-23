@@ -156,11 +156,13 @@ a:hover, a:visited, a:link, a:active
 }
 
 #previous {
-	margin-right: 30px;
+	margin-right: 20px;
+	margin-left: 20px;
 }
 
 #next {
-	margin-left: 30px;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 /********** features *********/

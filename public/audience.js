@@ -132,11 +132,11 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 			$scope.previous = (parseInt($scope.releaseDate) + 86400000);
 			*/
 
-/*
+
 			// if on today's page, hide button that allows you to go to tomorrow's content
 			if($scope.releaseDate == todayInMill)
 				document.getElementById('previous').style.display = 'none'; 
-*/
+
 			// if on first day's page, hide button that allows you to go further into past
 			if($scope.releaseDate == firstPostMill)
 				document.getElementById('next').style.display = 'none'; 
