@@ -47,7 +47,7 @@ body {
 	border-right: solid #F2F2F2 30px;
 	text-align: center;
 	padding-top: 50px;
-	padding-bottom: 60px;
+	padding-bottom: 100px;
 	color: #4A4A4A;
 }
 
@@ -142,13 +142,20 @@ a:hover, a:visited, a:link, a:active
 	float: left;
 }
 
-.artistPhotoNew {
+.artistPhoto {
 	-moz-box-shadow:    0px 0px 5px 0px rgba(0,0,0,0.50);
 	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.50);
 	box-shadow:         0px 0px 5px 0px rgba(0,0,0,0.50);
 	height: 300px;
 	float: left;
-	margin: 0px 40px 40px 0px;
+	margin: -120px 40px 40px 0px;
+}
+
+.artistQuickInfo {
+	text-align: left;
+	font-family: NoticiaText, serif;
+	font-size: 20px;
+	line-height: 30px;
 }
 
 .addthis_sharing_toolbox {
