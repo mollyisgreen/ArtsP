@@ -3,7 +3,24 @@ var pageDate = new Date();
 var currentMonth = pageDate.getMonth() + 1;
 var currentDate = pageDate.getDate();
 var currentYear = pageDate.getFullYear();
+var todayInMillOld = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
+var todayInMill;
+
+// skip weekends
+var dayOfWeek = pageDate.getDay();
+if (dayOfWeek == 0) {
+	// If Sunday, go back two days worth of milliseconds
+	todayInMill = todayInMillOld - 172800000;
+} else if (dayOfWeek == 6) {
+	// If Saturday, go back one days worth of milliseconds
+	todayInMill = todayInMillOld - 86400000;
+} else {
+	todayInMill = todayInMillOld;
+}
+
+/* if not skipping weekends: 
 var todayInMill = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
+*/ 
 
 // first/release date of atom review
 var firstPostMill = Date.parse("6/25/2014");
@@ -84,15 +101,42 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 
 			$scope.releaseDate = $routeParams.date;
 
+			var dateFromMill = new Date(parseInt($scope.releaseDate));
+			var dayOfWeekFromMill = dateFromMill.getDay();
+			console.log(dayOfWeekFromMill);
+
+			// yesterday
+			$scope.next;
+			// tomorrow
+			$scope.previous
+
+
+			if (dayOfWeekFromMill==1) {
+				// if Monday and trying to go back in time, skip to Friday (or 3 days worth of milliseconds)
+				$scope.next = ($scope.releaseDate - 259200000);
+				$scope.previous = (parseInt($scope.releaseDate) + 86400000);
+			} else if (dayOfWeekFromMill==5) {
+				// if Friday and trying to go forward in time, skip to Monday (or 3 days worth of milliseconds)
+				$scope.previous = (parseInt($scope.releaseDate) + 259200000);
+				$scope.next = ($scope.releaseDate - 86400000);
+			} else {
+				$scope.next = ($scope.releaseDate - 86400000);
+				$scope.previous = (parseInt($scope.releaseDate) + 86400000);
+			}
+
+
+			/* not skipping weekends 
 			// yesterday
 			$scope.next = ($scope.releaseDate - 86400000);
 			// tomorrow
 			$scope.previous = (parseInt($scope.releaseDate) + 86400000);
+			*/
 
+/*
 			// if on today's page, hide button that allows you to go to tomorrow's content
 			if($scope.releaseDate == todayInMill)
 				document.getElementById('previous').style.display = 'none'; 
-
+*/
 			// if on first day's page, hide button that allows you to go further into past
 			if($scope.releaseDate == firstPostMill)
 				document.getElementById('next').style.display = 'none'; 
