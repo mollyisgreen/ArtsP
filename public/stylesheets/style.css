@@ -149,6 +149,7 @@ a:hover, a:visited, a:link, a:active
 	height: 300px;
 	float: left;
 	margin: -120px 40px 40px 0px;
+	vertical-align: bottom:;
 }
 
 .artistQuickInfo {
@@ -156,6 +157,7 @@ a:hover, a:visited, a:link, a:active
 	font-family: NoticiaText, serif;
 	font-size: 20px;
 	line-height: 30px;
+	vertical-align: bottom;
 }
 
 .addthis_sharing_toolbox {

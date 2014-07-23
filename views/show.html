@@ -34,19 +34,19 @@
 
 <div class="middle">
 	<div class="interviewblock">
-		<img class="artistPhoto" src={{bioPhotoPath}} alt={{artist[0].name}}>
+			<img class="artistPhoto" src={{bioPhotoPath}} alt={{artist[0].name}}>
 
-		<div class="artistQuickInfo">
-			<b>Artist</b> {{artist[0].name}}</br>
-			<b>City</b> {{artist[0].city}}</br>
-			<div class="addthis_sharing_toolbox"></div>
-		</div>
+			<div class="artistQuickInfo">
+				<b>Artist</b> {{artist[0].name}}</br>
+				<b>City</b> {{artist[0].city}}
+			</div>
 
 		<div class="interview">
 			<b>{{artist[0].question}}</b></br>
 			{{artist[0].answer}}</br></br>
 		</div>
 
+		<div class="addthis_sharing_toolbox"></div></br></br>
 		<a id="previous" href="#!/show/{{previous}}"><img src="leftarrow.png"></a>
 		<a id="next" href="#!/show/{{next}}"><img src="rightarrow.png"></a>
 	</div>
