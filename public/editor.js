@@ -106,12 +106,10 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 	$scope.embedfeature = true;
 	$scope.imagefeature = true;
 
-
 	$http.get('/artist/' + $routeParams.artistId)
 		.success(function(data) {
 			$scope.artist = data;
 			console.log(data);
-
 			// only relevant feature is visible
 			if($scope.artist[0].embedlink) {
 				// safe iframe src link
@@ -156,7 +154,7 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 				$scope.artist[0].discoverheight3 = bandcampSize;				
 			}
 
-			//$scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;
+			$scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;
 
 		})
 		.error(function(data) {

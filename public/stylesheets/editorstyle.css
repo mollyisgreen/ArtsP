@@ -1,11 +1,12 @@
 .editorBody {
 	margin: 0px 0px 0px 0px;
-	border: solid;
-	text-align: center;
+	/*border: solid;
 	border-color: #F2F2F2;
 	border-width: 30px;
-	padding-top: 50px;
+	*/
+	text-align: center;
 	padding-bottom: 50px;
+	padding-top: 50px;
 	color: #4A4A4A;
 }
 
@@ -17,6 +18,10 @@
 
 .addArtistForm {
 	margin-bottom: 40px;
+}
+
+.description {
+	margin-bottom: 100px;
 }
 
 .editorSearch {
