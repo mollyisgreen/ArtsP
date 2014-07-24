@@ -1,31 +1,59 @@
-<img id="imagefeatureDisplay" class="imagefeature" src={{visualFeaturePath}}>
+<a href="#/" class="btn">Back to Dashboard</a>
+<a href="#/edit/{{artist[0]._id}}">Edit</a>
 
-<div id="textfeatureDisplay" class="textfeature">{{artist.textfeature}}</div>
 
-<div id="iframefeatureDisplay">
-	<iframe src={{iframesrc}} width={{artist.embedwidth}} height={{artist.embedheight}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<div class="textfeature" id="textfeature">{{artist[0].textfeature}}</div>
+
+<img class="imagefeature" id="imagefeature" src={{visualFeaturePath}}>
+
+<div id="iframefeature">
+	<iframe src={{iframesrc}} width={{artist[0].embedwidth}} height={{artist[0].embedheight}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 
-<div class="interviewblock">
-	<img class="artistPhoto" src={{artist[0].photoPath}}>
+<div class="description">{{artist[0].description}}</div>
 
-	<div class="rightinterview">
+
+
+<div class="middle">
+	<div class="interviewblock">
+			<img class="artistPhoto" src={{bioPhotoPath}} alt={{artist[0].name}}>
+
+			<div class="artistQuickInfo">
+				<b>Artist</b> {{artist[0].name}}</br>
+				<b>City</b> {{artist[0].city}}
+			</div>
+
 		<div class="interview">
-			Name: {{artist[0].name}}</br>
-			City: {{artist[0].city}}</br>
-
 			<b>{{artist[0].question}}</b></br>
-			{{artist[0].answer}}</br>
-
-			<!-- AddThis -->
-			<div class="addthis_sharing_toolbox"></div>
+			{{artist[0].answer}}</br></br>
 		</div>
+
+		<div class="addthis_sharing_toolbox"></div></br></br>
+		<a id="previous" href="#!/show/{{previous}}"><img src="leftarrow.png"></a>
+		<a id="next" href="#!/show/{{next}}"><img src="rightarrow.png"></a>
 	</div>
 
 </div>
 
-<a id="previous" href="#!/show/{{previous}}"><img src="leftarrow.png"></a>
-<a id="next" href="#!/show/{{next}}"><img src="rightarrow.png"></a>
-</br>
-<a href="#/" class="btn">Back to Dashboard</a>
-<a href="#/edit/{{artist[0]._id}}">Edit</a>
+
+
+<div class="discover" ng-controller="discoverController" infinite-scroll="myPagingFunction()" 
+				infinite-scroll-disabled='endOfList' analytics-on="scrollby" analytics-event="discoverScroll">
+
+	<div class="discoverTitle">Discover other artists</div>
+
+    <div ng-repeat="artist in artistList">
+    	
+    	<iframe class="discoverUnit" src={{artist.discoverlink1}} width={{artist.discoverwidth1}} height={{artist.discoverheight1}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    	{{artist.discoverlink1description}}
+
+		<iframe class="discoverUnit" src={{artist.discoverlink2}} width={{artist.discoverwidth2}} height={{artist.discoverheight2}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		{{artist.discoverlink2description}}
+
+		<iframe class="discoverUnit" src={{artist.discoverlink3}} width={{artist.discoverwidth3}} height={{artist.discoverheight3}} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		{{artist.discoverlink3description}}
+
+    </div>
+
+
+</div>
