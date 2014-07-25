@@ -98,6 +98,12 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 				document.getElementById('textfeature').style.display = 'none'; 
 			}
 
+			// don't show second question if doesn't exist
+			if(!($scope.artist[0].question2)) {
+				// safe iframe src link
+				document.getElementById('question2').style.display = 'none'; 
+			} 
+
 
 			$scope.releaseDate = $routeParams.date;
 

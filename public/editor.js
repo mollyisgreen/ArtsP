@@ -126,6 +126,12 @@ var editor = angular.module('editor', ['ngRoute', 'angularFileUpload'])
 				//document.getElementById('textfeatureDisplay').style.display = 'none'; 
 			}
 
+			// don't show second question if doesn't exist
+			if(!($scope.artist[0].question2)) {
+				// safe iframe src link
+				document.getElementById('question2').style.display = 'none'; 
+			} 
+
 			$scope.discoveriframe1 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink1);
 			$scope.discoveriframe2 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink2);
 			$scope.discoveriframe3 = $sce.trustAsResourceUrl($scope.artist[0].discoverlink3);
