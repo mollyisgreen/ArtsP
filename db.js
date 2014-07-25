@@ -19,11 +19,11 @@ var db          = mongoose.connection;
 var Artist = mongoose.model('Artist', {
         name        : String,
         city        : String,
-        question    : String,
+        question1    : String,
+        question2   : String,
+        answer1     : String,
+        answer2     : String,
         description : String,
-        answer      : String,
-        photoPath   : String,
-        feature     : String,
         date        : Date
 });
 
@@ -61,9 +61,11 @@ exports.createArtist = function(req, res){
     var artist = new Artist({
         name        : req.body.artistname,
         city        : req.body.artistcity,
-        question    : req.body.artistquestion,
+        question1    : req.body.artistquestion1,
+        question2    : req.body.artistquestion2,
         description : req.body.artistdescription,
-        answer      : req.body.artistanswer,
+        answer1      : req.body.artistanswer1,
+        answer2      : req.body.artistanswer2,
         date        : req.body.artistdate
     });
 
@@ -120,8 +122,10 @@ exports.saveChange = function(req, res){
                 'name'      : req.body.name,
                 'city'      : req.body.city,
                 'description' : req.body.description,
-                'question'   : req.body.question,
-                'answer'    : req.body.answer,
+                'question1'   : req.body.question1,
+                'answer1'    : req.body.answer1,
+                'question2'   : req.body.question2,
+                'answer2'    : req.body.answer2,
                 'date'      : new Date(req.body.date),
                 'category'  : req.body.category
             }
@@ -204,7 +208,6 @@ exports.saveVisualFeature = function(req, res){
 
     db.collection("artists").update(
         { '_id' : mongoose.Types.ObjectId(req.params.artist_id) } ,
-        // is req.files sufficient? should i go deeper into that?
         { 
             $unset: { textfeature: "",
                         embedlink: "",
