@@ -142,6 +142,7 @@ a:hover, a:visited, a:link, a:active
 	color: #4A4A4A;
 	text-align: left;
 	float: left;
+	margin-top: 20px;
 }
 
 .artistPhoto {
@@ -150,7 +151,7 @@ a:hover, a:visited, a:link, a:active
 	box-shadow:         0px 0px 5px 0px rgba(0,0,0,0.50);
 	height: 300px;
 	float: left;
-	margin: -150px 40px 40px 0px;
+	margin: -120px 40px 40px 0px;
 	vertical-align: bottom:;
 }
 
@@ -159,7 +160,7 @@ a:hover, a:visited, a:link, a:active
 	font-family: NoticiaText, serif;
 	font-size: 20px;
 	line-height: 30px;
-	padding-top: 90px;
+	padding-top: 20px;
 }
 
 .addthis_sharing_toolbox {
