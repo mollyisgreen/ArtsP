@@ -3,7 +3,6 @@ dotenv.load();
 var crypto      = require('crypto');
 var bcrypt      = require('bcrypt-nodejs');
 var mongoose    = require('mongoose');
-//var uristring   = process.env.mongoUriString;
 var uristring   = process.env.MONGOLAB_URI;
 var fs          = require('fs');
 

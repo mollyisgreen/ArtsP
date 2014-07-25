@@ -81,8 +81,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 				$location.path('/error');
 			}
 
-console.log($scope.artist);
-
 			// only relevant feature is visible
 			if($scope.artist[0].embedlink) {
 				// safe iframe src link
