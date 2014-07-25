@@ -32,7 +32,7 @@ module.exports = function(app, passport) {
 	});
 
 	app.get('/spaerror', function(req, res){
-	  	res.render('spaerror.html', { title: 'Express' });
+	  	res.render('spaerror.html', { title: 'Error' });
 	});
 
 	app.get('/list', function(req, res){

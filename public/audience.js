@@ -75,7 +75,7 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 			        pageCaption: $scope.artist[0].answer
 			    };
 
-			    $scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;
+			    //$scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;
 			    
 			} else {
 				$location.path('/error');
@@ -109,7 +109,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 
 			var dateFromMill = new Date(parseInt($scope.releaseDate));
 			var dayOfWeekFromMill = dateFromMill.getDay();
-			console.log(dayOfWeekFromMill);
 
 			// yesterday
 			$scope.next;
@@ -205,7 +204,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 
 		var dateFromMill = new Date(parseInt(discoverMillisecond));
 		var dayOfWeekFromMill = dateFromMill.getDay();
-		console.log(dayOfWeekFromMill);
 
 		if (dayOfWeekFromMill==1) {
 			// if Monday and trying to go back in time, skip to Friday (or 3 days worth of milliseconds)
