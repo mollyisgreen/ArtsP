@@ -47,7 +47,7 @@ body {
 	border-right: solid #F2F2F2 30px;
 	text-align: center;
 	padding-top: 50px;
-	padding-bottom: 100px;
+	padding-bottom: 50px;
 	color: #4A4A4A;
 }
 
@@ -143,7 +143,6 @@ a:hover, a:visited, a:link, a:active
 	color: #4A4A4A;
 	text-align: left;
 	float: left;
-	margin-top: 20px;
 }
 
 .artistPhoto {
