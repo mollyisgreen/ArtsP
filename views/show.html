@@ -34,11 +34,11 @@
 
 <div class="middle">
 	<div class="interviewblock">
-		<!--<img class="artistPhoto" src="https://atomreview.s3.amazonaws.com/biopic{{artist[0]._id}}" alt={{artist[0].name}}>
-			<div class="artistQuickInfo">
-
+		<!--
+		<img class="artistPhoto" src="https://atomreview.s3.amazonaws.com/biopic{{artist[0]._id}}" alt={{artist[0].name}}>
+		<div class="artistQuickInfo">
 		</div>
-	-->
+		-->
 
 		<div class="interview">
 			<b>Artist</b> {{artist[0].name}}</br>
@@ -49,7 +49,10 @@
 			{{artist[0].answer2}}</br></br></div>
 		</div>
 
-		<div class="addthis_sharing_toolbox"></div></br></br>
+		<div data-addthis-toolbox class="addthis_sharing_toolbox">
+		</div></br></br>
+
+
 		<a id="previous" href="#!/show/{{previous}}"><img src="leftarrow.png"></a>
 		<a id="next" href="#!/show/{{next}}"><img src="rightarrow.png"></a>
 	</div>
