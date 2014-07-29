@@ -126,9 +126,10 @@ a:hover, a:visited, a:link, a:active
 	font-size: 18px;
 	color: #4A4A4A;
 	line-height: 25px;
-	margin-top: 30px;
-	width: 800px;
+	width: 50%;
 	margin: 0 auto;
+	margin-top: 40px;
+	margin-bottom: 20px;
 }
 
 .interviewblock {
