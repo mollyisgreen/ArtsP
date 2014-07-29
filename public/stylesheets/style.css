@@ -152,7 +152,8 @@ a:hover, a:visited, a:link, a:active
 	box-shadow:         0px 0px 5px 0px rgba(0,0,0,0.50);
 	height: 300px;
 	float: left;
-	margin: -120px 40px 40px 0px;
+	/*margin: -120px 40px 40px 0px;*/
+	margin: 0px 40px 40px 0px;
 	vertical-align: bottom:;
 }
 
@@ -161,7 +162,8 @@ a:hover, a:visited, a:link, a:active
 	font-family: NoticiaText, serif;
 	font-size: 20px;
 	line-height: 30px;
-	padding-top: 20px;
+	/*padding-top: 20px;*/
+	padding-top: 240px;
 }
 
 .addthis_sharing_toolbox {
