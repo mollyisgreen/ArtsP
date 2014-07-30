@@ -6,7 +6,12 @@ var currentDate = pageDate.getDate();
 var currentYear = pageDate.getFullYear();
 var todayInMillOld = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
 */
-var todayInMillOld = Date.parse('8/5/2014');
+
+// delete later
+var todayInMillOld = Date.parse("8/5/2014");
+var pageDate = new Date(parseInt(todayInMillOld));
+
+
 var todayInMill;
 
 // skip weekends
