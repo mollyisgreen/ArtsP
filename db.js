@@ -125,7 +125,6 @@ exports.saveChange = function(req, res){
                 'answer1'    : req.body.answer1,
                 'question2'   : req.body.question2,
                 'answer2'    : req.body.answer2,
-                'date'      : new Date(req.body.date),
                 'twitter'  : req.body.twitter
             }
         },
