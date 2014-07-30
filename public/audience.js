@@ -8,7 +8,7 @@ var todayInMillOld = Date.parse(currentMonth + '/' + currentDate + '/' + current
 */
 
 // delete later
-var todayInMillOld = Date.parse("8/19/2014");
+var todayInMillOld = Date.parse("8/22/2014");
 var pageDate = new Date(parseInt(todayInMillOld));
 
 
