@@ -126,7 +126,7 @@ exports.saveChange = function(req, res){
                 'question2'   : req.body.question2,
                 'answer2'    : req.body.answer2,
                 'date'      : new Date(req.body.date),
-                'category'  : req.body.category
+                'twitter'  : req.body.twitter
             }
         },
         function (err, result) {
