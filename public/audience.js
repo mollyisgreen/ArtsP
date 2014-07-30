@@ -1,9 +1,12 @@
 // today's date in milliseconds
+/*
 var pageDate = new Date();
 var currentMonth = pageDate.getMonth() + 1;
 var currentDate = pageDate.getDate();
 var currentYear = pageDate.getFullYear();
 var todayInMillOld = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
+*/
+var todayInMillOld = Date.parse('8/5/2014');
 var todayInMill;
 
 // skip weekends
@@ -23,7 +26,7 @@ var todayInMill = Date.parse(currentMonth + '/' + currentDate + '/' + currentYea
 */ 
 
 // first/release date of atom review
-var firstPostMill = Date.parse("6/25/2014");
+var firstPostMill = Date.parse("8/1/2014");
 
 
 var vimeoWidth = 500;
