@@ -53,7 +53,7 @@ body {
 
 .middle {
 	margin: 0px 0px 0px 0px;
-	border-top: solid #98C1B7 20px;
+	/*border-top: solid #98C1B7 20px;*/
 	padding-top: 70px;
 	padding-bottom: 50px;
 	background-color: #F2F2F2;
@@ -133,7 +133,7 @@ a:hover, a:visited, a:link, a:active
 }
 
 .interviewblock {
-	width: 50%;
+	width: 800px;
 	margin: 0 auto;
 }
 
@@ -162,8 +162,9 @@ a:hover, a:visited, a:link, a:active
 	font-family: NoticiaText, serif;
 	font-size: 20px;
 	line-height: 30px;
-	/*padding-top: 20px;*/
-	padding-top: 240px;
+	/*padding-top: 20px;
+	padding-top: 240px;*/
+	
 }
 
 .addthis_sharing_toolbox {
