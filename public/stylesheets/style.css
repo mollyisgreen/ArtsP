@@ -199,3 +199,14 @@ a:hover, a:visited, a:link, a:active
 	margin-left: 630px;
 	padding-bottom: 50px;
 }
+
+.addthiswidget {
+	float: left;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.addthisToolbox {
+	width: 180px;
+	margin: 0 auto;
+}
