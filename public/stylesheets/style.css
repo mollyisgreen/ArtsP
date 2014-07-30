@@ -144,6 +144,7 @@ a:hover, a:visited, a:link, a:active
 	color: #4A4A4A;
 	text-align: left;
 	float: left;
+	margin-bottom: 50px;
 }
 
 .artistPhoto {
@@ -162,23 +163,21 @@ a:hover, a:visited, a:link, a:active
 	font-family: NoticiaText, serif;
 	font-size: 20px;
 	line-height: 30px;
-	/*padding-top: 20px;
-	padding-top: 240px;*/
+	padding-top: 60px;
+	/*padding-top: 240px;*/
 	
-}
-
-.addthis_sharing_toolbox {
-	clear: both;
 }
 
 #previous {
 	margin-right: 20px;
 	margin-left: 20px;
+	margin-top: 30px;
 }
 
 #next {
 	margin-left: 20px;
 	margin-right: 20px;
+	margin-top: 30px;
 }
 
 /********** features *********/
