@@ -137,7 +137,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 				$scope.previous = (parseInt($scope.releaseDate) + 86400000);
 			}
 
-
 			/* not skipping weekends 
 			// yesterday
 			$scope.next = ($scope.releaseDate - 86400000);
