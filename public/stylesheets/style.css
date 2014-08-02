@@ -103,13 +103,19 @@ a:hover, a:visited, a:link, a:active
 
 
 .largetext {
-	font-family: Courier;
-	font-size: 30px;
+	font-family: NoticiaText;
+	font-size: 25px;
 }
 
 .contactUs {
 	width: 60%;
 	margin: 0 auto;
+	margin-bottom: 70px;
+	margin-top: 70px;
+}
+
+.socialMedia {
+	margin-bottom: 60px;
 }
 
 
