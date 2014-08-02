@@ -80,7 +80,9 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 				$scope.$parent.seo = {
 			        pageTitle : $scope.artist[0].name,
 			        pageDescription: 'Showcasing one indie artist per day: ' + $scope.artist[0].name,
-			        pageCaption: $scope.artist[0].answer1
+			        pageCaption: $scope.artist[0].answer1,
+			        pageDate: $routeParams.date,
+			        pageArtistId: $scope.artist[0]._id
 			    };
 
 			    //$scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;
