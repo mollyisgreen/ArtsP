@@ -141,7 +141,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 
 			addthis.toolbox('.addthisToolbox');
 
-/*
 			// if on today's page, hide button that allows you to go to tomorrow's content
 			if($scope.releaseDate == todayInMill)
 				document.getElementById('previous').style.display = 'none'; 
@@ -149,8 +148,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 			// if on first day's page, hide button that allows you to go further into past
 			if($scope.releaseDate == firstPostMill)
 				document.getElementById('next').style.display = 'none'; 
-			*/
-
 		})
 		.error(function(data) {
 			console.log('Error: ' + data);
