@@ -1,16 +1,15 @@
 // today's date in milliseconds
-/*
 var pageDate = new Date();
 var currentMonth = pageDate.getMonth() + 1;
 var currentDate = pageDate.getDate();
 var currentYear = pageDate.getFullYear();
 var todayInMillOld = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
-*/
 
-// delete later
+
+/*
 var todayInMillOld = Date.parse("8/28/2014");
 var pageDate = new Date(parseInt(todayInMillOld));
-
+*/
 
 var todayInMill;
 
