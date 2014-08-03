@@ -104,7 +104,8 @@ a:hover, a:visited, a:link, a:active
 
 .largetext {
 	font-family: NoticiaText;
-	font-size: 25px;
+	font-size: 22px;
+	line-height: 35px;
 }
 
 .contactUs {

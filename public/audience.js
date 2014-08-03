@@ -84,9 +84,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 			        pageDate: $routeParams.date,
 			        pageArtistId: $scope.artist[0]._id
 			    };
-
-			    //$scope.bioPhotoPath = "https://atomreview.s3.amazonaws.com/biopic" + $scope.artist[0]._id;
-			    
 			} else {
 				$location.path('/error');
 			}
@@ -109,7 +106,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 
 			// don't show second question if doesn't exist
 			if(!($scope.artist[0].question2)) {
-				// safe iframe src link
 				document.getElementById('question2').style.display = 'none'; 
 			} 
 
@@ -122,7 +118,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 			$scope.next;
 			// tomorrow
 			$scope.previous
-
 
 			if (dayOfWeekFromMill==1) {
 				// if Monday and trying to go back in time, skip to Friday (or 3 days worth of milliseconds)
