@@ -88,6 +88,7 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 				$location.path('/error');
 			}
 
+			console.log("order1");
 			// only relevant feature is visible
 			if($scope.artist[0].embedlink) {
 				// safe iframe src link
@@ -139,6 +140,8 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 			$scope.previous = (parseInt($scope.releaseDate) + 86400000);
 			*/
 
+			addthis.toolbox('.addthisToolbox');
+
 
 			// if on today's page, hide button that allows you to go to tomorrow's content
 			if($scope.releaseDate == todayInMill)
@@ -157,8 +160,8 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 })
 
 .directive('addthisToolbox', function() {
+	console.log("order2");
     return {
-        
         restrict: 'A',
         transclude: true,
         replace: true,
@@ -168,10 +171,12 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
             // Safe for multiple calls, only first call will be processed (loaded css/images, popup injected)
             // http://support.addthis.com/customer/portal/articles/381263-addthis-client-api#configuration-url
             // http://support.addthis.com/customer/portal/articles/381221-optimizing-addthis-performance
+            //addthis.init();
             addthis.init();
             // Ajax load (bind events)
             // http://support.addthis.com/customer/portal/articles/381263-addthis-client-api#rendering-js-toolbox
             // http://support.addthis.com/customer/portal/questions/548551-help-on-call-back-using-ajax-i-lose-share-buttons
+            //addthis.toolbox($(element).get());
             addthis.toolbox($(element).get());
         }
     }
