@@ -1,4 +1,3 @@
-
 // redirect to https
 function redirectSec(req, res, next) {
     if (req.headers['x-forwarded-proto'] == 'http') { 
@@ -11,7 +10,7 @@ function redirectSec(req, res, next) {
 module.exports = function(app, passport) {
 
 	// allows http redirection
-	app.get('/', redirectSec, function(req, res){
+	app.get('/', function(req, res){
 	  	res.render('index.html', { title: 'Express' } );
 	});
 
