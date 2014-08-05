@@ -175,16 +175,16 @@ a:hover, a:visited, a:link, a:active
 }
 
 #previous {
-	margin-right: 20px;
-	margin-left: 20px;
+	margin-right: 15px;
+	margin-left: 15px;
 	margin-top: 30px;
 	font-family: NoticiaText;
 	font-size: 25px;
 }
 
 #next {
-	margin-left: 20px;
-	margin-right: 20px;
+	margin-left: 15px;
+	margin-right: 15px;
 	margin-top: 30px;
 	font-family: NoticiaText;
 	font-size: 25px;
