@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-
+require('newrelic');
 db = require('./db');
 var dotenv = require('dotenv');
 dotenv.load();
