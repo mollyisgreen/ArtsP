@@ -1,16 +1,19 @@
 
 // today's date in milliseconds
 //var pageDate = new Date();
+/*
 var preUTCDate = new Date();
 var pageDate = new Date(preUTCDate.getUTCFullYear(), preUTCDate.getUTCMonth(), preUTCDate.getUTCDate());
 var currentMonth = pageDate.getMonth() + 1;
 var currentDate = pageDate.getDate();
 var currentYear = pageDate.getFullYear();
 var todayInMillOld = (Date.parse(currentMonth + '/' + currentDate + '/' + currentYear)) - 86400000;
+*/
 //var todayInMillOld = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
 
-var todayInMill;
+var todayInMill = 1407394800000;
 
+/*
 // skip weekends
 // delete -1 for first two conditions if if get rid of UTC
 var dayOfWeek = pageDate.getDay();
@@ -23,6 +26,7 @@ if ((dayOfWeek-1) == 0) {
 } else {
 	todayInMill = todayInMillOld;
 }
+*/
 
 /* if not skipping weekends: 
 var todayInMill = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
