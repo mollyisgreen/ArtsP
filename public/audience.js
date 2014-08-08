@@ -53,7 +53,8 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 	      templateUrl:'contact'
 	    })
 	   	.when('/spaerror', {
-	      templateUrl:'spaerror'
+	      templateUrl:'spaerror',
+	      controller: 'errorController'
 	    })
 	    .when('/', {
 	    	redirectTo: '/show/' + todayInMill,
@@ -177,6 +178,13 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
             addthis.toolbox($(element).get());
         }
     }
+})
+
+.controller('errorController', function($scope, $routeParams) {
+	// prerender SEO
+	$scope.$parent.seo = {
+		pageTitle : 'Error'
+	};
 })
 
 
