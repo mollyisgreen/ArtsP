@@ -1,10 +1,11 @@
+
 // today's date in milliseconds
-var pageDate = new Date();
+var preUTCDate = new Date();
+var pageDate = new Date(preUTCDate.getUTCFullYear(), preUTCDate.getUTCMonth(), preUTCDate.getUTCDate());
 var currentMonth = pageDate.getMonth() + 1;
 var currentDate = pageDate.getDate();
 var currentYear = pageDate.getFullYear();
-var todayInMillOld = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
-
+var todayInMillOld = (Date.parse(currentMonth + '/' + currentDate + '/' + currentYear)) - 86400000;
 
 /*
 var todayInMillOld = Date.parse("8/28/2014");
