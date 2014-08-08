@@ -1,25 +1,23 @@
 
 // today's date in milliseconds
+//var pageDate = new Date();
 var preUTCDate = new Date();
 var pageDate = new Date(preUTCDate.getUTCFullYear(), preUTCDate.getUTCMonth(), preUTCDate.getUTCDate());
 var currentMonth = pageDate.getMonth() + 1;
 var currentDate = pageDate.getDate();
 var currentYear = pageDate.getFullYear();
 var todayInMillOld = (Date.parse(currentMonth + '/' + currentDate + '/' + currentYear)) - 86400000;
-
-/*
-var todayInMillOld = Date.parse("8/28/2014");
-var pageDate = new Date(parseInt(todayInMillOld));
-*/
+//var todayInMillOld = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
 
 var todayInMill;
 
 // skip weekends
+// delete -1 for first two conditions if if get rid of UTC
 var dayOfWeek = pageDate.getDay();
-if (dayOfWeek == 0) {
+if ((dayOfWeek-1) == 0) {
 	// If Sunday, go back two days worth of milliseconds
 	todayInMill = todayInMillOld - 172800000;
-} else if (dayOfWeek == 6) {
+} else if ((dayOfWeek-1) == 6) {
 	// If Saturday, go back one days worth of milliseconds
 	todayInMill = todayInMillOld - 86400000;
 } else {
@@ -89,7 +87,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 				$location.path('/error');
 			}
 
-			console.log("order1");
 			// only relevant feature is visible
 			if($scope.artist[0].embedlink) {
 				// safe iframe src link
@@ -159,7 +156,6 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 })
 
 .directive('addthisToolbox', function() {
-	console.log("order2");
     return {
         restrict: 'A',
         transclude: true,
