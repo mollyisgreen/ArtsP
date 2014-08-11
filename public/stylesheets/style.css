@@ -220,7 +220,7 @@ a:hover, a:visited, a:link, a:active
 /********** error page *********/
 
 .archive {
-	width: 70%;
+	width: 74%;
 	margin: 0 auto;
 	padding-bottom: 700px;
 }
@@ -229,7 +229,7 @@ a:hover, a:visited, a:link, a:active
 .archiveArtist {
 	float: left;
 	width: 250px;
-	margin: 20px 30px 40px 30px;
+	margin: 20px 40px 40px 40px;
 }
 
 .archiveIcon {
