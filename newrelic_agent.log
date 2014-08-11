@@ -103,3 +103,6 @@
 {"name":"newrelic","hostname":"Mollys-MacBook-Air.local","pid":19754,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-08-11T06:22:42.189Z","v":0}
 {"name":"newrelic","hostname":"Mollys-MacBook-Air.local","pid":19754,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/734437/applications/4799747","time":"2014-08-11T06:22:43.987Z","v":0}
 {"name":"newrelic","hostname":"Mollys-MacBook-Air.local","pid":19754,"component":"collector_api","level":30,"msg":"Connected to collector-134.newrelic.com:443 with agent run ID 1207475275.","time":"2014-08-11T06:22:43.989Z","v":0}
+{"name":"newrelic","hostname":"Mollys-MacBook-Air.local","pid":20263,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-08-11T15:59:28.340Z","v":0}
+{"name":"newrelic","hostname":"Mollys-MacBook-Air.local","pid":20263,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/734437/applications/4799747","time":"2014-08-11T15:59:30.209Z","v":0}
+{"name":"newrelic","hostname":"Mollys-MacBook-Air.local","pid":20263,"component":"collector_api","level":30,"msg":"Connected to collector-134.newrelic.com:443 with agent run ID 1208751344.","time":"2014-08-11T15:59:30.210Z","v":0}
