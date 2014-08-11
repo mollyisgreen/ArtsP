@@ -55,6 +55,9 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 	    .when('/contact', {
 	      templateUrl:'contact'
 	    })
+	   	.when('/archive', {
+	      templateUrl:'archive'
+	    })
 	   	.when('/spaerror', {
 	      templateUrl:'spaerror',
 	      controller: 'errorController'

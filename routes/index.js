@@ -26,6 +26,10 @@ module.exports = function(app, passport) {
 	  res.render('show.html', { title: 'Express' });
 	});
 
+	app.get('/archive', function(req, res){
+	  res.render('archive.html', { title: 'Express' });
+	});
+
 	app.get('/error', function(req, res){
 	  	res.render('error.html', { title: 'Express' });
 	});
