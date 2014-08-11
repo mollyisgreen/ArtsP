@@ -56,7 +56,8 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 	      templateUrl:'contact'
 	    })
 	   	.when('/archive', {
-	      templateUrl:'archive'
+	      templateUrl:'archive',
+	      controller:'archiveController'
 	    })
 	   	.when('/spaerror', {
 	      templateUrl:'spaerror',
@@ -188,6 +189,13 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 	// prerender SEO
 	$scope.$parent.seo = {
 		pageTitle : 'Error'
+	};
+})
+
+.controller('archiveController', function($scope, $routeParams) {
+	// prerender SEO
+	$scope.$parent.seo = {
+		pageTitle : 'Archive'
 	};
 })
 

@@ -216,3 +216,38 @@ a:hover, a:visited, a:link, a:active
 	width: 180px;
 	margin: 0 auto;
 }
+
+
+/********** error page *********/
+
+.archive {
+	width: 70%;
+	margin: 0 auto;
+	padding-bottom: 700px;
+}
+
+
+.archiveArtist {
+	float: left;
+	width: 250px;
+	margin: 20px 30px 40px 30px;
+}
+
+.archiveIcon {
+	height: 200px;
+	width: 320px;
+	float: left;
+	margin-bottom: 10px;
+}
+
+.archiveCaption {
+	text-align: left;
+	font-family: NoticiaText;
+	font-size: 18px;
+	line-height: 25px;
+}
+
+
+
+
+
