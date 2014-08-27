@@ -202,7 +202,8 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 
 .controller('discoverController', function($scope, $routeParams, $http, $sce, $location) {
 
-	var discoverMillisecond = todayInMill;
+	// 8/27/14 (last day w/ discover links)
+	var discoverMillisecond = 1409122800000;
 	$scope.endOfList = false;
 	$scope.artistList = [];
 
