@@ -38,7 +38,6 @@ body {
 	margin: 0px 0px 0px 0px;
 	text-align: center;
 	color: #4A4A4A;
-	border: solid #F2F2F2 30px;
 }
 
 .top {
@@ -46,13 +45,16 @@ body {
 	text-align: center;
 	padding-top: 50px;
 	color: #4A4A4A;
+	/*border-top: solid #F2F2F2 30px;
+	border-left: solid #F2F2F2 30px;
+	border-right: solid #F2F2F2 30px;*/
 }
 
 .middle {
 	margin: 50px 0px 0px 0px;
-	/*border-top: solid #98C1B7 20px;*/
 	padding-top: 70px;
 	background-color: #F2F2F2;
+	padding-bottom: 70px;
 }
 
 a:hover, a:visited, a:link, a:active
