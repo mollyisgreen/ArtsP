@@ -38,6 +38,9 @@ body {
 	margin: 0px 0px 0px 0px;
 	text-align: center;
 	color: #4A4A4A;
+	border-top: solid #F2F2F2 30px;
+	border-left: solid #F2F2F2 30px;
+	border-right: solid #F2F2F2 30px;
 }
 
 .top {
@@ -45,9 +48,6 @@ body {
 	text-align: center;
 	padding-top: 50px;
 	color: #4A4A4A;
-	/*border-top: solid #F2F2F2 30px;
-	border-left: solid #F2F2F2 30px;
-	border-right: solid #F2F2F2 30px;*/
 }
 
 .middle {
