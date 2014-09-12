@@ -11,7 +11,7 @@ var todayInMillOld = (Date.parse(currentMonth + '/' + currentDate + '/' + curren
 */
 //var todayInMillOld = Date.parse(currentMonth + '/' + currentDate + '/' + currentYear);
 
-var todayInMill = 1410332400000;
+var todayInMill = 1410418800000;
 
 /*
 // skip weekends
