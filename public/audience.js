@@ -34,6 +34,7 @@ var todayInMill = Date.parse(currentMonth + '/' + currentDate + '/' + currentYea
 
 // first/release date of atom review
 var firstPostMill = Date.parse("8/1/2014");
+var lastPostMill = 1410505200000;
 
 
 var vimeoWidth = 500;
@@ -148,8 +149,8 @@ var audience = angular.module('audience', ['ngRoute', 'angularFileUpload', 'infi
 
 			addthis.toolbox('.addthisToolbox');
 
-			// if on today's page, hide button that allows you to go to tomorrow's content
-			if($scope.releaseDate == todayInMill)
+			// if on last page, hide button that allows you to go to tomorrow's content
+			if($scope.releaseDate == lastPostMill)
 				document.getElementById('previous').style.display = 'none'; 
 
 			// if on first day's page, hide button that allows you to go further into past
