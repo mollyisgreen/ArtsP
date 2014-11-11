@@ -222,7 +222,6 @@ a:hover, a:visited, a:link, a:active
 /********** error page *********/
 
 .archive {
-	text-align: center;
 	width: 990px;
 	padding-bottom: 3300px;
 	margin: 0 auto;
@@ -232,7 +231,7 @@ a:hover, a:visited, a:link, a:active
 .archiveArtist {
 	float: left;
 	width: 250px;
-	margin: 20px 40px 40px 40px;
+	margin: 20px 80px 40px 0px;
 }
 
 .archiveIcon {
