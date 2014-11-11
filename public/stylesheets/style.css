@@ -222,11 +222,10 @@ a:hover, a:visited, a:link, a:active
 /********** error page *********/
 
 .archive {
-	/*width: 74%;*/
+	text-align: center;
 	width: 990px;
-	margin: 0 auto;
 	padding-bottom: 3300px;
-	margin-left: 150px;
+	margin: 0 auto;
 }
 
 
